@@ -13,6 +13,13 @@ var lightGate = function () {
   };
   
   
+  journeyEnd = function(endDescription) {
+    idOfBodyTagAtEnd = endDescription.bodyId;
+    endingEvent = endDescription.eventObject;
+    return this;
+  };
+  
+  
   cookieName = function (name) {
     nameOfCookie = name;
     return this;
@@ -42,6 +49,10 @@ var lightGate = function () {
     }
 
     document.getElementById(idOfStartingLink).onclick = tagCookie;
+    
+    if (document.getElementsByTagName("body")[0].getAttribute("id") === idOfBodyTagAtEnd) {
+      sendFunction(endingEvent);
+    }
   };
 
   
@@ -49,6 +60,7 @@ var lightGate = function () {
     init: init,
     cookieName: cookieName,
     journeyStart: journeyStart,
+    journeyEnd: journeyEnd,
     sendFunction: sendFunction
   };
 

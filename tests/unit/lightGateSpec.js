@@ -17,7 +17,13 @@ describe("lightGate.js - journey tracking for google analytics", function () {
         'action': "journey_start",
         "label": "some_label",
         "nonInteraction": true
-      };
+      },
+      anotherEventToSend = {
+        'category': "bar",
+        'action': "journey_start",
+        "label": "some_label",
+        "nonInteraction": true
+      };;
   
 
   // BEFORE ALL - TODO: Delete all cookies before/after the tests run
@@ -26,6 +32,7 @@ describe("lightGate.js - journey tracking for google analytics", function () {
   lightGate.cookieName(cookie)
            .sendFunction(stubAnalyticsService)
            .journeyStart({ linkId: linkId, eventObject: eventToSend })
+           .journeyEnd({ bodyId:"end", eventObject:anotherEventToSend })
            .init();
   
   describe("initialization", function () {
@@ -61,11 +68,23 @@ describe("lightGate.js - journey tracking for google analytics", function () {
   
   });
   
+  
   describe("on click", function () {
     
     it("should add an event to the cookie when the link is clicked", function () {
       document.getElementById(linkId).click();
       expect(document.cookie).toContain(cookie + "=" + JSON.stringify(eventToSend));
+    });
+    
+  });
+  
+  
+  describe("landing on end page", function () {
+    
+    it("should fire an event when the last page of the journey is reached", function () {
+      pageBody.setAttribute('id','end');
+      lightGate.journeyEnd({ bodyId:"end", eventObject:anotherEventToSend }).init()
+      expect(stubAnalyticsService.lastMessage).toBe(anotherEventToSend);
     });
     
   });
