@@ -24,6 +24,11 @@ var cookieUtils = function() {
   };
   
   
+  var deleteCookieNamed = function (name) {
+    document.cookie = name + "=" + "deleted" + ";expires=" + new Date(0).toUTCString();
+  };
+  
+  
   var arrayify = function (obj) {
     return (Object.prototype.toString.call(obj) !== '[object Array]') ? [obj] : obj;
   };
@@ -32,6 +37,7 @@ var cookieUtils = function() {
   return {
     cookiesAsKeyValues: cookiesAsKeyValues,
     getCookieNamed: getCookieNamed,
+    deleteCookieNamed: deleteCookieNamed,
     arrayify: arrayify
   };
   

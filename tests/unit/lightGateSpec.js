@@ -20,7 +20,7 @@ describe("lightGate.js - journey tracking for google analytics", function () {
       };
   
 
-  // BEFORE ALL
+  // BEFORE ALL - TODO: Delete all cookies before/after the tests run
   pageBody.innerHTML += stubLink;
 
   lightGate.cookieName(cookie)
@@ -48,6 +48,15 @@ describe("lightGate.js - journey tracking for google analytics", function () {
       lightGate.init();
       expect(stubAnalyticsService.count).toBe(3);
       expect(stubAnalyticsService.lastMessage).toBe('zap');
+    });
+    
+    it("should only send events once", function () {
+      stubAnalyticsService.count = 0;
+      document.cookie = "another_test=" + JSON.stringify(['hello','there']);
+      lightGate.cookieName("another_test").init();
+      lightGate.cookieName("another_test").init();
+      expect(stubAnalyticsService.count).toBe(2);
+      expect(stubAnalyticsService.lastMessage).toBe('there');
     });
   
   });

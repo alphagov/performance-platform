@@ -14,9 +14,9 @@ describe("cookie utils", function () {
   
   
   it("should extract a single cookie by name", function () {
-    var retrivedCookie = cookieUtils.getCookieNamed('zap');
-    expect(retrivedCookie.key).toBe('zap');
-    expect(retrivedCookie.value).toBe('"pow"');
+    var retrievedCookie = cookieUtils.getCookieNamed('zap');
+    expect(retrievedCookie.key).toBe('zap');
+    expect(retrievedCookie.value).toBe('"pow"');
   });
   
   
@@ -24,5 +24,12 @@ describe("cookie utils", function () {
     var arrayFromString = cookieUtils.arrayify('foo');
     expect(arrayFromString[0]).toBe('foo');
   });
+  
+  
+  it("should delete a cookie", function () {
+    document.cookie = "nameOfCookie=" + "value";
+    cookieUtils.deleteCookieNamed("nameOfCookie");
+    expect(document.cookie).not.toContain("nameOfCookie=value");
+  })
   
 });

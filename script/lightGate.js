@@ -38,6 +38,7 @@ var lightGate = function () {
       for (var i = 0; i < events.length; i++) {
         sendFunction(events[i]);
       }
+      cookieUtils.deleteCookieNamed(nameOfCookie);
     }
 
     document.getElementById(idOfStartingLink).onclick = tagCookie;
