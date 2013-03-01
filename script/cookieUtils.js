@@ -9,9 +9,19 @@ var cookieUtils = function() {
     }
     return bakedCookies;
   }
+  
+  var getCookieNamed = function (name) {
+    var allCookies = cookiesAsKeyValues();
+    for (var i = 0; i < allCookies.length; i++) {
+      if (allCookies[i][0] === name) {
+        return allCookies[i];
+      }
+    }
+  };
 
   return {
-    cookiesAsKeyValues: cookiesAsKeyValues
+    cookiesAsKeyValues: cookiesAsKeyValues,
+    getCookieNamed: getCookieNamed
   };
   
 }();
