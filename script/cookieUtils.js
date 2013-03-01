@@ -13,6 +13,7 @@ var cookieUtils = function() {
     return bakedCookies;
   }
   
+  
   var getCookieNamed = function (name) {
     var allCookies = cookiesAsKeyValues();
     for (var i = 0; i < allCookies.length; i++) {
@@ -22,9 +23,11 @@ var cookieUtils = function() {
     }
   };
   
+  
   var arrayify = function (obj) {
     return (Object.prototype.toString.call(obj) !== '[object Array]') ? [obj] : obj;
   };
+
 
   return {
     cookiesAsKeyValues: cookiesAsKeyValues,

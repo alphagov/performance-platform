@@ -2,11 +2,13 @@ var lightGate = function () {
 
   var nameOfCookie = "journey_events"
       idOfStartingLink = undefined,
+      startingEvent = undefined,
       sendDataFunction = undefined;
 
 
-  startingLinkID = function(id) {
-    idOfStartingLink = id;
+  journeyStart = function(elementId, eventToSend) {
+    idOfStartingLink = elementId;
+    startingEvent = eventToSend;
     return this;
   };
   
@@ -24,7 +26,7 @@ var lightGate = function () {
 
   
   tagCookie = function() {
-    document.cookie = nameOfCookie + '=' + '"event"';
+    document.cookie = nameOfCookie + '=' + JSON.stringify(startingEvent);
   };
 
 
@@ -45,7 +47,7 @@ var lightGate = function () {
   return {
     init: init,
     cookieName: cookieName,
-    startingLinkID: startingLinkID,
+    journeyStart: journeyStart,
     sendFunction: sendFunction
   };
 
