@@ -5,7 +5,10 @@ var cookieUtils = function() {
     var rawCookies = document.cookie.split(';');
     for (var i = 0; i < rawCookies.length; i++) {
       var keyValue = rawCookies[i].split('=');
-      bakedCookies.push([keyValue[0].trim(), keyValue[1].trim()]);
+      bakedCookies.push({
+        key: keyValue[0].trim(), 
+        value: keyValue[1].trim()
+      });
     }
     return bakedCookies;
   }
@@ -13,7 +16,7 @@ var cookieUtils = function() {
   var getCookieNamed = function (name) {
     var allCookies = cookiesAsKeyValues();
     for (var i = 0; i < allCookies.length; i++) {
-      if (allCookies[i][0] === name) {
+      if (allCookies[i].key === name) {
         return allCookies[i];
       }
     }

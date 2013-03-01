@@ -7,15 +7,15 @@ describe("cookie utils", function () {
   
   it("should extract cookies as key values with trimmed white space", function () {
     console.log(cookieUtils.cookiesAsKeyValues());
-    expect(cookieUtils.cookiesAsKeyValues()).toContain(['foo','bar']);
-    expect(cookieUtils.cookiesAsKeyValues()).toContain(['zap','pow']);
-    expect(cookieUtils.cookiesAsKeyValues()).toContain(['zig','zag']);
+    expect(cookieUtils.cookiesAsKeyValues()).toContain({ key: 'foo', value: 'bar' });
+    expect(cookieUtils.cookiesAsKeyValues()).toContain({ key: 'zap', value: 'pow' });
+    expect(cookieUtils.cookiesAsKeyValues()).toContain({ key: 'zig', value: 'zag' });
   });
   
   it("should extract a single cookie by name", function () {
     var retrivedCookie = cookieUtils.getCookieNamed('zap');
-    expect(retrivedCookie[0]).toBe('zap');
-    expect(retrivedCookie[1]).toBe('pow');
+    expect(retrivedCookie.key).toBe('zap');
+    expect(retrivedCookie.value).toBe('pow');
   });
   
 });
