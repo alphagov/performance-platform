@@ -6,9 +6,9 @@ var lightGate = function () {
       sendDataFunction = undefined;
 
 
-  journeyStart = function(elementId, eventToSend) {
-    idOfStartingLink = elementId;
-    startingEvent = eventToSend;
+  journeyStart = function(startDescription) {
+    idOfStartingLink = startDescription.linkId;
+    startingEvent = startDescription.eventObject;
     return this;
   };
   

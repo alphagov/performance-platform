@@ -25,7 +25,7 @@ describe("lightGate.js - journey tracking for google analytics", function () {
 
   lightGate.cookieName(cookie)
            .sendFunction(stubAnalyticsService)
-           .journeyStart(linkId, eventToSend)
+           .journeyStart({ linkId: linkId, eventObject: eventToSend })
            .init();
   
   describe("initialization", function () {
