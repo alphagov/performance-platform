@@ -1,10 +1,17 @@
 describe("cookie utils", function () {
   
-  // BEFORE ALL
-  document.cookie = 'foo="bar"';
-  document.cookie = ' zap = "pow" ';
-  document.cookie = ' zig="zag"';
+  beforeEach(function () {
+    document.cookie = 'foo="bar"';
+    document.cookie = ' zap = "pow" ';
+    document.cookie = ' zig="zag"';  
+  });
   
+  afterEach(function () {
+    cookies = document.cookie.split(';');
+    for (var i = 0; i < cookies.length; i++) {
+      cookieUtils.deleteCookieNamed(cookies[i].split('=')[0]);
+    }
+  });
   
   it("should extract cookies as key values with trimmed white space", function () {
     expect(cookieUtils.cookiesAsKeyValues()).toContain({ key: 'foo', value: '"bar"' });
@@ -36,6 +43,20 @@ describe("cookie utils", function () {
     document.cookie = "nameOfCookie=" + "value";
     cookieUtils.deleteCookieNamed("nameOfCookie");
     expect(document.cookie).not.toContain("nameOfCookie=value");
-  })
+  });
+  
+  
+  it("should not complain if a cookie does not have a value", function () {
+    document.cookie = "cookieWithoutValue=";
+    cookieUtils.cookiesAsKeyValues();
+    // should pass
+  });
+  
+  
+  it("should not complain if a cookie does not have a key", function () {
+    document.cookie = "=wookieWithoutCause";
+    cookieUtils.cookiesAsKeyValues();
+    // should pass
+  });
   
 });

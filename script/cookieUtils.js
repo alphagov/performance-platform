@@ -7,7 +7,7 @@ var cookieUtils = function() {
       var keyValue = rawCookies[i].split('=');
       bakedCookies.push({
         key: keyValue[0].trim(), 
-        value: keyValue[1].trim()
+        value: keyValue[1] ? keyValue[1].trim() : undefined
       });
     }
     return bakedCookies;

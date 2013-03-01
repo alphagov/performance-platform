@@ -23,7 +23,7 @@ describe("lightGate.js - journey tracking for google analytics", function () {
         'action': "journey_start",
         "label": "some_label",
         "nonInteraction": true
-      };;
+      };
   
 
   // BEFORE ALL - TODO: Delete all cookies before/after the tests run
@@ -36,6 +36,12 @@ describe("lightGate.js - journey tracking for google analytics", function () {
            .init();
   
   describe("initialization", function () {
+    
+    it("should not blow up if the link does not exist", function () {
+      lightGate.journeyStart({ linkId: "does_not_exist", eventObject: eventToSend })
+               .init();
+      // should pass
+    });
 
     it("should bind event to starting link", function () {
       expect(document.getElementById(linkId).onclick).not.toBe(null)

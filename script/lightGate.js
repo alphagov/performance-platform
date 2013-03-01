@@ -32,7 +32,7 @@ var lightGate = function () {
   }
 
   
-  tagCookie = function() {
+  addStartingEventToCookie = function() {
     cookieUtils.setSessionCookie({key: nameOfCookie, value: JSON.stringify(startingEvent)});
   };
 
@@ -50,7 +50,7 @@ var lightGate = function () {
     if (existingCookie && existingCookie.value) {
       var events = cookieUtils.arrayify(JSON.parse(existingCookie.value));
       for (var i = 0; i < events.length; i++) {
-        sendFunction(events[i]);
+        sendDataFunction(events[i]);
       }
       cookieUtils.deleteCookieNamed(nameOfCookie);
     }
@@ -58,13 +58,16 @@ var lightGate = function () {
 
 
   var bindStartingEvent = function () {
-    document.getElementById(idOfStartingLink).onclick = tagCookie;
+    var startingLink = document.getElementById(idOfStartingLink);
+    if (startingLink) {
+      startingLink.onclick = addStartingEventToCookie; 
+    }
   };
   
   
   var doEndingEvent = function () {
     if (document.getElementsByTagName("body")[0].getAttribute("id") === idOfBodyTagAtEnd) {
-      sendFunction(endingEvent);
+      sendDataFunction(endingEvent);
     }
   };
   
