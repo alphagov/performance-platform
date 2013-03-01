@@ -17,4 +17,9 @@ describe("cookie utils", function () {
     expect(retrivedCookie.value).toBe('"pow"');
   });
   
+  it("should convert strings that look suspiciously like arrays into arrays", function () {
+    var arrayFromString = cookieUtils.arrayify('foo');
+    expect(arrayFromString[0]).toBe('foo');
+  });
+  
 });

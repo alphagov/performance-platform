@@ -21,10 +21,15 @@ var cookieUtils = function() {
       }
     }
   };
+  
+  var arrayify = function (obj) {
+    return (Object.prototype.toString.call(obj) !== '[object Array]') ? [obj] : obj;
+  };
 
   return {
     cookiesAsKeyValues: cookiesAsKeyValues,
-    getCookieNamed: getCookieNamed
+    getCookieNamed: getCookieNamed,
+    arrayify: arrayify
   };
   
 }();
