@@ -1,10 +1,11 @@
 describe("the end of the user journey", function () {
 
+  var messages = [];
   var stubAnalyticsService = function (data) {
     stubAnalyticsService.count++;
-    stubAnalyticsService.lastMessage = data;
+    messages.push(data);
   };
-  
+    
   // BEFORE ALL
   lightGate.cookieName("test_journey")
            .sendFunction(stubAnalyticsService)
@@ -13,7 +14,12 @@ describe("the end of the user journey", function () {
            .init();
 
   it("should have sent a start event", function () {
-    expect(stubAnalyticsService.lastMessage).toBe("bye");
+    // TODO - see lightGate.js
+    expect(true).toBe(false);
+  });
+  
+  it("should have sent an end event", function () {
+    expect(messages).toContain("bye");
   });
   
 });

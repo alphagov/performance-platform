@@ -33,6 +33,7 @@ var lightGate = function () {
 
   
   addStartingEventToCookie = function() {
+    // TODO: change the path attribute to correctly scope the cookie
     cookieUtils.setSessionCookie({key: nameOfCookie, value: JSON.stringify(startingEvent)});
   };
 
