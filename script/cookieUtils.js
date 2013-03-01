@@ -24,6 +24,11 @@ var cookieUtils = function() {
   };
   
   
+  var setSessionCookie = function (cookie) {
+    document.cookie = cookie.key + "=" + cookie.value;
+  };
+  
+  
   var deleteCookieNamed = function (name) {
     document.cookie = name + "=" + "deleted" + ";expires=" + new Date(0).toUTCString();
   };
@@ -37,6 +42,7 @@ var cookieUtils = function() {
   return {
     cookiesAsKeyValues: cookiesAsKeyValues,
     getCookieNamed: getCookieNamed,
+    setSessionCookie: setSessionCookie,
     deleteCookieNamed: deleteCookieNamed,
     arrayify: arrayify
   };

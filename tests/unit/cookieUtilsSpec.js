@@ -26,6 +26,12 @@ describe("cookie utils", function () {
   });
   
   
+  it("should set a cookie", function () {
+    cookieUtils.setSessionCookie({key:"name", value:"foo"});
+    expect(document.cookie).toContain("name=foo");
+  });
+  
+  
   it("should delete a cookie", function () {
     document.cookie = "nameOfCookie=" + "value";
     cookieUtils.deleteCookieNamed("nameOfCookie");

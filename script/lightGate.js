@@ -26,7 +26,7 @@ var lightGate = function () {
 
   
   tagCookie = function() {
-    document.cookie = nameOfCookie + '=' + JSON.stringify(startingEvent);
+    cookieUtils.setSessionCookie({key: nameOfCookie, value: JSON.stringify(startingEvent)});
   };
 
 
