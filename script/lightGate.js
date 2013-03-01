@@ -38,6 +38,13 @@ var lightGate = function () {
 
 
   init = function () {
+    bindStartingEvent();
+    sendCookieEvents();
+    doEndingEvent();
+  };
+
+
+  var sendCookieEvents = function () {
     var existingCookie = cookieUtils.getCookieNamed(nameOfCookie);
     
     if (existingCookie && existingCookie.value) {
@@ -47,14 +54,20 @@ var lightGate = function () {
       }
       cookieUtils.deleteCookieNamed(nameOfCookie);
     }
+  };
 
+
+  var bindStartingEvent = function () {
     document.getElementById(idOfStartingLink).onclick = tagCookie;
-    
+  };
+  
+  
+  var doEndingEvent = function () {
     if (document.getElementsByTagName("body")[0].getAttribute("id") === idOfBodyTagAtEnd) {
       sendFunction(endingEvent);
     }
   };
-
+  
   
   return {
     init: init,
