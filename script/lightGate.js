@@ -1,6 +1,7 @@
 var lightGate = function () {
 
-  var nameOfCookie = "journey_events"
+  var nameOfCookie = "journey_events",
+      pathOfCookie = undefined,
       idOfStartingLink = undefined,
       startingEvent = undefined,
       sendDataFunction = undefined;
@@ -26,14 +27,25 @@ var lightGate = function () {
   };
   
   
+  cookiePath = function(path) {
+    console.log('called');
+    pathOfCookie = path;
+    return this;
+  };
+  
+  
   sendFunction = function (send) {
     sendDataFunction = send;
     return this;
-  }
+  };
 
   
   _addStartingEventToCookie = function() {
-    cookieUtils.setSessionCookie({key: nameOfCookie, value: JSON.stringify(startingEvent)});
+    var cookie = {key: nameOfCookie, value: JSON.stringify(startingEvent)};
+    console.log(pathOfCookie);
+    if (pathOfCookie !== undefined) cookie['path'] = pathOfCookie;
+    console.log(cookie);
+    cookieUtils.setSessionCookie(cookie);
   };
 
 
@@ -89,7 +101,8 @@ var lightGate = function () {
     cookieName: cookieName,
     journeyStart: journeyStart,
     journeyEnd: journeyEnd,
-    sendFunction: sendFunction
+    sendFunction: sendFunction,
+    cookiePath: cookiePath
   };
 
 }();

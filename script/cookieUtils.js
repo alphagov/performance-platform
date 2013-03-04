@@ -25,7 +25,8 @@ var cookieUtils = function() {
   
   
   var setSessionCookie = function (cookie) {
-    document.cookie = cookie.key + "=" + cookie.value + "; Path=/"
+    var path = (cookie['path'] === undefined) ? "; Path=/" : "; Path=" + cookie.path;
+    document.cookie = cookie.key + "=" + cookie.value + path;
   };
   
   

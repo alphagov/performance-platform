@@ -28,6 +28,7 @@ describe("lightGate.js - journey tracking for google analytics", function () {
            .journeyStart({ linkId: linkId, eventObject: eventToSend })
            .journeyEnd({ bodyId:"end", eventObject:anotherEventToSend })
            .init();
+  
            
    afterEach(function () {
      cookies = document.cookie.split(';');
@@ -36,6 +37,7 @@ describe("lightGate.js - journey tracking for google analytics", function () {
      }
      stubAnalyticsService.reset();
    });
+  
   
   describe("initialization", function () {
     
@@ -103,6 +105,15 @@ describe("lightGate.js - journey tracking for google analytics", function () {
       expect(document.cookie).toContain(cookie + "=" + JSON.stringify(eventToSend));
     });
     
+    
+    it("should optionally initialize with a cookie path", function () {
+      var spy = spyOn(cookieUtils, "setSessionCookie");
+      lightGate.cookiePath("/tests/").init();
+      document.getElementById(linkId).click();
+      expect(spy).toHaveBeenCalled();
+      expect(spy.argsForCall[0][0].path).toBe('/tests/');  
+    });
+    
   });
   
   
@@ -120,6 +131,7 @@ describe("lightGate.js - journey tracking for google analytics", function () {
       lightGate.journeyEnd({ bodyId:"end", eventObject:anotherEventToSend }).init()
       expect(stubAnalyticsService.messages()[0]['stage']).toBe(1);
     });
+
     
   });
   

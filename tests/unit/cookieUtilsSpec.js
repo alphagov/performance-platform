@@ -6,12 +6,14 @@ describe("cookie utils", function () {
     document.cookie = ' zig="zag"' + '; Path=/';  
   });
   
+  
   afterEach(function () {
     cookies = document.cookie.split(';');
     for (var i = 0; i < cookies.length; i++) {
       cookieUtils.deleteCookieNamed(cookies[i].split('=')[0]);
     }
   });
+  
   
   it("should extract cookies as key values with trimmed white space", function () {
     expect(cookieUtils.cookiesAsKeyValues()).toContain({ key: 'foo', value: '"bar"' });
