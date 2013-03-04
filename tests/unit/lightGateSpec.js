@@ -1,13 +1,6 @@
 describe("lightGate.js - journey tracking for google analytics", function () {
   
   // SETUP
-  var messages = [];
-  var stubAnalyticsService = function (data) {
-    stubAnalyticsService.count++;
-    messages.push(data);
-  };
-  
-  
   var linkId = 'start',
       cookie = 'test'
       stubLink = "<a href='#' id='" + linkId + "'>This is a link</a>",
@@ -31,7 +24,7 @@ describe("lightGate.js - journey tracking for google analytics", function () {
   pageBody.innerHTML += stubLink;  
 
   lightGate.cookieName(cookie)
-           .sendFunction(stubAnalyticsService)
+           .sendFunction(stubAnalyticsService.post)
            .journeyStart({ linkId: linkId, eventObject: eventToSend })
            .journeyEnd({ bodyId:"end", eventObject:anotherEventToSend })
            .init();
@@ -41,6 +34,7 @@ describe("lightGate.js - journey tracking for google analytics", function () {
      for (var i = 0; i < cookies.length; i++) {
        cookieUtils.deleteCookieNamed(cookies[i].split('=')[0]);
      }
+     stubAnalyticsService.reset();
    });
   
   describe("initialization", function () {
@@ -60,18 +54,17 @@ describe("lightGate.js - journey tracking for google analytics", function () {
     it("should try to send a waiting event", function () {
       cookieUtils.setSessionCookie({key: cookie, value: '"waiting"'});
       lightGate.init();
-      expect(messages[0]).toBe('waiting');
+      expect(stubAnalyticsService.messages()[0]).toBe('waiting');
     });
       
         
     it("should try to send any waiting events", function () {
-      stubAnalyticsService.count = 0;
       cookieUtils.setSessionCookie({key: cookie, value: JSON.stringify(["foo","bar","zap"])});
       lightGate.init();
-      expect(stubAnalyticsService.count).toBe(3);
-      expect(messages).toContain("foo");
-      expect(messages).toContain("bar");
-      expect(messages).toContain("zap");
+      expect(stubAnalyticsService.count()).toBe(3);
+      expect(stubAnalyticsService.messages()).toContain("foo");
+      expect(stubAnalyticsService.messages()).toContain("bar");
+      expect(stubAnalyticsService.messages()).toContain("zap");
     });
     
     
@@ -84,24 +77,14 @@ describe("lightGate.js - journey tracking for google analytics", function () {
     
     
     it("should only send events once", function () {
-      stubAnalyticsService.count = 0;
       cookieUtils.setSessionCookie({key: "another_test", value: JSON.stringify(['hello','there'])});
       lightGate.cookieName("another_test").init();
       lightGate.cookieName("another_test").init();
-      expect(stubAnalyticsService.count).toBe(2);
-      expect(messages).toContain('hello');
-      expect(messages).toContain('there');
+      expect(stubAnalyticsService.count()).toBe(2);
+      expect(stubAnalyticsService.messages()).toContain('hello');
+      expect(stubAnalyticsService.messages()).toContain('there');
     });
     
-    
-    // it("should provide a unique id for events", function () {
-    //   document.cookie = 'event="something"'
-    //   lightGate.init();
-    //   var namespace = {};
-    //   namespace.stubAnalyticsService = stubAnalyticsService;
-    //   var spy = spyOn(namespace, "stubAnalyticsService");
-    //   expect(spy).toHaveBeenCalled();
-    // });
   
   });
   
@@ -121,7 +104,7 @@ describe("lightGate.js - journey tracking for google analytics", function () {
     it("should fire an event when the last page of the journey is reached", function () {
       pageBody.setAttribute('id','end');
       lightGate.journeyEnd({ bodyId:"end", eventObject:anotherEventToSend }).init()
-      expect(messages).toContain(anotherEventToSend);
+      expect(stubAnalyticsService.messages()).toContain(anotherEventToSend);
     });
     
   });
