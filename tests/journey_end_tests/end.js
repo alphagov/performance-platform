@@ -14,8 +14,7 @@ describe("the end of the user journey", function () {
            .init();
 
   it("should have sent a start event", function () {
-    // TODO - see lightGate.js
-    expect(true).toBe(false);
+    expect(messages).toContain("hello");
   });
   
   it("should have sent an end event", function () {
