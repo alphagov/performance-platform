@@ -8,7 +8,7 @@ describe("cookie utils", function () {
   
   
   afterEach(function () {
-    cookies = document.cookie.split(';');
+    var cookies = document.cookie.split(';');
     for (var i = 0; i < cookies.length; i++) {
       cookieUtils.deleteCookieNamed(cookies[i].split('=')[0]);
     }
@@ -45,7 +45,7 @@ describe("cookie utils", function () {
     cookieUtils.setSessionCookie({key:'a', value:'b'});
     cookieUtils.deleteCookieNamed('a');
     expect(cookieUtils.getCookieNamed('a')).toBe(undefined);
-  })
+  });
   
   
   it("should not complain if a cookie does not have a value", function () {

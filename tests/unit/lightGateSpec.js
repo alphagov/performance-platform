@@ -2,7 +2,7 @@ describe("lightGate.js - journey tracking for google analytics", function () {
   
   // SETUP
   var linkId = 'start',
-      cookie = 'test'
+      cookie = 'test',
       stubLink = "<a href='#' id='" + linkId + "'>This is a link</a>",
       pageBody = document.getElementsByTagName('body')[0],
       sendFunction = stubAnalyticsService,
@@ -31,7 +31,7 @@ describe("lightGate.js - journey tracking for google analytics", function () {
   
            
    afterEach(function () {
-     cookies = document.cookie.split(';');
+     var cookies = document.cookie.split(';');
      for (var i = 0; i < cookies.length; i++) {
        cookieUtils.deleteCookieNamed(cookies[i].split('=')[0]);
      }

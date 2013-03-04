@@ -4,43 +4,45 @@ var lightGate = function () {
       pathOfCookie = undefined,
       idOfStartingLink = undefined,
       startingEvent = undefined,
+      idOfBodyTagAtEnd = undefined,
+      endingEvent = undefined,
       sendDataFunction = undefined;
 
 
-  journeyStart = function(startDescription) {
+  var journeyStart = function(startDescription) {
     idOfStartingLink = startDescription.linkId;
     startingEvent = startDescription.eventObject;
     return this;
   };
   
   
-  journeyEnd = function(endDescription) {
+  var journeyEnd = function(endDescription) {
     idOfBodyTagAtEnd = endDescription.bodyId;
     endingEvent = endDescription.eventObject;
     return this;
   };
   
   
-  cookieName = function (name) {
+  var cookieName = function (name) {
     nameOfCookie = name;
     return this;
   };
   
   
-  cookiePath = function(path) {
+  var cookiePath = function(path) {
     console.log('called');
     pathOfCookie = path;
     return this;
   };
   
   
-  sendFunction = function (send) {
+  var sendFunction = function (send) {
     sendDataFunction = send;
     return this;
   };
 
   
-  _addStartingEventToCookie = function() {
+  var _addStartingEventToCookie = function() {
     var cookie = {key: nameOfCookie, value: JSON.stringify(startingEvent)};
     console.log(pathOfCookie);
     if (pathOfCookie !== undefined) cookie['path'] = pathOfCookie;
@@ -49,7 +51,7 @@ var lightGate = function () {
   };
 
 
-  init = function () {
+  var init = function () {
     _bindStartingEvent();
     _sendCookieEvents();
     _doEndingEvent();
