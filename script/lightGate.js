@@ -32,43 +32,55 @@ var lightGate = function () {
   }
 
   
-  addStartingEventToCookie = function() {
+  _addStartingEventToCookie = function() {
     cookieUtils.setSessionCookie({key: nameOfCookie, value: JSON.stringify(startingEvent)});
   };
 
 
   init = function () {
-    bindStartingEvent();
-    sendCookieEvents();
-    doEndingEvent();
+    _bindStartingEvent();
+    _sendCookieEvents();
+    _doEndingEvent();
   };
 
 
-  var sendCookieEvents = function () {
+  var _sendCookieEvents = function () {
     var existingCookie = cookieUtils.getCookieNamed(nameOfCookie);
     
     if (existingCookie && existingCookie.value) {
       var events = cookieUtils.arrayify(JSON.parse(existingCookie.value));
       for (var i = 0; i < events.length; i++) {
-        sendDataFunction(events[i]);
+        _sendEvent(events[i]);
       }
       cookieUtils.deleteCookieNamed(nameOfCookie);
     }
   };
 
 
-  var bindStartingEvent = function () {
+  var _bindStartingEvent = function () {
     var startingLink = document.getElementById(idOfStartingLink);
     if (startingLink) {
-      startingLink.onclick = addStartingEventToCookie; 
+      startingLink.onclick = _addStartingEventToCookie; 
     }
   };
   
   
-  var doEndingEvent = function () {
+  var _doEndingEvent = function () {
     if (document.getElementsByTagName("body")[0].getAttribute("id") === idOfBodyTagAtEnd) {
-      sendDataFunction(endingEvent);
+      _sendEvent(endingEvent);
     }
+  };
+  
+  
+  var _jsonEqual = function (a, b) {
+    return JSON.stringify(a) === JSON.stringify(b);
+  };
+  
+  
+  var _sendEvent = function (data) {
+    if (data["stage"] === undefined && data === endingEvent) data["stage"] = 1;
+    if (data["stage"] === undefined && _jsonEqual(data,startingEvent)) data["stage"] = 0;
+    sendDataFunction(data);
   };
   
   
