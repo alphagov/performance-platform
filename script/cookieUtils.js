@@ -30,7 +30,7 @@ var cookieUtils = function() {
   
   
   var deleteCookieNamed = function (name) {
-    document.cookie = name + "=" + "deleted" + ";expires=" + new Date(0).toUTCString();
+    document.cookie = name.trim() + "=" + "deleted" + ";expires=" + new Date(0).toUTCString() + "; Path=/";
   };
   
   

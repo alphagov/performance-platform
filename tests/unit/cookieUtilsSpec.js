@@ -1,9 +1,9 @@
 describe("cookie utils", function () {
   
   beforeEach(function () {
-    document.cookie = 'foo="bar"';
-    document.cookie = ' zap = "pow" ';
-    document.cookie = ' zig="zag"';  
+    document.cookie = 'foo="bar"' + '; Path=/';
+    document.cookie = ' zap = "pow"' + '; Path=/';
+    document.cookie = ' zig="zag"' + '; Path=/';  
   });
   
   afterEach(function () {
@@ -39,22 +39,22 @@ describe("cookie utils", function () {
   });
   
   
-  it("should delete a cookie", function () {
-    document.cookie = "nameOfCookie=" + "value";
-    cookieUtils.deleteCookieNamed("nameOfCookie");
-    expect(document.cookie).not.toContain("nameOfCookie=value");
-  });
+  it("should delete cookies set by itself", function () {
+    cookieUtils.setSessionCookie({key:'a', value:'b'});
+    cookieUtils.deleteCookieNamed('a');
+    expect(cookieUtils.getCookieNamed('a')).toBe(undefined);
+  })
   
   
   it("should not complain if a cookie does not have a value", function () {
-    document.cookie = "cookieWithoutValue=";
+    document.cookie = "cookieWithoutValue=" + "; Path=/";
     cookieUtils.cookiesAsKeyValues();
     // should pass
   });
   
   
   it("should not complain if a cookie does not have a key", function () {
-    document.cookie = "=wookieWithoutCause";
+    document.cookie = "=wookieWithoutCause" + "; Path=/";
     cookieUtils.cookiesAsKeyValues();
     // should pass
   });
