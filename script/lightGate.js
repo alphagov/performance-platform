@@ -30,7 +30,6 @@ var lightGate = function () {
   
   
   var cookiePath = function(path) {
-    console.log('called');
     pathOfCookie = path;
     return this;
   };
@@ -44,7 +43,6 @@ var lightGate = function () {
   
   var _addStartingEventToCookie = function() {
     var cookie = {key: nameOfCookie, value: JSON.stringify(startingEvent)};
-    console.log(pathOfCookie);
     if (pathOfCookie !== undefined) cookie['path'] = pathOfCookie;
     console.log(cookie);
     cookieUtils.setSessionCookie(cookie);
