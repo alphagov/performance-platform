@@ -22,3 +22,4 @@ sends the event on the next page load.
 `juicer merge -o "release/lightGate.0.1.0.js" release_templates/lightGateTemplate.js`. Make sure that you bump the version number as appropriate. This will
 run JsLint against your code and then minify and combine are necessary. **It is strongly recommended that you run JsLint in strict mode to prevent errors
 being created by minifying**.
+4. You currently need to run the tests manually by changing `tests/unit/unit_tests.html` to include the new releases.
