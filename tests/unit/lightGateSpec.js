@@ -8,13 +8,13 @@ describe("lightGate.js - journey tracking for google analytics", function () {
       sendFunction = stubAnalyticsService,
       eventToSend = {
         'category': "foo",
-        'action': "journey_start",
+        'action': "occurances!",
         "label": "some_label",
         "nonInteraction": true
       },
       anotherEventToSend = {
         'category': "bar",
-        'action': "journey_start",
+        'action': "something_happened",
         "label": "some_label",
         "nonInteraction": true
       };
@@ -120,19 +120,33 @@ describe("lightGate.js - journey tracking for google analytics", function () {
   describe("landing on end page", function () {
     
     it("should fire an event when the last page of the journey is reached", function () {
-      pageBody.setAttribute('id','end');
+      pageBody.setAttribute('id', 'end');
       lightGate.journeyEnd({ bodyId:"end", eventObject:anotherEventToSend }).init()
       expect(stubAnalyticsService.messages()).toContain(anotherEventToSend);
     });
     
     
-    it("should provide a stage for each event start = 0, end = 1", function () {
-      pageBody.setAttribute('id','end');
-      lightGate.journeyEnd({ bodyId:"end", eventObject:anotherEventToSend }).init()
-      expect(stubAnalyticsService.messages()[0]['stage']).toBe(1);
+    it("should provide a stage for each event start = 0, middle = 1, end = 2", function () {
+      pageBody.setAttribute('id', 'end');
+      lightGate
+        .journeyStage({ bodyId: "middle", eventObject:{foo: "test"} })
+        .journeyEnd({ bodyId:"end", eventObject: {bar: "another test"} })
+        .init();
+              
+      expect(stubAnalyticsService.messages()[0]['stage']).toBe(2);
     });
-
     
   });
+  
+  
+  describe("landing on an interesting page", function () {
+    
+    it("should fire an event when an interesting page in the journey is reached", function () {
+      pageBody.setAttribute('id', 'middle');
+      lightGate.journeyStage({ bodyId:"middle", eventObject:"test_object"}).init();
+      expect(stubAnalyticsService.messages()).toContain("test_object");
+    });
+    
+  })
   
 });

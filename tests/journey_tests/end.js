@@ -1,7 +1,7 @@
 describe("the end of the user journey", function () {
 
   it("should have sent an end event", function () {
-    expect(stubAnalyticsService.messages()).toContain("bye");
+    expect(stubAnalyticsService.messages()).toContain({message: "bye", stage: 2});
   });
   
 });

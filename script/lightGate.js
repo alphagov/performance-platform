@@ -4,7 +4,7 @@
 var lightGate = (function () {
   
   var nameOfCookie = "journey_events", pathOfCookie, idOfStartingLink, startingEvent, 
-    idOfBodyTagAtEnd, endingEvent, sendDataFunction, 
+    idOfBodyTagAtEnd, endingEvent, sendDataFunction, eventsForInterestingPages = {},
     
     journeyStart, journeyEnd, cookieName, cookiePath, sendFunction, init,
     privateMethods = {};
@@ -22,6 +22,16 @@ var lightGate = (function () {
     endingEvent = endDescription.eventObject;
     return this;
   };
+  
+  
+  journeyStage = function (stageDescription) {
+    if (stageDescription.eventObject.stage === undefined) {
+      stageDescription.eventObject.stage = Object.keys(eventsForInterestingPages).length + 1;
+    }
+    
+    eventsForInterestingPages[stageDescription.bodyId] = stageDescription.eventObject;
+    return this;
+  }
 
 
   cookieName = function (name) {
@@ -54,7 +64,7 @@ var lightGate = (function () {
   init = function () {
     privateMethods.bindStartingEvent();
     privateMethods.sendCookieEvents();
-    privateMethods.doEndingEvent();
+    privateMethods.doLandOnPageEvents();
   };
 
 
@@ -79,9 +89,18 @@ var lightGate = (function () {
   };
 
   
-  privateMethods.doEndingEvent = function () {
-    if (document.getElementsByTagName("body")[0].getAttribute("id") === idOfBodyTagAtEnd) {
+  privateMethods.doLandOnPageEvents = function () {
+    var i = 0, interestingIds = Object.keys(eventsForInterestingPages), 
+      id = document.getElementsByTagName("body")[0].getAttribute("id");
+
+    if (id === idOfBodyTagAtEnd) {
       privateMethods.sendEvent(endingEvent);
+    }
+    
+    for (i = 0; i < interestingIds.length; i++) {
+      if (id === interestingIds[i]) {
+        privateMethods.sendEvent(eventsForInterestingPages[interestingIds[i]]);
+      }
     }
   };
 
@@ -93,13 +112,13 @@ var lightGate = (function () {
 
   privateMethods.sendEvent = function (data) {
     if (data.stage === undefined && data === endingEvent) {
-      data.stage = 1;
+      data.stage = Object.keys(eventsForInterestingPages).length + 1;
     }
     
     if (data.stage === undefined && privateMethods.jsonEqual(data, startingEvent)) {
       data.stage = 0;
     }
-    
+        
     sendDataFunction(data);
   };
 
@@ -109,6 +128,7 @@ var lightGate = (function () {
     cookieName: cookieName,
     journeyStart: journeyStart,
     journeyEnd: journeyEnd,
+    journeyStage: journeyStage,
     sendFunction: sendFunction,
     cookiePath: cookiePath
   };
