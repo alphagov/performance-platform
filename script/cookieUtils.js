@@ -1,7 +1,7 @@
 /*global document:true*/
 /*jslint indent: 2 */
 
-var cookieUtils = (function () {
+GOVUK.performance.addToNamespace("cookieUtils", (function () {
   
   var cookiesAsKeyValues, getCookieNamed, setSessionCookie, deleteCookieNamed, arrayify; 
   
@@ -53,4 +53,4 @@ var cookieUtils = (function () {
     arrayify: arrayify
   };
 
-}());
+}()));

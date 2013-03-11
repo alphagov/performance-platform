@@ -2,9 +2,9 @@
 /*jslint indent: 2 */
 
 var lightGate = (function () {
-  
   var nameOfCookie = "journey_events", pathOfCookie, idOfStartingLink, startingEvent, 
     idOfBodyTagAtEnd, endingEvent, sendDataFunction, eventsForInterestingPages = {},
+    cookieUtils = GOVUK.performance.cookieUtils,
     
     journeyStart, journeyEnd, journeyStage, cookieName, cookiePath, sendFunction, init,
     privateMethods = {};

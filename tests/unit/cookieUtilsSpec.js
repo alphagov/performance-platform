@@ -1,5 +1,7 @@
 describe("cookie utils", function () {
   
+  var cookieUtils = GOVUK.performance.cookieUtils;
+  
   beforeEach(function () {
     document.cookie = 'foo="bar"' + '; Path=/';
     document.cookie = ' zap = "pow"' + '; Path=/';
