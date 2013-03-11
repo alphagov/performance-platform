@@ -1,4 +1,5 @@
 /*global document:true*/
+/*global GOVUK: true*/
 /*jslint indent: 2 */
 
 GOVUK.performance.addToNamespace("cookieUtils", (function () {

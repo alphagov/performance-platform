@@ -1,4 +1,5 @@
-/*global cookieUtils:true, document:true*/
+/*global document:true*/
+/*global GOVUK: true*/
 /*jslint indent: 2 */
 
 GOVUK.performance.addToNamespace("lightGate", (function () {
@@ -31,7 +32,7 @@ GOVUK.performance.addToNamespace("lightGate", (function () {
     
     eventsForInterestingPages[stageDescription.bodyId] = stageDescription.eventObject;
     return this;
-  }
+  };
 
 
   cookieName = function (name) {
@@ -97,7 +98,7 @@ GOVUK.performance.addToNamespace("lightGate", (function () {
       privateMethods.sendEvent(endingEvent);
     }
     
-    for (i = 0; i < interestingIds.length; i++) {
+    for (i = 0; i < interestingIds.length; (i += 1)) {
       if (id === interestingIds[i]) {
         privateMethods.sendEvent(eventsForInterestingPages[interestingIds[i]]);
       }
