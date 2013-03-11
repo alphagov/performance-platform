@@ -1,4 +1,4 @@
-lightGate.cookieName("test_journey")
+GOVUK.performance.lightGate.cookieName("test_journey")
          .sendFunction(stubAnalyticsService.post)
          .journeyStart({ linkId: "start", eventObject: {message: "hello"} })
          .journeyStage({ bodyId: "middle", eventObject: {message: "ping"} })
