@@ -1,3 +1,4 @@
+/*jslint indent: 2 */
 var GOVUK = GOVUK || {};
 GOVUK.performance = {};
 
