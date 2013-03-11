@@ -1,7 +1,7 @@
 /*global cookieUtils:true, document:true*/
 /*jslint indent: 2 */
 
-var lightGate = (function () {
+GOVUK.performance.addToNamespace("lightGate", (function () {
   var nameOfCookie = "journey_events", pathOfCookie, idOfStartingLink, startingEvent, 
     idOfBodyTagAtEnd, endingEvent, sendDataFunction, eventsForInterestingPages = {},
     cookieUtils = GOVUK.performance.cookieUtils,
@@ -133,4 +133,4 @@ var lightGate = (function () {
     cookiePath: cookiePath
   };
 
-}());
+}()));
