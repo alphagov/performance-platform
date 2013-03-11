@@ -6,7 +6,7 @@ var lightGate = (function () {
   var nameOfCookie = "journey_events", pathOfCookie, idOfStartingLink, startingEvent, 
     idOfBodyTagAtEnd, endingEvent, sendDataFunction, eventsForInterestingPages = {},
     
-    journeyStart, journeyEnd, cookieName, cookiePath, sendFunction, init,
+    journeyStart, journeyEnd, journeyStage, cookieName, cookiePath, sendFunction, init,
     privateMethods = {};
 
 
