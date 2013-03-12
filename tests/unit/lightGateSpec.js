@@ -17,7 +17,9 @@ describe("lightGate.js - journey tracking for google analytics", function () {
         'action': "something_happened",
         "label": "some_label",
         "nonInteraction": true
-      };
+      },
+      cookieUtils = GOVUK.performance.cookieUtils,
+      lightGate = GOVUK.performance.lightGate;
   
 
   // BEFORE ALL
