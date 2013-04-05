@@ -1,0 +1,52 @@
+<html>
+	<head>
+		<title>Monkey Bear Snake Platform as a Service as a Platform</title>
+	</head>
+	<body>
+		<div class="container-fluid">
+		<div class="row-fluid">
+			<div class="span10 offset2">
+				<h1>Performance Platform Data Builder</h1>
+			</div>
+		</div>
+		<div class="row-fluid">
+			<div class="span10 offset2">
+				<blockquote>
+					<p>It looks like you're trying to add some data to the performance platform? Would you like some help?</p>
+				</blockquote>
+			</div>
+		</div>
+		<div class="row-fluid">
+			<div class="span2 offset2">
+				<form>
+					<fieldset>
+						<input type="text" placeholder="Count...">
+						<button class="btn btn-primary">Go!</button>
+					</fieldset>
+				</form>
+			</div>
+			<div class="span8">
+				<form>
+					<fieldset>
+						<textarea id="code" rows="20" class="span10"></textarea>
+					</fieldset>
+				</form>
+			</div>
+		</div>
+		</div>
+		
+		<!-- CSS -->
+		<link rel="stylesheet" type="text/css" href="assets/styles/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="assets/styles/codemirror.css">
+		<script src="assets/vendor/jquery.js"></script>
+		<script src="assets/vendor/codemirror.js"></script>
+		<script src="assets/vendor/javascript.js"></script>
+		<script>
+      	var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
+        	lineNumbers: true,
+        	matchBrackets: true,
+        	continueComments: "Enter"
+      	});
+		</script>
+	</body>
+</html>
