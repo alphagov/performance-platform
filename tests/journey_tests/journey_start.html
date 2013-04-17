@@ -9,7 +9,9 @@
 
 <body>
     <h1>Journey Start 1/3</h1>
-    <a id="start" href="journey_middle.html">To journey middle -></a>
+    <a id="start" data-journey="test-journey:start" href="journey_middle.html">To journey middle -></a>
+
+    <script type="text/javascript" src="../../script/ext/sizzle.js"></script>
 
     <script type="text/javascript" src="../lib/jasmine-1.3.1/jasmine.js"></script>
     <script type="text/javascript" src="../lib/jasmine-1.3.1/jasmine-html.js"></script>
@@ -17,9 +19,9 @@
     <!-- include source files here... -->
     <script type="text/javascript" src="../../script/namespace.js"></script>
     <script type="text/javascript" src="../../script/cookieUtils.js"></script>
-    <script type="text/javascript" src="../../script/lightGate.js"></script>
+    <script type="text/javascript" src="../../script/_lightGate.js"></script>
     <script type="text/javascript" src="../stubAnalyticsService.js"></script>    
-    <script type="text/javascript" src="lightGateExampleSetup.js"></script>
+    <script type="text/javascript" src="_lightGateExampleSetup.js"></script>
 
     <!-- include spec files here... -->
     <script type="text/javascript" src="start.js"></script>

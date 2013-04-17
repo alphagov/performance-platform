@@ -9,7 +9,7 @@ describe("the middle of the user journey", function () {
   });
   
   it("should have sent the stored start event from the previous page", function () {
-    expect(stubAnalyticsService.messages()).toContain({message: "hello", stage: 0});
+    expect(stubAnalyticsService.messages()).toContain("test-journey:start");
   });
   
   
