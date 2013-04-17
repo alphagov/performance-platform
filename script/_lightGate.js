@@ -21,15 +21,19 @@ GOVUK.performance.addToNamespace("_lightGate", function () {
     
     sendCookieEvents();
     
-    var startingLink = Sizzle("[data-journey]")[0];
-    if (startingLink) {
-      if (startingLink.nodeName === "A") {
-        startingLink.onclick = function () { 
-          addStartStringToCookie(startingLink.getAttribute("data-journey"));
+    var nodeWithJourneyTag = Sizzle("[data-journey]")[0];
+    if (nodeWithJourneyTag) {
+      if (nodeWithJourneyTag.nodeName === "A") {
+        var oldOnclick = nodeWithJourneyTag.onclick;
+        nodeWithJourneyTag.onclick = function () {
+          if (oldOnclick) {
+            oldOnclick();
+          }
+          addStartStringToCookie(nodeWithJourneyTag.getAttribute("data-journey"));
         };
       } 
       else {
-        analyticsService(startingLink.getAttribute("data-journey"));
+        analyticsService(nodeWithJourneyTag.getAttribute("data-journey"));
       }
     }
   };
