@@ -2,7 +2,8 @@ $(function () {
     $('#go').on('click', function () {
         var dataToPost = {
             writeApiLocation: $('#write-api-location').val(),
-            jsonToPost: editor.getValue()
+            jsonToPost: editor.getValue(),
+            bearerToken: $('#bearer-token').val()
         };
         $.ajax({
             url: "/post",

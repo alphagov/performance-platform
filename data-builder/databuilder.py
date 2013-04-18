@@ -14,8 +14,15 @@ def main_page():
 def post_to_platform():
     url = request.json['writeApiLocation']
     data = request.json['jsonToPost']
+    bearerToken = request.json.get('bearerToken')
+    print bearerToken, "<----------------------------"
+    headers = {'content-type': 'application/json'}
+
+    if bearerToken is not None:
+        headers.update({'Authorization': 'Bearer ' + bearerToken})
+
     req = requests.post(url, data,
-                        headers={'content-type': 'application/json'})
+                        headers=headers)
     if req.status_code is 200:
         return "thanks"
     else:
