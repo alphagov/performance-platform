@@ -7,6 +7,14 @@ describe("_lightGate", function () {
 	it("should exist... probably", function () {
 		expect(GOVUK.performance._lightGate).not.toBeNull();
 	});
+	
+	it("should not blow up if there are no data-journey tags", function () {
+	  expect(Sizzle("[data-journey]").length).toBe(0);
+	  GOVUK.performance._lightGate.setup({
+	    analyticsFunction: function () {}
+	  });
+	  // should not blow up
+	});
 		
 	describe("sending events from cookies and then delete them", function () {
 
@@ -25,7 +33,7 @@ describe("_lightGate", function () {
   	  expect(document.cookie).not.toContain("journey_events=test-journey:start");
   	});
   	  
-	})
+	});
 	
 	
 	describe("journey events from clicks", function () {

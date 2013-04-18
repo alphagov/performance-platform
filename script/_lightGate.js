@@ -1,13 +1,21 @@
-GOVUK.performance.addToNamespace("_lightGate", function () {
-	var nameOfCookie = "journey_events",
-	  analyticsService;
-	
-	var addStartStringToCookie = function (journeyValue) {
+/*global GOVUK: true*/
+/*global Sizzle: true*/
+/*jslint indent: 2 */
+
+GOVUK.performance.addToNamespace("_lightGate", (function () {
+  var nameOfCookie = "journey_events",
+    analyticsService,
+    privateMethods = {},
+    setup;
+
+
+  privateMethods.addStartStringToCookie = function (journeyValue) {
     var cookie = {key: nameOfCookie, value: journeyValue, path: "/"};
     GOVUK.performance.cookieUtils.setSessionCookie(cookie);
-	};
-	
-  var sendCookieEvents = function () {
+  };
+
+
+  privateMethods.sendCookieEvents = function () {
     var existingCookie = GOVUK.performance.cookieUtils.getCookieNamed(nameOfCookie), events, i = 0;
 
     if (existingCookie && existingCookie.value) {
@@ -16,20 +24,23 @@ GOVUK.performance.addToNamespace("_lightGate", function () {
     }
   };
 
-  var setup = function(config) {
+  setup = function (config) {
+    /*jslint newcap: false*/
+    
     analyticsService = config.analyticsFunction;
-    
-    sendCookieEvents();
-    
-    var nodeWithJourneyTag = Sizzle("[data-journey]")[0];
+  
+    privateMethods.sendCookieEvents();
+  
+    var nodeWithJourneyTag = Sizzle("[data-journey]")[0],
+      oldOnclick;
     if (nodeWithJourneyTag) {
       if (nodeWithJourneyTag.nodeName === "A") {
-        var oldOnclick = nodeWithJourneyTag.onclick;
+        oldOnclick = nodeWithJourneyTag.onclick;
         nodeWithJourneyTag.onclick = function () {
           if (oldOnclick) {
             oldOnclick();
           }
-          addStartStringToCookie(nodeWithJourneyTag.getAttribute("data-journey"));
+          privateMethods.addStartStringToCookie(nodeWithJourneyTag.getAttribute("data-journey"));
         };
       } 
       else {
@@ -40,5 +51,5 @@ GOVUK.performance.addToNamespace("_lightGate", function () {
 
   return {
     setup: setup
-  }
-}());
+  };
+}()));

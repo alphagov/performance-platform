@@ -14,7 +14,7 @@ describe("the middle of the user journey", function () {
   
   
   it("should send a journey middle event", function () {
-    expect(stubAnalyticsService.messages()).toContain({message: "ping", stage: 1});
+    expect(stubAnalyticsService.messages()).toContain("test-journey:middle");
   });
   
   
