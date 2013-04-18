@@ -41,7 +41,7 @@ describe("_lightGate", function () {
 			expect(document.cookie).toContain('journey_events=test-journey:start');
 		});
 		
-		it("should not overright other onclick functions", function () {
+		it("should not overwrite other onclick functions", function () {
 		  document.getElementById("sandbox").innerHTML += "<a id='link' data-journey='test-journey:start'>Link</a>";		  
 		  spy = jasmine.createSpy();
 		  document.getElementById("link").onclick = spy;
