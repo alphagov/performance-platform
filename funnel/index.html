@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Performance Platform Labs</title>
+  <link rel="stylesheet" href="http://static.dev.gov.uk/static/application.css?body=1" type="text/css" media="screen" charset="utf-8">
+  <link rel="stylesheet" href="http://static.dev.gov.uk/static/fonts.css?body=1" type="text/css" media="screen" charset="utf-8">
+  <style type="text/css" media="screen">
+    #wrapper {
+      max-width: 1020px;
+      margin:auto;
+      background:#fff;
+      padding:1em;
+    }
+
+    .node {
+      stroke: #fff;
+      stroke-width: 1.5px;
+    }
+
+    .link {
+      stroke: #999;
+      stroke-opacity: .6;
+      fill: none;
+    }
+    .linkforward {
+      stroke: #5CB159;
+      stroke-opacity: .8;
+      fill: none;
+    }
+
+  </style>
+</head>
+<body>
+  <div id="wrapper">
+    <a href="/">&larr; Back</a>
+    <h1>Conversion funnel / user journey</h1>
+  </div>
+  <script src="dijkstra.js"></script>
+  <script src="http://d3js.org/d3.v3.min.js"></script>
+  <script>
+
+  var width = 960,
+      height = 500;
+
+  var color = d3.scale.category20();
+
+  var force = d3.layout.force()
+      .charge(-1200)
+      .linkDistance(100)
+      .size([width, height]);
+
+  var svg = d3.select("#wrapper").append("svg")
+      .attr("width", width)
+      .attr("height", height);
+
+  d3.json("simple.json", function(error, graph) {
+
+    var map = {};
+    graph.links.forEach(function (link) {
+      if (!map[link.source]) {
+        map[link.source] = {};
+      }
+      map[link.source][link.target] = 1 / link.value;
+    });
+    var dijkstraGraph = new Graph(map);
+
+
+    var scale = function (v) {
+      return 20 + v * 100;
+    };
+
+    var path;
+    var pathFrom = 0;
+    var pathTo = 9;
+    var calcPathAndScale = function () {
+      var newPath = dijkstraGraph.findShortestPath(pathFrom, pathTo).map(function (i) {
+        return parseInt(i, 10);
+      });
+      if (!newPath) {
+        return;
+      }
+      path = newPath;
+      path.unshift(0);
+    };
+    calcPathAndScale();
+
+    var y = 250;
+
+    force
+        .nodes(graph.nodes)
+        .links(graph.links)
+        .gravity(0)
+        .linkStrength(1)
+        .linkDistance(100)
+        .charge(-200)
+        .start();
+
+    var getPath = function (linkData) {
+
+      var diffX = linkData.target.x - linkData.source.x;
+      var diffY = linkData.target.y - linkData.source.y;
+      var dist = Math.sqrt(diffX * diffX + diffY * diffY) / 3;
+      var angle = Math.atan2(diffY, diffX) - Math.PI / 2;
+      var pointX = linkData.source.x + diffX / 2;
+      var pointY = linkData.source.y + diffY / 2;
+      pointX += Math.cos(angle) * dist;
+      pointY += Math.sin(angle) * dist;
+      var lineData = [
+        { x: linkData.source.x, y: linkData.source.y },
+        { x: pointX, y: pointY },
+        { x: linkData.target.x, y: linkData.target.y }
+      ];
+
+      var line = d3.svg.line()
+        .x(function (d) { return d.x; })
+        .y(function (d) { return d.y; })
+        .interpolate('basis');
+
+      return line(lineData);
+    };
+
+    var link = svg.selectAll(".link")
+        .data(graph.links)
+    .enter().append("path")
+        .style("stroke-width", function(d) { return d.value * 30 });
+
+    var setLinkClass = function () {
+      link.attr("class", function (d) {
+        var pathSourceIndex = path.indexOf(d.source.index);
+        var pathTargetIndex = path.indexOf(d.target.index);
+        if (pathTargetIndex > pathSourceIndex && pathSourceIndex >= 0) {
+          return "linkforward";
+        }
+        return "link";
+      });
+    };
+
+    setLinkClass();
+
+    var node = svg.selectAll(".node")
+        .data(graph.nodes);
+    node.enter().append("circle")
+        .attr("class", "node")
+        .attr("r", 10)
+        .style("fill", function(d) {
+          var pathIndex = path.indexOf(d.index);
+          var group = (pathIndex >= 0) ? 2 : 1;
+          return color(group); 
+        })
+        .call(force.drag)
+        .on('click', function (d, index) {
+          if (d3.event.shiftKey) {
+            pathFrom = index;
+          } else {
+            pathTo = index;
+          }
+          calcPathAndScale();
+          node.style("fill", function(d) {
+            var pathIndex = path.indexOf(d.index);
+            var group = (pathIndex >= 0) ? 2 : 1;
+            return color(group); 
+          })
+
+          setLinkClass();
+
+          force.start();
+        });
+
+    node.append("title")
+        .text(function(d) { return d.name; });
+
+    force.on("tick", function(e) {
+
+      var k = .5;
+      graph.nodes.forEach(function(o, i) {
+        var pathIndex = path.indexOf(i);
+        if (pathIndex >= 0) {
+          var diffX = scale(pathIndex) - o.x;
+          var diffY = y - o.y;
+          o.y += diffY * k;
+          o.x += diffX * k;
+        }
+      });
+
+      link.attr("d", function(d) { return getPath(d); });
+
+      node.attr("cx", function(d) { return d.x; })
+          .attr("cy", function(d) { return d.y; });
+    });
+
+  });
+
+  </script>
+</body>
+</html>
