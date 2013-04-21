@@ -46,8 +46,6 @@
   var color = d3.scale.category20();
 
   var force = d3.layout.force()
-      .charge(-1200)
-      .linkDistance(100)
       .size([width, height]);
 
   var svg = d3.select("#wrapper").append("svg")
@@ -70,6 +68,13 @@
       return 20 + v * 100;
     };
 
+    force
+      .nodes(graph.nodes)
+      .links(graph.links)
+      .gravity(0)
+      .linkDistance(100)
+      .charge(-200);
+    
     var path;
     var pathFrom = 0;
     var pathTo = 9;
@@ -81,20 +86,13 @@
         return;
       }
       path = newPath;
-      path.unshift(0);
+      path.unshift(pathFrom);
     };
     calcPathAndScale();
 
     var y = 250;
 
-    force
-        .nodes(graph.nodes)
-        .links(graph.links)
-        .gravity(0)
-        .linkStrength(1)
-        .linkDistance(100)
-        .charge(-200)
-        .start();
+    force.start();
 
     var getPath = function (linkData) {
 
@@ -137,6 +135,18 @@
     };
 
     setLinkClass();
+    
+    var run = function () {
+      force.start();
+      for (var i = 0; i < 100; ++i) force.tick();
+      force.stop();
+      
+      link.transition().attr("d", function(d) { return getPath(d); });
+
+      node.transition().attr("cx", function(d) { return d.x; })
+          .attr("cy", function(d) { return d.y; });
+
+    };
 
     var node = svg.selectAll(".node")
         .data(graph.nodes);
@@ -164,14 +174,14 @@
 
           setLinkClass();
 
-          force.start();
+          run();
         });
 
     node.append("title")
         .text(function(d) { return d.name; });
 
     force.on("tick", function(e) {
-
+    
       var k = .5;
       graph.nodes.forEach(function(o, i) {
         var pathIndex = path.indexOf(i);
@@ -182,13 +192,10 @@
           o.x += diffX * k;
         }
       });
-
-      link.attr("d", function(d) { return getPath(d); });
-
-      node.attr("cx", function(d) { return d.x; })
-          .attr("cy", function(d) { return d.y; });
+    
     });
-
+    
+    run();
   });
 
   </script>
