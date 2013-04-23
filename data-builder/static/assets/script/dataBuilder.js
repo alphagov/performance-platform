@@ -5,6 +5,9 @@ $(function () {
             jsonToPost: editor.getValue(),
             bearerToken: $('#bearer-token').val()
         };
+
+        $.storage.setItem('code', dataToPost.jsonToPost, 'localStorage');
+
         $.ajax({
             url: "/post",
             type: "POST",
@@ -26,6 +29,7 @@ $(function () {
 $(function () {
     var bucketName = $.storage.getItem('bucket', 'localStorage'),
         bearerToken = $.storage.getItem('token', 'localStorage'),
+        code = $.storage.getItem('code', 'localStorage'),
         write = $('#write-api-location'),
         bearer = $('#bearer-token');
     if (bucketName) {
@@ -33,6 +37,9 @@ $(function () {
     }
     if (bearerToken) {
         bearer.val(bearerToken);
+    }
+    if (code) {
+        editor.setValue(code);
     }
 
     write.on('change', function () {
