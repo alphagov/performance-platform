@@ -21,3 +21,25 @@ $(function () {
         });
     });
 });
+
+// local storage for bucket url and token
+$(function () {
+    var bucketName = $.storage.getItem('bucket', 'localStorage'),
+        bearerToken = $.storage.getItem('token', 'localStorage'),
+        write = $('#write-api-location'),
+        bearer = $('#bearer-token');
+    if (bucketName) {
+        write.val(bucketName);
+    }
+    if (bearerToken) {
+        bearer.val(bearerToken);
+    }
+
+    write.on('change', function () {
+        $.storage.setItem('bucket', write.val(), 'localStorage');
+    });
+
+    bearer.on('change', function () {
+        $.storage.setItem('token', bearer.val(), 'localStorage');
+    });
+});
