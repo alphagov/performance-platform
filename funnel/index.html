@@ -21,6 +21,7 @@
     .link {
       stroke: #999;
       stroke-opacity: .6;
+      stroke-dasharray: 7, 3;
       fill: none;
     }
     .linkforward {
@@ -50,7 +51,9 @@
 
   var svg = d3.select("#wrapper").append("svg")
       .attr("width", width)
-      .attr("height", height);
+      .attr("height", height)
+        .append("svg:g")
+        .attr("transform", "translate(200, 0)");
 
   d3.json("simple.json", function(error, graph) {
 
@@ -72,12 +75,12 @@
       .nodes(graph.nodes)
       .links(graph.links)
       .gravity(0)
-      .linkDistance(100)
-      .charge(-200);
+      .linkDistance(150)
+      .charge(-150);
     
     var path;
     var pathFrom = 0;
-    var pathTo = 9;
+    var pathTo = 2;
     var calcPathAndScale = function () {
       var newPath = dijkstraGraph.findShortestPath(pathFrom, pathTo).map(function (i) {
         return parseInt(i, 10);
@@ -135,7 +138,7 @@
     };
 
     setLinkClass();
-    
+
     var run = function () {
       force.start();
       for (var i = 0; i < 100; ++i) force.tick();
@@ -143,8 +146,9 @@
       
       link.transition().attr("d", function(d) { return getPath(d); });
 
-      node.transition().attr("cx", function(d) { return d.x; })
-          .attr("cy", function(d) { return d.y; });
+      node.transition()
+              .attr("cx", function(d) { return d.x; })
+              .attr("cy", function(d) { return d.y; });
 
     };
 
