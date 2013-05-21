@@ -1,25 +1,51 @@
 performance-platform
 ====================
 
-This repo will contain useful code for collecting data and integrating with the performance platform.
+This repo will contain useful code for collecting data and integrating with
+the performance platform.
 
-# Light Gate
+## Setup
 
-## What is it?
-Light gate is a javascript snippet for integrating internal user journeys (eg. not cross domain) with an analytics provider. 
-It sends data on page load instead of on click to avoid breaking user experience with opening new windows or tabs and to
-get around problems with analytics providers timing out on posts. To do this it 'stashes' an event in a cookie and then 
-sends the event on the next page load.
+### [gds-boxen](https://github.com/alphagov/gds-boxen)
 
-## Releasing a new version
+You can follow along with the README to get a new Mac set up.
 
-1. Install and set up juicer if you don't already have it. 
-    - `gem install juicer`
-    - `juicer install JsLint`
-    - `juicer install closure_compiler`
-2. Add any new dependencies to `release_templates/lightGateTemplate.js`
-3. In the `performance_platform` directory run `juicer merge -m "closure_compiler" -o "release/lightGate.0.1.0.min.js" release_templates/lightGateTemplate.js` and 
-`juicer merge -o "release/lightGate.0.1.0.js" release_templates/lightGateTemplate.js`. Make sure that you bump the version number as appropriate. This will
-run JsLint against your code and then minify and combine are necessary. **It is strongly recommended that you run JsLint in strict mode to prevent errors
-being created by minifying**.
-4. You currently need to run the tests manually by changing `tests/unit/unit_tests.html` to include the new releases.
+Create a personal manifest in `modules/people/` with your GitHub username, and
+make sure to include at least:
+
+    class people::your_username {
+      # Not sure if these are required, but they (probably) can't hurt
+      include vagrant_gem
+      include vagrant-dns
+      include vagrant-vbguest
+
+      include teams::performance-platform
+    }
+
+After completing the setup by running `boxen`, you should have everything you
+need to continue.
+
+### development
+
+You'll now have a repo called `development` checked out on your machine from
+GHE. Following the README in there will get your dev environment set up,
+including creating a VM with Vagrant.
+
+## [Backdrop](https://github.com/alphagov/backdrop)
+
+In your `backdrop` repository, you should be able to `./run_tests.sh` from inside
+your shiny new development VM. The repo README has more info.
+
+## [Limelight](https://github.com/alphagov/limelight)
+
+In your `limelight` repository, `bundle exec rake test:all` will run some fun
+Ruby tests.
+
+## Some other important things you should learn about soon
+
+- Legacy vs new world order
+- __Google Apps__: mailing lists and calendars (team and holiday)
+- __Meetings__: Show and Tell, All staff monthly (and invites for those)
+- Lunch
+- Current and near future work
+- [Learning wiki](https://github.com/alphagov/wiki/wiki)
