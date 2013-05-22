@@ -6,6 +6,9 @@ the performance platform.
 
 ## Setup
 
+First up, you'll probably need to be added to GitHub and to any relevant
+teams in order to get read and write access.
+
 ### [gds-boxen](https://github.com/alphagov/gds-boxen)
 
 You can follow along with the README to get a new Mac set up.
@@ -40,6 +43,9 @@ your shiny new development VM. The repo README has more info.
 
 In your `limelight` repository, `bundle exec rake test:all` will run some fun
 Ruby tests.
+
+Getting real data into Limelight might be something you should do at some
+point.
 
 ## Some other important things you should learn about soon
 
