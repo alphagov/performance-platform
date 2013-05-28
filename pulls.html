@@ -63,7 +63,9 @@ $(document).ready(function() {
                     $('#pulls').find(className).remove();
                     $.each(pulls, function (j, pull) {
                         var el = $([
-                            '<li>',
+                            '<li class="',
+                            className,
+                            '">',
                             '<h2>',
                             repo,
                             '</h2>',
