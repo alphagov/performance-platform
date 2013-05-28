@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+<head>
+    <title>Performance platform pull requests</title>
+    <link rel="stylesheet" href="https://assets.digital.cabinet-office.gov.uk/static/fonts.css">
+    <style type="text/css" media="screen">
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            font-family: nta, sans-serif;
+        }
+        #pulls {
+            list-style:none;
+            padding:0;
+            font-size:1.5em;
+        }
+        #pulls li {
+            background:#097F96;
+            padding:1em;
+            color:white;
+            margin-bottom:.5em;
+        }
+        #pulls li h2 {
+            margin:0;
+        }
+        #pulls li p {
+            margin:0;
+        }
+    </style>
+</head>
+<body>
+<h1>Pull requests</h1>
+<ul id="pulls"></ul>
+
+<script src="http://code.jquery.com/jquery-2.0.0.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+    var repos = [
+        {
+            user: 'alphagov',
+            repo: 'backdrop'
+        },
+        {
+            user: 'alphagov',
+            repo: 'limelight'
+        }
+    ];
+
+    function update () {
+        $.each(repos, function(i, def) {
+            var repo = def.repo,
+                className = [def.user, def.repo].join('-'),
+                url = [
+                    'https://api.github.com/repos',
+                    def.user,
+                    def.repo,
+                    'pulls'
+                ].join('/');
+            $.ajax({
+                url: url,
+                success: function (pulls) {
+                    $('#pulls').find(className).remove();
+                    $.each(pulls, function (j, pull) {
+                        var el = $([
+                            '<li>',
+                            '<h2>',
+                            repo,
+                            '</h2>',
+                            '<p>',
+                            pull.user.login,
+                            ': ',
+                            pull.title,
+                            '</p>',
+                            '</li>'
+                        ].join(''));
+                        $('#pulls').append(el);
+                    });
+                }
+            });
+        });
+    };
+
+    update();
+    setInterval(update, 300000);
+});
+
+</script>
+</body>
+</html>
