@@ -60,7 +60,7 @@ $(document).ready(function() {
             $.ajax({
                 url: url,
                 success: function (pulls) {
-                    $('#pulls').find(className).remove();
+                    $('#pulls').find('.' + className).remove();
                     $.each(pulls, function (j, pull) {
                         var el = $([
                             '<li class="',
