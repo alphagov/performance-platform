@@ -51,6 +51,10 @@ $(document).ready(function() {
         {
             user: 'alphagov',
             repo: 'limelight'
+        },
+        {
+            user: 'alphagov',
+            repo: 'performance-platform'
         }
     ];
 
@@ -80,6 +84,9 @@ $(document).ready(function() {
                             pull.user.login,
                             ': ',
                             pull.title,
+                            ' (#',
+                            pull.number,
+                            ')',
                             '</p>',
                             '</li>'
                         ].join(''));
