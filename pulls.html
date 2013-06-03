@@ -8,7 +8,7 @@
             box-sizing: border-box;
         }
         body {
-            font-family: nta, sans-serif;
+            font-family: ntatabularnumbers, nta, sans-serif;
             background:black;
         }
         #pulls {
@@ -21,6 +21,16 @@
             padding:1em;
             color:white;
             margin-bottom:.5em;
+            position:relative;
+        }
+        #pulls li.thumbsup {
+            background: #85994B !important;
+        }
+        #pulls li.age-aging {
+            background: #F47738;
+        }
+        #pulls li.age-old {
+            background: #B10E1E;
         }
         #pulls li h2 {
             margin:0;
@@ -34,6 +44,17 @@
             font-size:3em;
             margin:1em;
         }
+
+        .comments {
+            float: right;
+        }
+        .elapsed-time {
+            position:absolute;
+            top:1em;
+            right:.67em;
+            line-height: 100%;
+            font-size: 1.5em;
+        }
     </style>
 </head>
 <body>
@@ -43,6 +64,12 @@
 <script src="http://code.jquery.com/jquery-2.0.0.min.js" type="text/javascript"></script>
 <script type="text/javascript">
 $(document).ready(function() {
+
+    $.ajaxSetup({
+        headers: {
+            'Authorization': 'token ' + getToken(document.location.search)
+        }
+    });
     var repos = [
         {
             user: 'alphagov',
@@ -70,6 +97,74 @@ $(document).ready(function() {
         return location.split("?token=")[1];
     }
 
+    function updateComments(pullId, url) {
+        $.ajax({
+            url: url,
+            success: function (comments) {
+                var suffix = "";
+                if (comments.length == 0 || comments.length > 1) {
+                    suffix = "s";
+                }
+                $("#" + pullId).find('.comments').html(" " + comments.length + " comment" + suffix);
+                
+                var thumbsup = comments.some(function(comment) {
+                    var checkFor = [":+1:", ":thumbsup:"];
+                    return checkFor.some(function(check) {
+                        return comment.body.indexOf(check) != -1;
+                    })
+                });
+                if (thumbsup) {
+                    console.log("foo");
+                    $("#" + pullId).addClass("thumbsup");
+                }
+            }
+        });
+    }
+
+    function ageClass(seconds) {
+        var hours = 3600;
+        if (seconds > (6 * hours)) {
+            return "age-old";
+        } else if (seconds > (2 * hours)) {
+            return "age-aging";
+        } else {
+            return "age-fresh";
+        }
+    }
+
+    function secondsToTime(seconds) {
+        var days    = Math.floor(seconds / 86400);
+        var hours   = Math.floor((seconds - (days * 86400)) / 3600);
+        var minutes = Math.floor((seconds - (days * 86400) - (hours * 3600)) / 60);
+
+        if (hours   < 10) {hours   = "0"+hours;}
+        if (minutes < 10) {minutes = "0"+minutes;}
+        if (days == 1) {
+            days = days + " day";
+        } else if (days > 1) {
+            days = days + " days";
+        } else {
+            days = "";
+        }
+        return days + ' ' + hours+':'+minutes;
+    }
+
+    function elapsedSeconds(created_at) {
+        return (Date.now() - Date.parse(created_at)) / 1000;
+    }
+
+    function parseTime(timeString) {
+        var pattern = /(?:(\d+) days? )?(\d+):(\d+)/;
+        var match = timeString.match(pattern);
+        parts = match.slice(2, 4).map(function(part) { return parseInt(part); });
+
+        var time = parts[0] * 3600 + parts[1] * 60;
+        if (match[1] !== undefined) {
+            time += parseInt(match[1]) * 86400;
+        }
+        return time;
+    }
+
     function update () {
         $.each(repos, function(i, def) {
             var repo = def.repo,
@@ -82,19 +177,14 @@ $(document).ready(function() {
                 ].join('/');
             $.ajax({
                 url: url,
-                headers: {
-                    'Authorization': 'token ' + getToken(document.location.search)
-                },
                 success: function (pulls) {
                     $('#pulls').find('.' + className).remove();
                     $.each(pulls, function (j, pull) {
+                        var secs = elapsedSeconds(pull.created_at);
+                        var pullId = 'pull-' + pull.id;
                         var el = $([
-                            '<li class="',
-                            className,
-                            '">',
-                            '<h2>',
-                            repo,
-                            '</h2>',
+                            '<li id="', pullId, '" class="', className, ' ', ageClass(secs), '">',
+                            '<h2>', repo, '</h2>',
                             '<p>',
                             pull.user.login,
                             ': ',
@@ -102,24 +192,56 @@ $(document).ready(function() {
                             ' (#',
                             pull.number,
                             ')',
+                            '<span class="comments"></span>',
+                            '<div class="elapsed-time" data-created-at="',
+                            pull.created_at,
+                            '">',
+                            secondsToTime(secs),
+                            '</div>',
                             '</p>',
                             '</li>'
                         ].join(''));
                         $('#pulls').append(el);
+                        updateComments(pullId, pull.comments_url)
                     });
+
+                    $fields = $('#pulls li').clone();
+
+                    $('#pulls li').remove();
+
+                    $('#pulls').append($fields.sort(function(left, right) {
+                        var leftTime = +Date.parse($(left).find('.elapsed-time').data('created-at'));
+                        var rightTime = +Date.parse($(right).find('.elapsed-time').data('created-at'));
+
+                        return leftTime > rightTime ? 1 : (leftTime < rightTime ? -1 : 0);
+                    }));
 
                     if ($('#pulls li').length) {
                         $('#all-quiet').hide();
                     } else {
                         $('#all-quiet').show();
                     }
+
+                    updateTimes()
                 }
             });
         });
     };
 
+    function updateTimes() {
+        $('#pulls li').each(function(i, el) {
+            var timeEl = $(el).find(".elapsed-time");
+            var elapsedTime = parseTime($(timeEl).html()) + 1;
+
+            $(timeEl).html(secondsToTime(elapsedTime));
+            $(el).removeClass("age-fresh age-aging age-old").addClass(ageClass(elapsedTime))
+        });
+    };
+
     update();
     setInterval(update, 300000);
+
+    setInterval(updateTimes, 1000 * 60);
 });
 
 </script>
