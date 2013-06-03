@@ -66,6 +66,10 @@ $(document).ready(function() {
         },
     ];
 
+    function getToken(location) {
+        return location.split("?token=")[1];
+    }
+
     function update () {
         $.each(repos, function(i, def) {
             var repo = def.repo,
@@ -78,6 +82,9 @@ $(document).ready(function() {
                 ].join('/');
             $.ajax({
                 url: url,
+                headers: {
+                    'Authorization': 'token ' + getToken(document.location.search)
+                },
                 success: function (pulls) {
                     $('#pulls').find('.' + className).remove();
                     $.each(pulls, function (j, pull) {
