@@ -150,7 +150,7 @@ $(document).ready(function() {
         } else {
             days = "";
         }
-        return days + ' ' + hours+':'+minutes;
+        return days + ' ' + hours + 'h ' + minutes + 'm';
     }
 
     function elapsedSeconds(created_at) {
@@ -158,7 +158,7 @@ $(document).ready(function() {
     }
 
     function parseTime(timeString) {
-        var pattern = /(?:(\d+) days? )?(\d+):(\d+)/;
+        var pattern = /(?:(\d+) days? )?(\d+)h (\d+)m/;
         var match = timeString.match(pattern);
         parts = match.slice(2, 4).map(function(part) { return parseInt(part); });
 
