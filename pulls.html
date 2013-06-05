@@ -38,6 +38,10 @@
         #pulls li p {
             margin:0;
         }
+        #pulls a {
+          color: white;
+          text-decoration: none;
+        }
 
         #all-quiet {
             color: #b7b7b7;
@@ -186,12 +190,14 @@ $(document).ready(function() {
                             '<li id="', pullId, '" class="', className, ' ', ageClass(secs), '">',
                             '<h2>', repo, '</h2>',
                             '<p>',
+                            '<a href="', pull.html_url, '">',
                             pull.user.login,
                             ': ',
                             pull.title,
                             ' (#',
                             pull.number,
                             ')',
+                            '</a>',
                             '<span class="comments"></span>',
                             '<div class="elapsed-time" data-created-at="',
                             pull.created_at,
