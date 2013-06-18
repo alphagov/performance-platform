@@ -66,6 +66,7 @@
 <p id="all-quiet">No open pull requests.</p>
 
 <script src="http://code.jquery.com/jquery-2.0.0.min.js" type="text/javascript"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/moment.js/2.0.0/moment.min.js" type="text/javascript"></script>
 <script type="text/javascript">
 $(document).ready(function() {
 
@@ -177,8 +178,41 @@ $(document).ready(function() {
         return days + ' ' + hours + 'h ' + minutes + 'm';
     }
 
+    function startOfWorkingDay(date) {
+        return moment(date).startOf('day').hours(9).minutes(30);
+    }
+
+    function endOfWorkingDay(date) {
+        return moment(date).startOf('day').hours(17).minutes(30);
+    }
+
+    function workingTimeForDay(date, options) {
+        options = options || {};
+        date = moment(date).startOf('day');
+        var isWeekend = date.day() === 0 || date.day() === 6;
+        if (isWeekend) {
+            return 0;
+        }
+        var min = Math.max(+(options.min || 0), +startOfWorkingDay(date));
+        var max = Math.min(+(options.max || Infinity), +endOfWorkingDay(date));
+        return (max - min) / 1000;
+    }
+
     function elapsedSeconds(created_at) {
-        return (Date.now() - Date.parse(created_at)) / 1000;
+        var now = moment();
+        created_at = moment(created_at);
+
+        var elapsed = 0;
+        var date = moment(created_at).startOf('day');
+        while (date < now) {
+            elapsed += workingTimeForDay(date, {
+                min: created_at,
+                max: now
+            });
+            date.add(1, 'days');
+        }
+
+        return elapsed;
     }
 
     function parseTime(timeString) {
