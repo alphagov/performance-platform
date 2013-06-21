@@ -103,33 +103,6 @@ d3.sankey = function() {
     });
   }
 
-  function keys(dict) {
-    var result = [];
-    for (k in dict) {
-      result.push(k);
-    }
-    return result;
-  }
-
-  function identifiedCycleBetweenSourceNodeAndTargetNode(sourceNode, targetNode, listOfKnownPrecedingNodes) {
-    var visitedNodes = [];
-    var nodesToVisit = [sourceNode.name];
-    do {
-      var currNode = nodesToVisit.pop();
-      if (visitedNodes.indexOf(currNode) !== -1) {
-        continue;
-      }
-      var targetNodeAlreadyVisited = listOfKnownPrecedingNodes[currNode][targetNode.name];
-      if (targetNodeAlreadyVisited) {
-        return true;
-      }
-      nodesToVisit = nodesToVisit.concat(keys(listOfKnownPrecedingNodes[currNode]));
-      visitedNodes.push(currNode);
-
-    } while (nodesToVisit.length > 0)
-    return false;
-  }
-
   // Iteratively assign the breadth (x-position) for each node.
   // Nodes are assigned the maximum breadth of incoming neighbors plus one;
   // nodes with no incoming links are assigned breadth zero, while
@@ -137,72 +110,23 @@ d3.sankey = function() {
   function computeNodeBreadths() {
     var remainingNodes = nodes,
         nextNodes,
-        fromNodes = {},
         x = 0;
 
-    function trackOneNodeAsPrecedingOther(targetNodeName, precedingNodeName) {
-      if (!fromNodes[targetNodeName]) {
-        fromNodes[targetNodeName] = {};
-      }
-      fromNodes[targetNodeName][precedingNodeName] = true;
-    }
     while (remainingNodes.length) {
       nextNodes = [];
       remainingNodes.forEach(function(node) {
         node.x = x;
         node.dx = nodeWidth;
         node.sourceLinks.forEach(function(link) {
-          // visit all links and avoid cycles
-          {
-            if (!fromNodes[node.name]) {
-              fromNodes[node.name] = {}
-            }
-
-            if (!identifiedCycleBetweenSourceNodeAndTargetNode(node, link.target, fromNodes)) {
-              trackOneNodeAsPrecedingOther(link.target.name, node.name);
-              nextNodes.push(link.target);
-            }
-          }
+          nextNodes.push(link.target);
         });
       });
       remainingNodes = nextNodes;
       ++x;
     }
 
-    function averageLinkValue(nodes) {
-        var averageValue = 0;
-        var numberOfLinks = 0;
-        nodes.forEach(function (node) {
-            node.sourceLinks.forEach(function (link) {
-                averageValue += link.value;
-                numberOfLinks += 1;
-            })
-        });
-        return averageValue / numberOfLinks;
-    }
-
     //
     moveSinksRight(x);
-
-    var averageLinkValue = averageLinkValue(nodes);
-    function forceIsStrongWithThisOne(link) {
-      return link.value > averageLinkValue;
-    }
-
-    var MAX_STEPS = 50;
-    for (var i = 0; i < MAX_STEPS; i++) {
-        nodes.forEach(function (node) {
-            node.sourceLinks.forEach(function (link) {
-              var connectionBetweenNodesIsLaidOutTheOtherWayRound = (link.target.x - node.x) <= 0;
-              if (connectionBetweenNodesIsLaidOutTheOtherWayRound && forceIsStrongWithThisOne(link)) {
-                link.target.x += 1;
-              }
-            });
-        })
-    }
-
-    x = Math.max.apply(null, nodes.map(function (node) { return node.x; })) + 1;
-
     scaleNodeBreadths((size[0] - nodeWidth) / (x - 1));
   }
 
@@ -340,12 +264,10 @@ d3.sankey = function() {
       node.sourceLinks.forEach(function(link) {
         link.sy = sy;
         sy += link.dy;
-        link.backward = link.target.x - link.source.x < 0;
       });
       node.targetLinks.forEach(function(link) {
         link.ty = ty;
         ty += link.dy;
-        link.backward = link.target.x - link.source.x < 0;
       });
     });
 
