@@ -1,8 +1,11 @@
 performance-platform
 ====================
 
-This repo will contain useful code for collecting data and integrating with
+This repo will contain useful code and information for collecting data and integrating with
 the performance platform.
+
+## Contents
+- [User Research](https://github.com/alphagov/performance-platform/wiki/User-Research)
 
 ## Setup
 
