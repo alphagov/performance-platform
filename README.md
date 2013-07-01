@@ -1,13 +1,17 @@
 performance-platform
 ====================
 
-This repo will contain useful code and information for collecting data and integrating with
-the performance platform.
+This repo contains useful code and information for collecting data and integrating with
+the Performance Platform.
 
 ## Contents
+
+We use [the GitHub wiki attached to this repository](https://github.com/alphagov/performance-platform/wiki)
+for storing useful information like:
+
 - [User Research](https://github.com/alphagov/performance-platform/wiki/User-Research)
 
-## Setup
+## New dev setup
 
 First up, you'll probably need to be added to GitHub and to any relevant
 teams in order to get read and write access.
@@ -57,4 +61,4 @@ point.
 - __Meetings__: Show and Tell, All staff monthly (and invites for those)
 - Lunch
 - Current and near future work
-- [Learning wiki](https://github.com/alphagov/wiki/wiki)
+- [Learning wiki](https://github.com/alphagov/wiki/wiki) (GDS tech wiki)
