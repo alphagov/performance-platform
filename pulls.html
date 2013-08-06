@@ -11,6 +11,10 @@
             font-family: ntatabularnumbers, nta, sans-serif;
             background:black;
         }
+        .avatar{
+            float: left;
+            margin-right: 20px
+        }
         #pulls {
             list-style:none;
             padding:0;
@@ -259,12 +263,14 @@ $(document).ready(function() {
             $.ajax({
                 url: url,
                 success: function (pulls) {
+                    console.log(pulls);
                     $('#pulls').find('.' + className).remove();
                     $.each(pulls, function (j, pull) {
                         var secs = elapsedSeconds(pull.created_at);
                         var pullId = 'pull-' + pull.id;
                         var el = $([
                             '<li id="', pullId, '" class="', className, ' ', ageClass(secs), '">',
+                            '<img class="avatar" src="', pull.user.avatar_url, '" />',
                             '<h2>', repo, '</h2>',
                             '<p>',
                             '<a href="', pull.html_url, '">',
