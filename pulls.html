@@ -6,6 +6,7 @@
     <style type="text/css" media="screen">
         * {
             box-sizing: border-box;
+            -webkit-font-smoothing: antialiased;
         }
         body {
             font-family: ntatabularnumbers, nta, sans-serif;
@@ -13,12 +14,18 @@
         }
         .avatar{
             float: left;
-            margin-right: 20px
+            margin-right: 20px;
+            width: 80px;
+            height: 80px
+        }
+        .username{
+            text-shadow: 1px 1px 1px black
         }
         #pulls {
             list-style:none;
             padding:0;
             font-size:1.5em;
+            text-shadow: 0 1px 1px #333;
         }
         #pulls li {
             background:#097F96;
@@ -46,7 +53,6 @@
           color: white;
           text-decoration: none;
         }
-
         #all-quiet {
             color: #b7b7b7;
             font-size:3em;
@@ -150,6 +156,23 @@ $(document).ready(function() {
         return location.split("?token=")[1];
     }
 
+    // See http://developer.github.com/v3/repos/statuses/
+    // ala /repos/:owner/:repo/statuses/:ref
+    function updateStatus(url,pull){
+        // https://api.github.com/repos/alphagov/backdrop/statuses/e09e0e9bb50e47ffc224f9b0e490a1936c797df9
+        // console.log('status url', {'token':getToken(document.location.search)}, url);
+        $.ajax({
+          url: url,
+          // data: {param1: 'value1'},
+          success: function(data, textStatus, xhr) {
+            console.log(pull, pull.head.repo.name,' --- ',pull.title,': ',data);
+          },
+          error: function(xhr, textStatus, errorThrown) {
+            console.log(errorThrown);
+          }
+        });        
+    }
+
     function updateComments(pullId, url) {
         $.ajax({
             url: url,
@@ -250,12 +273,25 @@ $(document).ready(function() {
         return time;
     }
 
+    // function queryUrl () {
+    //     var baseUrl = 'https://api.github.com/repos',
+    //         def.user,
+    //         def.repo
+    //     return {
+    //         arguments.join('/');
+    //     }
+    // }
+
+
+
     function update () {
+
         $.each(repos, function(i, def) {
             var repo = def.repo,
                 className = [def.user, def.repo].join('-'),
+                baseUrl = 'https://api.github.com/repos',
                 url = [
-                    'https://api.github.com/repos',
+                    baseUrl,
                     def.user,
                     def.repo,
                     'pulls'
@@ -263,18 +299,18 @@ $(document).ready(function() {
             $.ajax({
                 url: url,
                 success: function (pulls) {
-                    console.log(pulls);
+                    // console.log(pulls);
                     $('#pulls').find('.' + className).remove();
                     $.each(pulls, function (j, pull) {
                         var secs = elapsedSeconds(pull.created_at);
                         var pullId = 'pull-' + pull.id;
-                        var el = $([
+                        var $el = $([
                             '<li id="', pullId, '" class="', className, ' ', ageClass(secs), '">',
                             '<img class="avatar" src="', pull.user.avatar_url, '" />',
                             '<h2>', repo, '</h2>',
                             '<p>',
                             '<a href="', pull.html_url, '">',
-                            pull.user.login,
+                            '<span class="username">',pull.user.login,'</span>',
                             ': ',
                             pull.title,
                             ' (#',
@@ -290,8 +326,17 @@ $(document).ready(function() {
                             '</p>',
                             '</li>'
                         ].join(''));
-                        $('#pulls').append(el);
-                        updateComments(pullId, pull.comments_url)
+                        
+                        $('#pulls').append($el);
+                        updateComments(pullId, pull.comments_url);
+                        var statusUrl = [
+                            baseUrl,
+                            def.user,
+                            def.repo,
+                            'statuses',
+                            pull.base.sha
+                        ].join('/');
+                        updateStatus(statusUrl,pull);
                     });
 
                     $fields = $('#pulls li').clone();
