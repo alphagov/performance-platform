@@ -24,7 +24,14 @@
         .status{
             padding:10px;
             background-color: black;
+            display: inline-block;
         }
+        
+            #pulls li p.status{
+                margin-left: 100px;
+                margin-top: 10px;
+            }
+
             .success{
                 background-color:lime;
             }
@@ -178,6 +185,8 @@ $(document).ready(function() {
             if(data.length){
                 var state = data[0].state;
                 $('#status_'+pull.id).html('Build status: ' + state).addClass(state);
+            } else {
+                $('#status_'+pull.id).html('No build status')
             }
           },
           error: function(xhr, textStatus, errorThrown) {
