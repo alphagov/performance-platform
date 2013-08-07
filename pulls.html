@@ -35,8 +35,11 @@
             .success{
                 background-color:green;
             }
-            .fail{
+            .failure{
                 background-color: red;
+            }
+            .pending{
+                background-color: orange;
             }
         #pulls {
             list-style:none;
@@ -343,7 +346,7 @@ $(document).ready(function() {
                             def.user,
                             def.repo,
                             'statuses',
-                            pull.base.sha
+                            pull.head.sha
                         ].join('/');
                         updateStatus(statusUrl,pull);
                     });
