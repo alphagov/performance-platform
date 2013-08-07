@@ -177,11 +177,9 @@ $(document).ready(function() {
     // ala /repos/:owner/:repo/statuses/:ref
     // We use the base SHA
     function updateStatus(url,pull){
-        // console.log(url);
         $.ajax({
           url: url,
           success: function(data, textStatus, xhr) {
-            console.log(data);
             if(data.length){
                 var state = data[0].state;
                 $('#status_'+pull.id).html('Build status: ' + state).addClass(state);
@@ -347,7 +345,6 @@ $(document).ready(function() {
                             'statuses',
                             pull.head.sha
                         ].join('/');
-                        // console.log('stuff you can use',pull);
                         updateStatus(statusUrl,pull);
                     });
 
