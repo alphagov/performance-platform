@@ -21,6 +21,16 @@
         .username{
             text-shadow: 0 1px 1px black
         }
+        .status{
+            padding:10px;
+            background-color: black;
+        }
+            .success{
+                background-color:lime;
+            }
+            .fail{
+                background-color: hotPink;
+            }
         #pulls {
             list-style:none;
             padding:0;
@@ -158,16 +168,16 @@ $(document).ready(function() {
 
     // See http://developer.github.com/v3/repos/statuses/
     // ala /repos/:owner/:repo/statuses/:ref
+    // We use the base SHA
     function updateStatus(url,pull){
-        // https://api.github.com/repos/alphagov/backdrop/statuses/e09e0e9bb50e47ffc224f9b0e490a1936c797df9
-        // console.log('status url', {'token':getToken(document.location.search)}, url);
         $.ajax({
           url: url,
           // data: {param1: 'value1'},
           success: function(data, textStatus, xhr) {
-            console.log(pull, pull.head.repo.name,' --- ',pull.title,': ',data);
+            // console.log(pull, pull.head.repo.name,' --- ',pull.title,': ',data);
             if(data.length){
-                $('#status_'+pull.id).html('Build status: ' + data[0].state);
+                var state = data[0].state;
+                $('#status_'+pull.id).html('Build status: ' + state).addClass(state);
             }
           },
           error: function(xhr, textStatus, errorThrown) {
@@ -275,17 +285,6 @@ $(document).ready(function() {
         }
         return time;
     }
-
-    // function queryUrl () {
-    //     var baseUrl = 'https://api.github.com/repos',
-    //         def.user,
-    //         def.repo
-    //     return {
-    //         arguments.join('/');
-    //     }
-    // }
-
-
 
     function update () {
 
