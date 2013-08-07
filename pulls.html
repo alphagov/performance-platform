@@ -26,17 +26,17 @@
             background-color: black;
             display: inline-block;
         }
-        
+
             #pulls li p.status{
                 margin-left: 100px;
                 margin-top: 10px;
             }
 
             .success{
-                background-color:lime;
+                background-color:green;
             }
             .fail{
-                background-color: hotPink;
+                background-color: red;
             }
         #pulls {
             list-style:none;
@@ -179,9 +179,7 @@ $(document).ready(function() {
     function updateStatus(url,pull){
         $.ajax({
           url: url,
-          // data: {param1: 'value1'},
           success: function(data, textStatus, xhr) {
-            // console.log(pull, pull.head.repo.name,' --- ',pull.title,': ',data);
             if(data.length){
                 var state = data[0].state;
                 $('#status_'+pull.id).html('Build status: ' + state).addClass(state);
@@ -310,7 +308,6 @@ $(document).ready(function() {
             $.ajax({
                 url: url,
                 success: function (pulls) {
-                    // console.log(pulls);
                     $('#pulls').find('.' + className).remove();
                     $.each(pulls, function (j, pull) {
                         var secs = elapsedSeconds(pull.created_at);
