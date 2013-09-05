@@ -217,6 +217,47 @@ $(document).ready(function() {
         }
         return time;
     }
+
+    var checkMaster = function(repoShas){
+        var c = 0;
+
+        window.reposShas = repoShas;
+        $.each(window.repoShas, function(i, v) {
+            console.log(i++);
+            var url = [
+                'https://api.github.com/repos/alphagov',
+                v.repo,
+                'statuses',
+                v.sha
+            ].join('/');
+
+            $.ajax({
+                url: url,
+            })
+            .done(function(data) {
+                console.log("success",data,url,v.repo);
+                if(data.length){
+                    var top = data[0],
+                        state = top.state,
+                        id = v.repo+'_bignotice',
+                        $notice = $('<h1></h1>');
+
+                    $notice.html(v.repo+':'+top.description).attr('id',id);
+                    $('body').prepend($notice);
+
+
+                }
+            })
+            .fail(function() {
+                console.log("error");
+            })
+            .always(function() {
+                // console.log("complete");
+            });
+        });
+
+    };
+
     // GET /repos/:owner/:repo/commits
     var getBaseShas = function(){
         repoShas = [];
@@ -232,16 +273,21 @@ $(document).ready(function() {
                 url: url,
             })
             .done(function(data) {
-                try{
-                    var baseSha = data[0].sha;
-                    repoShas.push({repo:baseSha});
-                    if(repoShas.length===repos.length){
-                        checkMaster(repoShas);
+
+                if(typeof data !=="undefined"){
+                    try{
+                        var baseSha = data[0].sha,
+                            obj = {'repo':repo,'sha':baseSha};
+                        repoShas.push(obj);
+                        if(repoShas.length==repos.length){
+                            checkMaster(repoShas);
+                            return false;
+                        }
+                    } catch (e){
+                        console.log(e,'couldn\'t get commits data');
+                        // checkMaster(repoShas);
                     }
-                } catch (e){
-                    console.log('couldn\'t get commits data');
                 }
-                // console.log(data,"success");
             })
             .fail(function() {
                 // console.log("error");
@@ -254,23 +300,6 @@ $(document).ready(function() {
     }
     getBaseShas();
     return false;
-    var checkMaster = function(){
-
-
-        $.ajax({
-            url: url,
-        })
-        .done(function(data) {
-            console.log("success",data,url);
-        })
-        .fail(function() {
-            console.log("error");
-        })
-        .always(function() {
-            console.log("complete");
-        });
-
-    };
 
     function update () {
         $.each(repos, function(i, def) {
