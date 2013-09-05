@@ -217,9 +217,62 @@ $(document).ready(function() {
         }
         return time;
     }
+    // GET /repos/:owner/:repo/commits
+    var getBaseShas = function(){
+        repoShas = [];
+        $.each(repos, function(index, val) {
+            var repo = val.repo,
+                url = [
+                    'https://api.github.com/repos',
+                    val.user,
+                    val.repo,
+                    'commits'
+                ].join('/');
+            $.ajax({
+                url: url,
+            })
+            .done(function(data) {
+                try{
+                    var baseSha = data[0].sha;
+                    repoShas.push({repo:baseSha});
+                    if(repoShas.length===repos.length){
+                        checkMaster(repoShas);
+                    }
+                } catch (e){
+                    console.log('couldn\'t get commits data');
+                }
+                // console.log(data,"success");
+            })
+            .fail(function() {
+                // console.log("error");
+            })
+            .always(function() {
+                // console.log("complete");
+            });
+
+        });
+    }
+    getBaseShas();
+    return false;
+    var checkMaster = function(){
+
+
+        $.ajax({
+            url: url,
+        })
+        .done(function(data) {
+            console.log("success",data,url);
+        })
+        .fail(function() {
+            console.log("error");
+        })
+        .always(function() {
+            console.log("complete");
+        });
+
+    };
 
     function update () {
-
         $.each(repos, function(i, def) {
             var repo = def.repo,
                 className = [def.user, def.repo].join('-'),
@@ -230,6 +283,7 @@ $(document).ready(function() {
                     def.repo,
                     'pulls'
                 ].join('/');
+
             $.ajax({
                 url: url,
                 success: function (pulls) {
