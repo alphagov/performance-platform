@@ -13,24 +13,25 @@
             background:black;
         }
         .avatar{
-            float: left;
-            margin-right: 20px;
+            position:absolute;
             width: 80px;
-            height: 80px
+            height: 80px;
+            top:15px;
+            left:15px;
         }
         .username{
             text-shadow: 0 1px 1px black
         }
-        .status{
-            padding:10px;
-            background-color: black;
-            display: inline-block;
-        }
 
-            #pulls li p.status{
-                margin-left: 100px;
-                margin-top: 10px;
-            }
+        .status{
+            padding:7px 10px 10px;
+            background-color: black;
+            position:absolute;
+            height: 80px;
+            width: 100px;
+            right:15px;
+            top:15px;
+        }
 
             .success{
                 background-color:green;
@@ -49,10 +50,17 @@
         }
         #pulls li {
             background:#097F96;
-            padding:1em;
+            padding:20px 135px 15px 110px;
             color:white;
             margin-bottom:.5em;
             position:relative;
+        }
+        #pulls li:after {
+            display:block;
+            content: '.';
+            text-indent:-999em;
+            height:0;
+            clear:both;
         }
         #pulls li.age-aging {
             background: #F47738;
@@ -79,15 +87,23 @@
             margin:1em;
         }
 
-        .comments {
-            float: right;
+        p.comments {
+            float:right;
+            clear:right;
         }
         .elapsed-time {
-            position:absolute;
-            top:1em;
-            right:.67em;
-            line-height: 100%;
+            float:right;
+            line-height: 110%;
             font-size: 1.5em;
+        }
+
+        h2 {
+            float:left;
+            line-height: 110%;
+        }
+        p {
+            float:left;
+            clear:left;
         }
     </style>
 </head>
@@ -193,9 +209,9 @@ $(document).ready(function() {
           success: function(data, textStatus, xhr) {
             if(data.length){
                 var state = data[0].state;
-                $('#status_'+pull.id).html('Build status: ' + state).addClass(state);
+                $('#status_'+pull.id).html('Status: ' + state).addClass(state);
             } else {
-                $('#status_'+pull.id).html('No build status')
+                $('#status_'+pull.id).html('No status')
             }
           },
           error: function(xhr, textStatus, errorThrown) {
@@ -326,24 +342,22 @@ $(document).ready(function() {
                         var $el = $([
                             '<li id="', pullId, '" class="', className, ' ', ageClass(secs), '">',
                             '<img class="avatar" src="', pull.user.avatar_url, '" />',
+                            '<p id="status_'+pull.id+'" class="status"></p>',
                             '<h2>', repo, '</h2>',
-                            '<p>',
-                            '<a href="', pull.html_url, '">',
+                            '<div class="elapsed-time" data-created-at="',
+                            pull.created_at,
+                            '">',
+                            secondsToTime(secs),
+                            '</div>',
+                            '<p><a href="', pull.html_url, '">',
                             '<span class="username">',pull.user.login,'</span>',
                             ': ',
                             pull.title,
                             ' (#',
                             pull.number,
                             ')',
-                            '</a>',
-                            '<span class="comments"></span>',
-                            '<div class="elapsed-time" data-created-at="',
-                            pull.created_at,
-                            '">',
-                            secondsToTime(secs),
-                            '</div>',
-                            '<p id="status_'+pull.id+'" class="status"></p>',
-                            '</p>',
+                            '</a></p>',
+                            '<p class="comments"></p>',
                             '</li>'
                         ].join(''));
                         
