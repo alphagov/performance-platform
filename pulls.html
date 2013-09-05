@@ -240,10 +240,17 @@ $(document).ready(function() {
                     var top = data[0],
                         state = top.state,
                         id = v.repo+'_bignotice',
-                        $notice = $('<h1></h1>');
+                        $notice = $('<h1></h1>'),
+                        $sel = $('#'+id);
 
-                    $notice.html(v.repo+':'+top.description).attr('id',id);
-                    $('body').prepend($notice);
+                    if($sel.length){
+                        $sel.remove();
+                    }
+
+                    if(state === 'success'){
+                        $notice.html('<span class="repo">'+v.repo+'</span> '+top.description).attr('id',id).addClass('notice');
+                        $('body').prepend($notice);
+                    }
 
 
                 }
