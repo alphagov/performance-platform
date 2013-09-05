@@ -1,0 +1,90 @@
+* {
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+}
+html,
+body {
+    font-family: ntatabularnumbers, nta, sans-serif;
+    background:#333;
+    margin:0;
+    padding:0;
+}
+.avatar{
+    float: left;
+    margin-right: 20px;
+    width: 80px;
+    height: 80px
+}
+.username{
+    text-shadow: 0 1px 1px black
+}
+.status{
+    padding:10px;
+    background-color: black;
+    display: inline-block;
+}
+
+.success{
+    background-color:green;
+}
+.failure{
+    background-color: red;
+}
+.pending{
+    background-color: orange;
+}
+
+#pulls {
+    list-style:none;
+    padding:0;
+    font-size:1.5em;
+    margin:10px;
+    text-shadow: 0 1px 1px #666;
+}
+#pulls li p.status{
+    margin-left: 100px;
+    margin-top: 10px;
+}
+
+#pulls li {
+    background:#097F96;
+    padding:1em;
+    color:white;
+    margin-bottom:.5em;
+    position:relative;
+}
+#pulls li.age-aging {
+    background: #F47738;
+}
+#pulls li.age-old {
+    background: #B10E1E;
+}
+#pulls li.thumbsup {
+    background: #85994B;
+}
+#pulls li h2 {
+    margin:0;
+}
+#pulls li p {
+    margin:0;
+}
+#pulls a {
+  color: white;
+  text-decoration: none;
+}
+#all-quiet {
+    color: #b7b7b7;
+    font-size:3em;
+    margin:1em;
+}
+
+.comments {
+    float: right;
+}
+.elapsed-time {
+    position:absolute;
+    top:1em;
+    right:.67em;
+    line-height: 100%;
+    font-size: 1.5em;
+}
