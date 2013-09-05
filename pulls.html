@@ -3,93 +3,7 @@
 <head>
     <title>Performance platform pull requests</title>
     <link rel="stylesheet" href="https://assets.digital.cabinet-office.gov.uk/static/fonts.css">
-    <style type="text/css" media="screen">
-        * {
-            box-sizing: border-box;
-            -webkit-font-smoothing: antialiased;
-        }
-        body {
-            font-family: ntatabularnumbers, nta, sans-serif;
-            background:black;
-        }
-        .avatar{
-            float: left;
-            margin-right: 20px;
-            width: 80px;
-            height: 80px
-        }
-        .username{
-            text-shadow: 0 1px 1px black
-        }
-        .status{
-            padding:10px;
-            background-color: black;
-            display: inline-block;
-        }
-
-            #pulls li p.status{
-                margin-left: 100px;
-                margin-top: 10px;
-            }
-
-            .success{
-                background-color:green;
-            }
-            .failure{
-                background-color: red;
-            }
-            .pending{
-                background-color: orange;
-            }
-        #pulls {
-            list-style:none;
-            padding:0;
-            font-size:1.5em;
-            text-shadow: 0 1px 1px #666;
-        }
-        #pulls li {
-            background:#097F96;
-            padding:1em;
-            color:white;
-            margin-bottom:.5em;
-            position:relative;
-        }
-        #pulls li.age-aging {
-            background: #F47738;
-        }
-        #pulls li.age-old {
-            background: #B10E1E;
-        }
-        #pulls li.thumbsup {
-            background: #85994B;
-        }
-        #pulls li h2 {
-            margin:0;
-        }
-        #pulls li p {
-            margin:0;
-        }
-        #pulls a {
-          color: white;
-          text-decoration: none;
-        }
-        #all-quiet {
-            color: #b7b7b7;
-            font-size:3em;
-            margin:1em;
-        }
-
-        .comments {
-            float: right;
-        }
-        .elapsed-time {
-            position:absolute;
-            top:1em;
-            right:.67em;
-            line-height: 100%;
-            font-size: 1.5em;
-        }
-    </style>
+    <link rel="stylesheet" href="pulls.css">
 </head>
 <body>
 <ul id="pulls"></ul>
@@ -201,7 +115,7 @@ $(document).ready(function() {
           error: function(xhr, textStatus, errorThrown) {
             console.log(errorThrown);
           }
-        });        
+        });
     }
 
     function updateComments(pullId, url) {
@@ -213,7 +127,7 @@ $(document).ready(function() {
                     suffix = "s";
                 }
                 $("#" + pullId).find('.comments').html(" " + comments.length + " comment" + suffix);
-                
+
                 var thumbsup = comments.some(function(comment) {
                     var checkFor = [":+1:", ":thumbsup:"];
                     return checkFor.some(function(check) {
@@ -346,7 +260,7 @@ $(document).ready(function() {
                             '</p>',
                             '</li>'
                         ].join(''));
-                        
+
                         $('#pulls').append($el);
                         updateComments(pullId, pull.comments_url);
                         var statusUrl = [
