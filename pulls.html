@@ -247,7 +247,7 @@ $(document).ready(function() {
                         $sel.remove();
                     }
 
-                    if(state === 'success'){
+                    if(state === 'failure'){
                         $notice.html('<span class="repo">'+v.repo+'</span> '+top.description).attr('id',id).addClass('notice');
                         $('body').prepend($notice);
                     }
@@ -305,10 +305,11 @@ $(document).ready(function() {
 
         });
     }
-    getBaseShas();
-    return false;
 
     function update () {
+        // potentially don't need to do this every time
+        getBaseShas();
+
         $.each(repos, function(i, def) {
             var repo = def.repo,
                 className = [def.user, def.repo].join('-'),
