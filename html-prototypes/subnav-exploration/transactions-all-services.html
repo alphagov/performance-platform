@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<!--[if lt IE 9]><html class="lte-ie8 " lang="en"><![endif]--><!--[if gt IE 8]><!--><html lang="en" class="">
+<!--<![endif]--><head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>
+        All services - Transactions Explorer: transactional services performance data from the UK government
+    </title>
+    <!---->
+    <script type="text/javascript">
+        (function(){if(navigator.userAgent.match(/IEMobile\/10\.0/)){var d=document,c="appendChild",a=d.createElement("style");a[c](d.createTextNode("@-ms-viewport{width:auto!important}"));d.getElementsByTagName("head")[0][c](a);}})();
+    </script><!--[if gt IE 8]><!-->
+    <link href="https://assets.digital.cabinet-office.gov.uk/static/application-1b0d255bd2edcf96f98085c13a1025a8.css" media="screen" rel="stylesheet" type="text/css">
+    <!--<![endif]--><!--[if IE 6]><link href="https://assets.digital.cabinet-office.gov.uk/static/application-ie6-6a1214f649a7dc53b6bd919f1a233bc7.css" media="screen" rel="stylesheet" type="text/css" /><![endif]--><!--[if IE 7]><link href="https://assets.digital.cabinet-office.gov.uk/static/application-ie7-b5cd38374cec9610a2895a1c307a65b6.css" media="screen" rel="stylesheet" type="text/css" /><![endif]--><!--[if IE 8]><link href="https://assets.digital.cabinet-office.gov.uk/static/application-ie8-a1c0822e615e9a79517c9577b3a94e3f.css" media="screen" rel="stylesheet" type="text/css" /><![endif]--><link href="https://assets.digital.cabinet-office.gov.uk/static/print-a83044adbe3290b61f0cc0cab8098a86.css" media="print" rel="stylesheet" type="text/css">
+    <!--[if IE 8]>
+    <script type="text/javascript">
+        (function(){if(window.opera){return;}
+        setTimeout(function(){var a=document,g,b={families:(g=
+        ["nta"]),urls:["https://assets.digital.cabinet-office.gov.uk/static/fonts-ie8-beb10cbc00c9b7dcdbdee824962bc5f6.css"]},
+        c="https://assets.digital.cabinet-office.gov.uk/static/libs/goog/webfont-debug-96870cf9f159ed811fd43c39bdf4656b.js",d="script",
+        e=a.createElement(d),f=a.getElementsByTagName(d)[0],h=g.length;WebFontConfig
+        ={custom:b},e.src=c,f.parentNode.insertBefore(e,f);for(;h=h-1;a.documentElement
+        .className+=' wf-'+g[h].replace(/\s/g,'').toLowerCase()+'-n4-loading');},0)
+        })()
+    </script>
+    <![endif]--><!--[if gte IE 9]><!--><link href="https://assets.digital.cabinet-office.gov.uk/static/fonts-607c54f71c7c1f98257595cedaa13a34.css" media="all" rel="stylesheet" type="text/css">
+    <!--<![endif]--><!--[if lt IE 9]>
+    <script src="https://assets.digital.cabinet-office.gov.uk/static/ie-c367329222d827ee1dcc1ab71f8522d6.js" type="text/javascript"></script>
+    <![endif]--><link rel="shortcut icon" href="https://assets.digital.cabinet-office.gov.uk/static/favicon-447e4ac1ab790342660eacfe3dcce264.ico" type="image/x-icon">
+    <!-- For third-generation iPad with high-resolution Retina display: --><link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://assets.digital.cabinet-office.gov.uk/static/apple-touch-icon-144x144-4e306e01c31e237722b82b7aa7130082.png">
+    <!-- For iPhone with high-resolution Retina display: --><link rel="apple-touch-icon-precomposed" sizes="114x114" href="https://assets.digital.cabinet-office.gov.uk/static/apple-touch-icon-114x114-f1d7ccdc7b86d923386b373a9ba5e3db.png">
+    <!-- For first- and second-generation iPad: --><link rel="apple-touch-icon-precomposed" sizes="72x72" href="https://assets.digital.cabinet-office.gov.uk/static/apple-touch-icon-72x72-2ddbe540853e3ba0d30fbad2a95eab3c.png">
+    <!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: --><link rel="apple-touch-icon-precomposed" href="https://assets.digital.cabinet-office.gov.uk/static/apple-touch-icon-57x57-37527434942ed8407b091aae5feff3f3.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="og:image" content="https://assets.digital.cabinet-office.gov.uk/static/opengraph-image-4e469785ca4cc8f8dd18d0627bc43d19.png">
+    <script src="https://assets.digital.cabinet-office.gov.uk/static/libs/jquery/jquery-1.7.2-2ce4706f8f7193defaa9e7df2b641e9a.js" type="text/javascript"></script><script defer src="https://assets.digital.cabinet-office.gov.uk/static/application-d7bc5d93d79ba6d3e275683c247f0d1c.js" type="text/javascript"></script>
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-26179049-1']);
+    _gaq.push(['_setDomainName', 'www.gov.uk']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+</script>    <link rel="stylesheet" media="screen" href="https://assets.digital.cabinet-office.gov.uk/transactions-explorer/stylesheets/index.css">
+    <link rel="stylesheet" media="screen" href="https://assets.digital.cabinet-office.gov.uk/transactions-explorer/stylesheets/treemap.css">
+    <!--[if lt IE 9]>
+    <link type="text/css" href="https://assets.digital.cabinet-office.gov.uk/static/ie.css" rel="stylesheet" media="all">
+    <![endif]-->
+    <!--[if lt IE 7]>
+    <link type="text/css" href="https://assets.digital.cabinet-office.gov.uk/static/ie-more.css" rel="stylesheet" media="all">
+    <![endif]-->
+
+<!-- temp overrides -->
+<link href="assets/css/prototype-overrides.css" media="all" rel="stylesheet" type="text/css">
+
+</head>
+    <body class="">
+    <script type="text/javascript">document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script><a href="#content" class="visuallyhidden">Skip to main content</a>
+
+
+    <header role="banner" id="global-header" class="with-proposition">
+        <div class="header-wrapper">
+            <div class="header-global">
+                <div class="header-logo">
+                    <a href="/" title="Go to the GOV.UK homepage" id="logo" class="content">
+                        <img src="https://assets.digital.cabinet-office.gov.uk/static/gov.uk_logotype-2x-24145374d271079f08d96c618cc8d4a5.png" alt="GOV.UK">
+                    </a>
+                </div>
+            </div>
+            <div class="header-proposition">
+                <div class="content">
+                    <!--<a href="#proposition-links" class="js-header-toggle menu">Menu</a>-->
+                    <nav id="proposition-menu">
+                        <a href="/performance" id="proposition-name">
+                            Performance
+                            <span class="alpha-tag">Alpha</span>
+                        </a>
+                        <!--<ul id="proposition-links">
+                            <li><a href="/performance/services">Services</a></li>
+                            <li><a href="/performance/dashboard">GOV.UK performance</a></li>
+                            <li><a href="/performance/transactions-explorer/" class="active">Transactions Explorer</a></li>                           
+                        </ul>-->
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+<!-- breadcrumbs -->
+<div class="" id="global-breadcrumb">
+  <ol class="group" role="breadcrumbs">
+    <li><a href="homepage.html">Home</a></li>
+    <li><strong><a href="transactions-all-services.html">All Services</a></strong></li>
+  </ol>
+</div>
+
+    
+
+    <div id="wrapper" class="wrapper datainsight">
+        <section id="content" role="main" class="group"><!--<div class="pattern-status">{{ page.status }}</div>-->
+            <!--<nav class="performance-nav">
+                <ul>
+                    <li><a href="/performance/transactions-explorer/" class="">Overview</a></li>
+                    <li><a href="/performance/transactions-explorer/all-services/by-transactions-per-year/descending" class="active">All services</a></li>
+                    <li><a href="/performance/transactions-explorer/high-volume-services/by-transactions-per-year/descending" class="">High-volume services</a></li>
+                    <li><a href="/performance/transactions-explorer/about-data" class="">About the data</a></li>
+                </ul>
+            </nav>-->
+
+
+<header class="page-header group">
+    <hgroup>
+        <h1>All services</h1>
+    </hgroup>
+</header>
+
+<noscript>
+    <style type="text/css">
+        #search {
+            display: none;
+        }
+    </style>
+</noscript>
+
+<section class="content-group">
+    <div class="find-nearest">
+        <form action="/performance/transactions-explorer/search" method="get" id="search" data-search="/performance/transactions-explorer/data/search.json">
+            <fieldset>
+                <legend class="visuallyhidden">Search Transactions Explorer</legend>
+                <div class="ask_location">
+                    <label for="search-box">Find a department, agency or service:</label>
+                    <div class="search-box-and-button">
+                        <input class="postcode" id="search-box"
+                               name="keyword" type="text" required
+                               placeholder="e.g. driving licence">
+                        <button id="search-button" type="submit" class="button">Find</button>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</section>
+<div class="group">
+    <article role="article" class="group">
+        <section class="content-group">
+            <h1>Annual volume of transactions by department</h1>
+
+            <figure id="services-treemap" class="treemap" data-treemap-url="/performance/transactions-explorer/treemaps/all-services/by-transactions-per-year/descending"></figure>
+
+            <div style="clear:both;"></div>
+
+            <h1>All departments</h1>
+
+
+
+<table id="transactions-table" class="full_width_table">
+    <thead>
+        <tr>
+            <th scope="col">
+                        <a href="../by-department/ascending" title="None">Department</a>
+
+            </th>
+            <th scope="col" class="amount">
+                        <a href="../by-digital-takeup/descending" title="Proportion of transactions completed digitally (high-volume services only)">Digital take&#8209;up*</a>
+
+            </th>
+            <th scope="col" class="amount">
+                        <a href="../by-cost/descending" title="Total cost of providing services (high-volume services only)">Total cost*</a>
+
+            </th>
+            <th scope="col" class="amount">
+                        <a href="../by-data-coverage/descending" title="Proportion of latest data provided by department (high-volume services only)">Data coverage*</a>
+
+            </th>
+            <th scope="col" class="amount">
+                        <a href="../by-transactions-per-year/ascending" title="Transactions per year: most recent 12 months of data available across all channels">Transactions per year</a>
+        <span class="sort-ind">&#9660;</span>
+
+            </th>
+        </tr>
+    </thead>
+
+    <tbody>
+            <tr data-volume="934567956"
+                data-volumeLabel=" 934,567,956 "
+                data-category=""
+                data-body=""
+                data-body-abbr=""
+                data-url="transactions-all-services-hmrc.html"
+                data-href="transactions-all-services-hmrc.html"
+                data-label="HMRC"
+                data-title="HM Revenue and Customs"
+                data-text-color="#fff"
+                data-cost="&pound;553m"
+                data-dept-class="HMRC"
+                >
+                
+                <th scope="row"><a href="/performance/transactions-explorer/department/hmrc/by-transactions-per-year/descending">HM Revenue and Customs</a></th>
+                <td class="amount"> 88.6% </td>
+                <td class="amount"> &pound;553m </td>
+                <td class="amount"> 62.5% </td>
+                <td class="amount"> 934,567,956 </td>
+            </tr>
+
+            <tr data-volume="167669869"
+                data-volumeLabel=" 167,669,869 "
+                data-category=""
+                data-body=""
+                data-body-abbr=""
+                data-url="/performance/transactions-explorer/department/dft/by-transactions-per-year/descending"
+                data-href="/performance/transactions-explorer/department/dft/by-transactions-per-year/descending"
+                data-label="DfT"
+                data-title="Department for Transport"
+                data-text-color="#fff"
+                data-cost="&pound;313m"
+                data-dept-class="DfT"
+                >
+                
+                <th scope="row"><a href="/performance/transactions-explorer/department/dft/by-transactions-per-year/descending">Department for Transport</a></th>
+                <td class="amount"> 51.5% </td>
+                <td class="amount"> &pound;313m </td>
+                <td class="amount"> 48.1% </td>
+                <td class="amount"> 167,669,869 </td>
+            </tr>
+
+            <tr data-volume="118356370"
+                data-volumeLabel=" 118,356,370 "
+                data-category=""
+                data-body=""
+                data-body-abbr=""
+                data-url="/performance/transactions-explorer/department/home-office/by-transactions-per-year/descending"
+                data-href="/performance/transactions-explorer/department/home-office/by-transactions-per-year/descending"
+                data-label="Home Office"
+                data-title="Home Office"
+                data-text-color="#fff"
+                data-cost="&pound;1.28bn"
+                data-dept-class="Home Office"
+                >
+                
+                <th scope="row"><a href="/performance/transactions-explorer/department/home-office/by-transactions-per-year/descending">Home Office</a></th>
+                <td class="amount"> 4.04% </td>
+                <td class="amount"> &pound;1.28bn </td>
+                <td class="amount"> 80% </td>
+                <td class="amount"> 118,356,370 </td>
+            </tr>
+
+            <tr data-volume="107602661"
+                data-volumeLabel=" 107,602,661 "
+                data-category=""
+                data-body=""
+                data-body-abbr=""
+                data-url="/performance/transactions-explorer/department/dwp/by-transactions-per-year/descending"
+                data-href="/performance/transactions-explorer/department/dwp/by-transactions-per-year/descending"
+                data-label="DWP"
+                data-title="Department for Work and Pensions"
+                data-text-color="#fff"
+                data-cost="&pound;4.06bn"
+                data-dept-class="DWP"
+                >
+                
+                <th scope="row"><a href="/performance/transactions-explorer/department/dwp/by-transactions-per-year/descending">Department for Work and Pensions</a></th>
+                <td class="amount"> 6.98% </td>
+                <td class="amount"> &pound;4.06bn </td>
+                <td class="amount"> 97.9% </td>
+                <td class="amount"> 107,602,661 </td>
+            </tr>
+
+            <tr data-volume="40737314"
+                data-volumeLabel=" 40,737,314 "
+                data-category=""
+                data-body=""
+                data-body-abbr=""
+                data-url="/performance/transactions-explorer/department/bis/by-transactions-per-year/descending"
+                data-href="/performance/transactions-explorer/department/bis/by-transactions-per-year/descending"
+                data-label="BIS"
+                data-title="Department for Business, Innovation and Skills"
+                data-text-color="#fff"
+                data-cost="&pound;240m"
+                data-dept-class="BIS"
+                >
+                
+                <th scope="row"><a href="/performance/transactions-explorer/department/bis/by-transactions-per-year/descending">Department for Business, Innovation and Skills</a></th>
+                <td class="amount"> 83.8% </td>
+                <td class="amount"> &pound;240m </td>
+                <td class="amount"> 65.7% </td>
+                <td class="amount"> 40,737,314 </td>
+            </tr>
+
+            <tr data-volume="16647124"
+                data-volumeLabel=" 16,647,124 "
+                data-category=""
+                data-body=""
+                data-body-abbr=""
+                data-url="/performance/transactions-explorer/department/defra/by-transactions-per-year/descending"
+                data-href="/performance/transactions-explorer/department/defra/by-transactions-per-year/descending"
+                data-label="Defra"
+                data-title="Department for Environment, Food and Rural Affairs"
+                data-text-color="#fff"
+                data-cost="&pound;92.9m"
+                data-dept-class="Defra"
+                >
+                
+                <th scope="row"><a href="/performance/transactions-explorer/department/defra/by-transactions-per-year/descending">Department for Environment, Food and Rural Affairs</a></th>
+                <td class="amount"> 83.4% </td>
+                <td class="amount"> &pound;92.9m </td>
+                <td class="amount"> 51.9% </td>
+                <td class="amount"> 16,647,124 </td>
+            </tr>
+
+            <tr data-volume="10414950"
+                data-volumeLabel=" 10,414,950 "
+                data-category=""
+                data-body=""
+                data-body-abbr=""
+                data-url="/performance/transactions-explorer/department/dh/by-transactions-per-year/descending"
+                data-href="/performance/transactions-explorer/department/dh/by-transactions-per-year/descending"
+                data-label="DH"
+                data-title="Department of Health"
+                data-text-color="#fff"
+                data-cost="&pound;4.02m"
+                data-dept-class="DH"
+                >
+                
+                <th scope="row"><a href="/performance/transactions-explorer/department/dh/by-transactions-per-year/descending">Department of Health</a></th>
+                <td class="amount"> 78.4% </td>
+                <td class="amount"> &pound;4.02m </td>
+                <td class="amount"> 83.3% </td>
+                <td class="amount"> 10,414,950 </td>
+            </tr>
+
+            <tr data-volume="9640000"
+                data-volumeLabel=" 9,640,000 "
+                data-category=""
+                data-body=""
+                data-body-abbr=""
+                data-url="/performance/transactions-explorer/department/moj/by-transactions-per-year/descending"
+                data-href="/performance/transactions-explorer/department/moj/by-transactions-per-year/descending"
+                data-label="MoJ"
+                data-title="Ministry of Justice"
+                data-text-color="#fff"
+                data-cost="&pound;18.2m"
+                data-dept-class="MoJ"
+                >
+                
+                <th scope="row"><a href="/performance/transactions-explorer/department/moj/by-transactions-per-year/descending">Ministry of Justice</a></th>
+                <td class="amount"> 18.9% </td>
+                <td class="amount"> &pound;18.2m </td>
+                <td class="amount"> 40% </td>
+                <td class="amount"> 9,640,000 </td>
+            </tr>
+
+            <tr data-volume="4507691"
+                data-volumeLabel=" 4,507,691 "
+                data-category=""
+                data-body=""
+                data-body-abbr=""
+                data-url="/performance/transactions-explorer/department/co/by-transactions-per-year/descending"
+                data-href="/performance/transactions-explorer/department/co/by-transactions-per-year/descending"
+                data-label="CO"
+                data-title="Cabinet Office"
+                data-text-color="#fff"
+                data-cost="&pound;44.9k"
+                data-dept-class="CO"
+                >
+                
+                <th scope="row"><a href="/performance/transactions-explorer/department/co/by-transactions-per-year/descending">Cabinet Office</a></th>
+                <td class="amount"> 100% </td>
+                <td class="amount"> &pound;44.9k </td>
+                <td class="amount"> 100% </td>
+                <td class="amount"> 4,507,691 </td>
+            </tr>
+
+            <tr data-volume="1365168"
+                data-volumeLabel=" 1,365,168 "
+                data-category=""
+                data-body=""
+                data-body-abbr=""
+                data-url="/performance/transactions-explorer/department/decc/by-transactions-per-year/descending"
+                data-href="/performance/transactions-explorer/department/decc/by-transactions-per-year/descending"
+                data-label="DECC"
+                data-title="Department of Energy and Climate Change"
+                data-text-color="#fff"
+                data-cost=""
+                data-dept-class="DECC"
+                >
+                
+                <th scope="row"><a href="/performance/transactions-explorer/department/decc/by-transactions-per-year/descending">Department of Energy and Climate Change</a></th>
+                <td class="amount">  </td>
+                <td class="amount">  </td>
+                <td class="amount">  </td>
+                <td class="amount"> 1,365,168 </td>
+            </tr>
+
+            <tr data-volume="527736"
+                data-volumeLabel=" 527,736 "
+                data-category=""
+                data-body=""
+                data-body-abbr=""
+                data-url="/performance/transactions-explorer/department/fco/by-transactions-per-year/descending"
+                data-href="/performance/transactions-explorer/department/fco/by-transactions-per-year/descending"
+                data-label="FCO"
+                data-title="Foreign and Commonwealth Office"
+                data-text-color="#fff"
+                data-cost=""
+                data-dept-class="FCO"
+                >
+                
+                <th scope="row"><a href="/performance/transactions-explorer/department/fco/by-transactions-per-year/descending">Foreign and Commonwealth Office</a></th>
+                <td class="amount">  </td>
+                <td class="amount">  </td>
+                <td class="amount">  </td>
+                <td class="amount"> 527,736 </td>
+            </tr>
+
+            <tr data-volume="497529"
+                data-volumeLabel=" 497,529 "
+                data-category=""
+                data-body=""
+                data-body-abbr=""
+                data-url="/performance/transactions-explorer/department/dclg/by-transactions-per-year/descending"
+                data-href="/performance/transactions-explorer/department/dclg/by-transactions-per-year/descending"
+                data-label="DCLG"
+                data-title="Department for Communities and Local Government"
+                data-text-color="#fff"
+                data-cost=""
+                data-dept-class="DCLG"
+                >
+                
+                <th scope="row"><a href="/performance/transactions-explorer/department/dclg/by-transactions-per-year/descending">Department for Communities and Local Government</a></th>
+                <td class="amount">  </td>
+                <td class="amount">  </td>
+                <td class="amount">  </td>
+                <td class="amount"> 497,529 </td>
+            </tr>
+
+            <tr data-volume="285000"
+                data-volumeLabel=" 285,000 "
+                data-category=""
+                data-body=""
+                data-body-abbr=""
+                data-url="/performance/transactions-explorer/department/mod/by-transactions-per-year/descending"
+                data-href="/performance/transactions-explorer/department/mod/by-transactions-per-year/descending"
+                data-label="MoD"
+                data-title="Ministry of Defence"
+                data-text-color="#fff"
+                data-cost=""
+                data-dept-class="MoD"
+                >
+                
+                <th scope="row"><a href="/performance/transactions-explorer/department/mod/by-transactions-per-year/descending">Ministry of Defence</a></th>
+                <td class="amount">  </td>
+                <td class="amount">  </td>
+                <td class="amount">  </td>
+                <td class="amount"> 285,000 </td>
+            </tr>
+
+            <tr data-volume="225575"
+                data-volumeLabel=" 225,575 "
+                data-category=""
+                data-body=""
+                data-body-abbr=""
+                data-url="/performance/transactions-explorer/department/dfe/by-transactions-per-year/descending"
+                data-href="/performance/transactions-explorer/department/dfe/by-transactions-per-year/descending"
+                data-label="DfE"
+                data-title="Department for Education"
+                data-text-color="#fff"
+                data-cost=""
+                data-dept-class="DfE"
+                >
+                
+                <th scope="row"><a href="/performance/transactions-explorer/department/dfe/by-transactions-per-year/descending">Department for Education</a></th>
+                <td class="amount">  </td>
+                <td class="amount">  </td>
+                <td class="amount">  </td>
+                <td class="amount"> 225,575 </td>
+            </tr>
+
+            <tr data-volume="103310"
+                data-volumeLabel=" 103,310 "
+                data-category=""
+                data-body=""
+                data-body-abbr=""
+                data-url="/performance/transactions-explorer/department/ago/by-transactions-per-year/descending"
+                data-href="/performance/transactions-explorer/department/ago/by-transactions-per-year/descending"
+                data-label="AGO"
+                data-title="Attorney General's Office"
+                data-text-color="#fff"
+                data-cost=""
+                data-dept-class="AGO"
+                >
+                
+                <th scope="row"><a href="/performance/transactions-explorer/department/ago/by-transactions-per-year/descending">Attorney General's Office</a></th>
+                <td class="amount">  </td>
+                <td class="amount">  </td>
+                <td class="amount">  </td>
+                <td class="amount"> 103,310 </td>
+            </tr>
+
+            <tr data-volume="30000"
+                data-volumeLabel=" 30,000 "
+                data-category=""
+                data-body=""
+                data-body-abbr=""
+                data-url="/performance/transactions-explorer/department/dcms/by-transactions-per-year/descending"
+                data-href="/performance/transactions-explorer/department/dcms/by-transactions-per-year/descending"
+                data-label="DCMS"
+                data-title="Department for Culture, Media and Sport"
+                data-text-color="#fff"
+                data-cost=""
+                data-dept-class="DCMS"
+                >
+                
+                <th scope="row"><a href="/performance/transactions-explorer/department/dcms/by-transactions-per-year/descending">Department for Culture, Media and Sport</a></th>
+                <td class="amount">  </td>
+                <td class="amount">  </td>
+                <td class="amount">  </td>
+                <td class="amount"> 30,000 </td>
+            </tr>
+
+            <tr data-volume="14851"
+                data-volumeLabel=" 14,851 "
+                data-category=""
+                data-body=""
+                data-body-abbr=""
+                data-url="/performance/transactions-explorer/department/dfid/by-transactions-per-year/descending"
+                data-href="/performance/transactions-explorer/department/dfid/by-transactions-per-year/descending"
+                data-label="DFID"
+                data-title="Department for International Development"
+                data-text-color="#fff"
+                data-cost=""
+                data-dept-class="DFID"
+                >
+                
+                <th scope="row"><a href="/performance/transactions-explorer/department/dfid/by-transactions-per-year/descending">Department for International Development</a></th>
+                <td class="amount">  </td>
+                <td class="amount">  </td>
+                <td class="amount">  </td>
+                <td class="amount"> 14,851 </td>
+            </tr>
+
+    </tbody>
+</table>
+<!--[if gt IE 8]><!-->
+<script type="text/javascript" src="https://assets.digital.cabinet-office.gov.uk/transactions-explorer/javascripts/lib/d3.v3.js"></script>
+<script type="text/javascript" src="https://assets.digital.cabinet-office.gov.uk/transactions-explorer/javascripts/table-to-tree-map.js"></script>
+<script>
+  $(document).ready(function() {
+      if ($(".treemap").length) {
+ 
+        var tree = Tree.fromHtmlTable(d3.selectAll("tbody tr"));
+        TreeMapLayout.display("services-treemap", tree);
+        $(window).on('resize', function () {
+          TreeMapLayout.display("services-treemap", tree);
+        });
+
+      }
+  });
+</script>
+<!--<![endif]-->
+
+<script>
+  $(document).ready(function() {
+      if ($(".treemap").length) {
+        if (typeof(d3) === 'undefined') {
+          $('.treemap').load($('.treemap').data('treemap-url'));
+          return;
+        }
+      }
+    });
+</script>
+
+            <div class="application-notice info-notice table-margin">
+                <p>* Figures are based on data for high-volume services only</p>
+            </div>
+
+<div class="transactions-explorer-download">
+    <p>
+        <a href="/performance/transactions-explorer/data/transaction-volumes.csv" title="Download the full data set (CSV)" download="transaction-volumes.csv">Download the full data set (CSV)</a>
+    </p>
+</div>        </section>
+    </article>
+</div>
+
+<script src="https://assets.digital.cabinet-office.gov.uk/transactions-explorer/javascripts/lib/highlight.js"></script>
+<script src="https://assets.digital.cabinet-office.gov.uk/transactions-explorer/javascripts/search.js"></script>
+<script>
+    GOVUK.transactionsExplorer.initSearch();
+</script>
+        </section>
+
+    </div><!--end wrapper-->
+
+
+    <footer class="group js-footer" id="footer" role="contentinfo">
+        <div class="footer-wrapper">
+            <div class="footer-categories">
+                <div class="footer-explore">
+                    <h2>Services and information</h2>
+
+                    <ul>
+                        <li><a href="/browse/driving">Driving and transport</a></li>
+                        <li><a href="/browse/benefits">Benefits</a></li>
+                        <li><a href="/browse/business">Businesses and self-employed</a></li>
+                        <li><a href="/browse/employing-people">Employing people</a></li>
+                        <li><a href="/browse/abroad">Passports, travel and living abroad</a></li>
+                        <li><a href="/browse/education">Education and learning</a></li>
+                        <li><a href="/browse/working">Working, jobs and pensions</a></li>
+                        <li><a href="/browse/housing">Housing and local services</a></li>
+                        <li><a href="/browse/justice">Crime, justice and the law</a></li>
+                        <li><a href="/browse/tax">Money and tax</a></li>
+                        <li><a href="/browse/births-deaths-marriages">Births, deaths, marriages and care</a></li>
+                        <li><a href="/browse/disabilities">Disabled people</a></li>
+                        <li><a href="/browse/citizenship">Citizenship and life in the UK</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-inside-government">
+                    <h2>Departments and policy</h2>
+
+                    <ul>
+                        <li><a href="/government/how-government-works">How government works</a></li>
+                        <li><a href="/government/organisations">Departments</a></li>
+                        <li><a href="/government/world">Worldwide</a></li>
+                        <li><a href="/government/topics">Topics</a></li>
+                        <li><a href="/government/policies">Policies</a></li>
+                        <li><a href="/government/publications">Publications</a></li>
+                        <li><a href="/government/announcements">Announcements</a></li>
+                    </ul>
+                </div>
+
+            </div>
+            <div class="footer-meta">
+                <div class="footer-meta-inner">
+                    <h2 class="visuallyhidden">Support links</h2>
+                    <ul>
+                        <li><a href="/support">Support</a></li>
+                        <li><a href="/support/cookies">Cookies</a></li>
+                        <li><a href="/feedback">Feedback</a></li>
+                        <li><a href="/cymraeg">Cymraeg</a></li>
+                        <li>Built by the <a href="http://digital.cabinetoffice.gov.uk/">Government Digital Service</a></li>
+                    </ul>
+                    <div class="open-government-licence">
+                        <h2><a href="http://www.nationalarchives.gov.uk/doc/open-government-licence/version/2"><img alt="OGL" src="https://assets-origin.preview.alphagov.co.uk/static/open-government-licence_2x-d273d7eca3045d3b710a863d9bfc0b33.png"></a></h2>
+                        <p>All content is available under the <a href="http://www.nationalarchives.gov.uk/doc/open-government-licence/version/2">Open Government Licence v2.0</a>, except where otherwise stated</p>
+                    </div>
+                </div>
+
+                <div class="copyright">
+                    <a href="http://www.nationalarchives.gov.uk/information-management/our-services/crown-copyright.htm">© Crown Copyright</a>
+                </div>
+            </div>
+        </div>
+    </footer><!--end footer-->
+
+    </body>
+</html>

@@ -1,0 +1,3427 @@
+<!DOCTYPE html>
+<!--[if lt IE 9]><html class="lte-ie8 " lang="en"><![endif]--><!--[if gt IE 8]><!--><html lang="en" class="">
+<!--<![endif]--><head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>
+        High volume services - Transactions Explorer: transactional services performance data from the UK government
+    </title>
+    <!---->
+    <script type="text/javascript">
+        (function(){if(navigator.userAgent.match(/IEMobile\/10\.0/)){var d=document,c="appendChild",a=d.createElement("style");a[c](d.createTextNode("@-ms-viewport{width:auto!important}"));d.getElementsByTagName("head")[0][c](a);}})();
+    </script><!--[if gt IE 8]><!-->
+    <link href="https://assets.digital.cabinet-office.gov.uk/static/application-1b0d255bd2edcf96f98085c13a1025a8.css" media="screen" rel="stylesheet" type="text/css">
+    <!--<![endif]--><!--[if IE 6]><link href="https://assets.digital.cabinet-office.gov.uk/static/application-ie6-6a1214f649a7dc53b6bd919f1a233bc7.css" media="screen" rel="stylesheet" type="text/css" /><![endif]--><!--[if IE 7]><link href="https://assets.digital.cabinet-office.gov.uk/static/application-ie7-b5cd38374cec9610a2895a1c307a65b6.css" media="screen" rel="stylesheet" type="text/css" /><![endif]--><!--[if IE 8]><link href="https://assets.digital.cabinet-office.gov.uk/static/application-ie8-a1c0822e615e9a79517c9577b3a94e3f.css" media="screen" rel="stylesheet" type="text/css" /><![endif]--><link href="https://assets.digital.cabinet-office.gov.uk/static/print-a83044adbe3290b61f0cc0cab8098a86.css" media="print" rel="stylesheet" type="text/css">
+    <!--[if IE 8]>
+    <script type="text/javascript">
+        (function(){if(window.opera){return;}
+        setTimeout(function(){var a=document,g,b={families:(g=
+        ["nta"]),urls:["https://assets.digital.cabinet-office.gov.uk/static/fonts-ie8-beb10cbc00c9b7dcdbdee824962bc5f6.css"]},
+        c="https://assets.digital.cabinet-office.gov.uk/static/libs/goog/webfont-debug-96870cf9f159ed811fd43c39bdf4656b.js",d="script",
+        e=a.createElement(d),f=a.getElementsByTagName(d)[0],h=g.length;WebFontConfig
+        ={custom:b},e.src=c,f.parentNode.insertBefore(e,f);for(;h=h-1;a.documentElement
+        .className+=' wf-'+g[h].replace(/\s/g,'').toLowerCase()+'-n4-loading');},0)
+        })()
+    </script>
+    <![endif]--><!--[if gte IE 9]><!--><link href="https://assets.digital.cabinet-office.gov.uk/static/fonts-607c54f71c7c1f98257595cedaa13a34.css" media="all" rel="stylesheet" type="text/css">
+    <!--<![endif]--><!--[if lt IE 9]>
+    <script src="https://assets.digital.cabinet-office.gov.uk/static/ie-c367329222d827ee1dcc1ab71f8522d6.js" type="text/javascript"></script>
+    <![endif]--><link rel="shortcut icon" href="https://assets.digital.cabinet-office.gov.uk/static/favicon-447e4ac1ab790342660eacfe3dcce264.ico" type="image/x-icon">
+    <!-- For third-generation iPad with high-resolution Retina display: --><link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://assets.digital.cabinet-office.gov.uk/static/apple-touch-icon-144x144-4e306e01c31e237722b82b7aa7130082.png">
+    <!-- For iPhone with high-resolution Retina display: --><link rel="apple-touch-icon-precomposed" sizes="114x114" href="https://assets.digital.cabinet-office.gov.uk/static/apple-touch-icon-114x114-f1d7ccdc7b86d923386b373a9ba5e3db.png">
+    <!-- For first- and second-generation iPad: --><link rel="apple-touch-icon-precomposed" sizes="72x72" href="https://assets.digital.cabinet-office.gov.uk/static/apple-touch-icon-72x72-2ddbe540853e3ba0d30fbad2a95eab3c.png">
+    <!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: --><link rel="apple-touch-icon-precomposed" href="https://assets.digital.cabinet-office.gov.uk/static/apple-touch-icon-57x57-37527434942ed8407b091aae5feff3f3.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="og:image" content="https://assets.digital.cabinet-office.gov.uk/static/opengraph-image-4e469785ca4cc8f8dd18d0627bc43d19.png">
+    <script src="https://assets.digital.cabinet-office.gov.uk/static/libs/jquery/jquery-1.7.2-2ce4706f8f7193defaa9e7df2b641e9a.js" type="text/javascript"></script><script defer src="https://assets.digital.cabinet-office.gov.uk/static/application-d7bc5d93d79ba6d3e275683c247f0d1c.js" type="text/javascript"></script>
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-26179049-1']);
+    _gaq.push(['_setDomainName', 'www.gov.uk']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+</script>    <link rel="stylesheet" media="screen" href="https://assets.digital.cabinet-office.gov.uk/transactions-explorer/stylesheets/index.css">
+    <link rel="stylesheet" media="screen" href="https://assets.digital.cabinet-office.gov.uk/transactions-explorer/stylesheets/treemap.css">
+    <!--[if lt IE 9]>
+    <link type="text/css" href="https://assets.digital.cabinet-office.gov.uk/static/ie.css" rel="stylesheet" media="all">
+    <![endif]-->
+    <!--[if lt IE 7]>
+    <link type="text/css" href="https://assets.digital.cabinet-office.gov.uk/static/ie-more.css" rel="stylesheet" media="all">
+    <![endif]-->
+
+<!-- temp overrides -->
+<link href="assets/css/prototype-overrides.css" media="all" rel="stylesheet" type="text/css">
+
+</head>
+    <body class="">
+    <script type="text/javascript">document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script><a href="#content" class="visuallyhidden">Skip to main content</a>
+
+
+    <header role="banner" id="global-header" class="with-proposition">
+        <div class="header-wrapper">
+            <div class="header-global">
+                <div class="header-logo">
+                    <a href="/" title="Go to the GOV.UK homepage" id="logo" class="content">
+                        <img src="https://assets.digital.cabinet-office.gov.uk/static/gov.uk_logotype-2x-24145374d271079f08d96c618cc8d4a5.png" alt="GOV.UK">
+                    </a>
+                </div>
+            </div>
+            <div class="header-proposition">
+                <div class="content">
+                    <!--<a href="#proposition-links" class="js-header-toggle menu">Menu</a>-->
+                    <nav id="proposition-menu">
+                        <a href="/performance" id="proposition-name">
+                            Performance
+                            <span class="alpha-tag">Alpha</span>
+                        </a>
+                        <!--<ul id="proposition-links">
+                            <li><a href="/performance/services">Services</a></li>
+                            <li><a href="/performance/dashboard">GOV.UK performance</a></li>
+                            <li><a href="/performance/transactions-explorer/" class="active">Transactions Explorer</a></li>                           
+                        </ul>-->
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+<!-- breadcrumbs -->
+<div class="" id="global-breadcrumb">
+  <ol class="group" role="breadcrumbs">
+    <li><a href="/">Home</a></li>
+    <li><a href="/browse/driving">Driving and transport</a></li>
+    <li><strong><a href="/browse/driving/blue-badge-parking">Blue Badge, parking, local travel and the environment</a></strong></li>
+  </ol>
+</div>
+
+    <div id="wrapper" class="wrapper datainsight">
+        <section id="content" role="main" class="group"><!--<div class="pattern-status">{{ page.status }}</div>-->
+            <!--<nav class="performance-nav">
+                <ul>
+                    <li><a href="/performance/transactions-explorer/" class="">Overview</a></li>
+                    <li><a href="/performance/transactions-explorer/all-services/by-transactions-per-year/descending" class="">All services</a></li>
+                    <li><a href="/performance/transactions-explorer/high-volume-services/by-transactions-per-year/descending" class="active">High-volume services</a></li>
+                    <li><a href="/performance/transactions-explorer/about-data" class="">About the data</a></li>
+                </ul>
+            </nav>-->
+
+
+<header class="page-header group">
+    <hgroup>
+        <h1>High-volume services</h1>
+    </hgroup>
+</header>
+
+<div class="group">
+    <article role="article" class="group">
+        <section class="content-group">
+            <h1>Annual volume of transactions by service</h1>
+
+            <figure id="services-treemap" class="treemap" data-treemap-url="/performance/transactions-explorer/treemaps/high-volume-services/by-transactions-per-year/descending"></figure>
+
+            <h1>All high-volume services</h1>
+
+
+
+<table id="transactions-table" class="full_width_table">
+    <thead>
+        <tr>
+            <th scope="col">
+                        <a href="../by-name/ascending" title="None">Transactional service</a>
+
+            </th>
+            <th scope="col">
+                        <a href="../by-department/ascending" title="None">Department</a>
+
+            </th>
+            <th scope="col">
+                        <a href="../by-total-cost/descending" title="None">Total cost</a>
+
+            </th>
+            <th scope="col">
+                        <a href="../by-cost-per-transaction/descending" title="None">Cost per transaction</a>
+
+            </th>
+            <th scope="col">
+                        <a href="../by-digital-takeup/descending" title="None">Digital take&#8209;up</a>
+
+            </th>
+            <th scope="col" class="amount">
+                        <a href="../by-transactions-per-year/ascending" title="Transactions per year: most recent 12 months of data available across all channels">Transactions per year</a>
+        <span class="sort-ind">&#9660;</span>
+
+            </th>
+        </tr>
+    </thead>
+
+    <tbody>
+
+            <tr data-volume="390590310"
+                data-volumeLabel=" 390,590,310 "
+                data-category="Providing/reporting information"
+                data-body="HM Revenue and Customs"
+                data-body-abbr="HMRC"
+                data-url="http://www.hmrc.gov.uk/sdrt/intro/basics.htm"
+                data-href="/performance/transactions-explorer/service-details/hmrc-stamp-duty-reserve-tax"
+                data-label="SDRT"
+                data-title="Stamp Duty Reserve Tax"
+                data-text-color="#fff"
+                data-color="hotPink"
+                data-dept-class="HMRC"
+                >
+
+                <th scope="row">
+                    <a href="/performance/transactions-explorer/service-details/hmrc-stamp-duty-reserve-tax">Stamp Duty Reserve Tax</a>
+                </th>
+
+                <td><abbr title="HM Revenue and Customs">HMRC</abbr></td>
+
+                <td class="amount">
+                    &pound;23.4m
+                </td>
+
+                <td class="amount">
+                    &pound;0.06
+                </td>
+
+                <td class="amount">
+                    100%
+                </td>
+
+                <td class="amount">
+                    390,590,310
+                </td>
+
+            </tr>
+
+            <tr data-volume="178794607"
+                data-volumeLabel=" 178,794,607 "
+                data-category="Making a payment (taxes and fines)"
+                data-body="HM Revenue and Customs"
+                data-body-abbr="HMRC"
+                data-url=""
+                data-href="/performance/transactions-explorer/service-details/hmrc-payments-made-banking"
+                data-label="Payments made"
+                data-title="Payments made (banking)"
+                data-text-color="#fff"
+                data-color="hotPink"
+                data-dept-class="HMRC"
+                >
+
+                <th scope="row">
+                    <a href="/performance/transactions-explorer/service-details/hmrc-payments-made-banking">Payments made (banking)</a>
+                </th>
+
+                <td><abbr title="HM Revenue and Customs">HMRC</abbr></td>
+
+                <td class="amount">
+                    &pound;19.7m
+                </td>
+
+                <td class="amount">
+                    &pound;0.11
+                </td>
+
+                <td class="amount">
+                    94.5%
+                </td>
+
+                <td class="amount">
+                    178,794,607
+                </td>
+
+            </tr>
+
+            <tr data-volume="106441369"
+                data-volumeLabel=" 106,441,369 "
+                data-category="Requesting a licence/authorisation"
+                data-body="Home Office"
+                data-body-abbr=""
+                data-url=""
+                data-href="/performance/transactions-explorer/service-details/home-office-passengers-crossing-the-border"
+                data-label=""
+                data-title="Passengers crossing the border"
+                data-text-color="#fff"
+                data-color="hotPink"
+                data-dept-class="Home Office"
+                >
+
+                <th scope="row">
+                    <a href="/performance/transactions-explorer/service-details/home-office-passengers-crossing-the-border">Passengers crossing the border</a>
+                </th>
+
+                <td><abbr title="Home Office">Home Office</abbr></td>
+
+                <td class="amount">
+                    &pound;303m
+                </td>
+
+                <td class="amount">
+                    &pound;2.85
+                </td>
+
+                <td class="amount">
+                    0%
+                </td>
+
+                <td class="amount">
+                    106,441,369
+                </td>
+
+            </tr>
+
+            <tr data-volume="99439596"
+                data-volumeLabel=" 99,439,596 "
+                data-category="Providing/reporting information"
+                data-body="HM Revenue and Customs"
+                data-body-abbr="HMRC"
+                data-url="http://www.hmrc.gov.uk/paye/index.htm"
+                data-href="/performance/transactions-explorer/service-details/hmrc-pay-as-you-earn-paye"
+                data-label="PAYE"
+                data-title="Pay As You Earn (PAYE)"
+                data-text-color="#fff"
+                data-color="hotPink"
+                data-dept-class="HMRC"
+                >
+
+                <th scope="row">
+                    <a href="/performance/transactions-explorer/service-details/hmrc-pay-as-you-earn-paye">Pay As You Earn (PAYE)</a>
+                </th>
+
+                <td><abbr title="HM Revenue and Customs">HMRC</abbr></td>
+
+                <td class="amount">
+                    &pound;277m
+                </td>
+
+                <td class="amount">
+                    &pound;2.79
+                </td>
+
+                <td class="amount">
+                    77.8%
+                </td>
+
+                <td class="amount">
+                    99,439,596
+                </td>
+
+            </tr>
+
+            <tr data-volume="98634777"
+                data-volumeLabel=" 98,634,777 "
+                data-category="Providing/reporting information"
+                data-body="HM Revenue and Customs"
+                data-body-abbr="HMRC"
+                data-url=""
+                data-href="/performance/transactions-explorer/service-details/hmrc-customs"
+                data-label=""
+                data-title="Customs"
+                data-text-color="#fff"
+                data-color="hotPink"
+                data-dept-class="HMRC"
+                >
+
+                <th scope="row">
+                    <a href="/performance/transactions-explorer/service-details/hmrc-customs">Customs</a>
+                </th>
+
+                <td><abbr title="HM Revenue and Customs">HMRC</abbr></td>
+
+                <td class="amount">
+                    &pound;14.8m
+                </td>
+
+                <td class="amount">
+                    &pound;0.15
+                </td>
+
+                <td class="amount">
+                    99.7%
+                </td>
+
+                <td class="amount">
+                    98,634,777
+                </td>
+
+            </tr>
+
+            <tr data-volume="59589398"
+                data-volumeLabel=" 59,589,398 "
+                data-category="Making a payment (taxes and fines)"
+                data-body="HM Revenue and Customs"
+                data-body-abbr="HMRC"
+                data-url=""
+                data-href="/performance/transactions-explorer/service-details/hmrc-payments-received-banking"
+                data-label="Payments received"
+                data-title="Payments received (banking)"
+                data-text-color="#fff"
+                data-color="hotPink"
+                data-dept-class="HMRC"
+                >
+
+                <th scope="row">
+                    <a href="/performance/transactions-explorer/service-details/hmrc-payments-received-banking">Payments received (banking)</a>
+                </th>
+
+                <td><abbr title="HM Revenue and Customs">HMRC</abbr></td>
+
+                <td class="amount">
+                    &pound;13.7m
+                </td>
+
+                <td class="amount">
+                    &pound;0.23
+                </td>
+
+                <td class="amount">
+                    89.2%
+                </td>
+
+                <td class="amount">
+                    59,589,398
+                </td>
+
+            </tr>
+
+            <tr data-volume="45778327"
+                data-volumeLabel=" 45,778,327 "
+                data-category="Requesting a licence/authorisation"
+                data-body="Driver and Vehicle Licensing Agency"
+                data-body-abbr="DVLA"
+                data-url="https://www.gov.uk/tax-disc"
+                data-href="/performance/transactions-explorer/service-details/dft-tax-a-vehicle"
+                data-label=""
+                data-title="Tax a vehicle"
+                data-text-color="#fff"
+                data-color="hotPink"
+                data-dept-class="DfT"
+                >
+
+                <th scope="row">
+                    <a href="/performance/transactions-explorer/service-details/dft-tax-a-vehicle">Tax a vehicle</a>
+                </th>
+
+                <td><abbr title="Department for Transport">DfT</abbr></td>
+
+                <td class="amount">
+                    &pound;65.5m
+                </td>
+
+                <td class="amount">
+                    &pound;1.43
+                </td>
+
+                <td class="amount">
+                    54%
+                </td>
+
+                <td class="amount">
+                    45,778,327
+                </td>
+
+            </tr>
+
+            <tr data-volume="40936023"
+                data-volumeLabel=" 40,936,023 "
+                data-category="Providing/reporting information"
+                data-body="Driver and Vehicle Licensing Agency"
+                data-body-abbr="DVLA"
+                data-url=""
+                data-href="/performance/transactions-explorer/service-details/dft-amend-vehicle-registration-details"
+                data-label=""
+                data-title="Amend vehicle registration details"
+                data-text-color="#fff"
+                data-color="hotPink"
+                data-dept-class="DfT"
+                >
+
+                <th scope="row">
+                    <a href="/performance/transactions-explorer/service-details/dft-amend-vehicle-registration-details">Amend vehicle registration details</a>
+                </th>
+
+                <td><abbr title="Department for Transport">DfT</abbr></td>
+
+                <td class="amount">
+                    &pound;81.1m
+                </td>
+
+                <td class="amount">
+                    &pound;1.98
+                </td>
+
+                <td class="amount">
+                    
+                </td>
+
+                <td class="amount">
+                    40,936,023
+                </td>
+
+            </tr>
+
+            <tr data-volume="38330000"
+                data-volumeLabel=" 38,330,000 "
+                data-category="Requesting information"
+                data-body="Department for Work and Pensions"
+                data-body-abbr="DWP"
+                data-url="https://www.gov.uk/moving-from-benefits-to-work"
+                data-href="/performance/transactions-explorer/service-details/dwp-jobsearch-reviews-signing-on"
+                data-label="Jobsearch: signing on"
+                data-title="Jobsearch reviews (signing on)"
+                data-text-color="#fff"
+                data-color="hotPink"
+                data-dept-class="DWP"
+                >
+
+                <th scope="row">
+                    <a href="/performance/transactions-explorer/service-details/dwp-jobsearch-reviews-signing-on">Jobsearch reviews (signing on)</a>
+                </th>
+
+                <td><abbr title="Department for Work and Pensions">DWP</abbr></td>
+
+                <td class="amount">
+                    &pound;268m
+                </td>
+
+                <td class="amount">
+                    &pound;7.00
+                </td>
+
+                <td class="amount">
+                    0%
+                </td>
+
+                <td class="amount">
+                    38,330,000
+                </td>
+
+            </tr>
+
+            <tr data-volume="28655088"
+                data-volumeLabel=" 28,655,088 "
+                data-category="Requesting information"
+                data-body="Driver and Vehicle Licensing Agency"
+                data-body-abbr="DVLA"
+                data-url="https://www.gov.uk/check-vehicle-tax"
+                data-href="/performance/transactions-explorer/service-details/dft-check-your-own-vehicles-details"
+                data-label=""
+                data-title="Check your own vehicle's details"
+                data-text-color="#fff"
+                data-color="hotPink"
+                data-dept-class="DfT"
+                >
+
+                <th scope="row">
+                    <a href="/performance/transactions-explorer/service-details/dft-check-your-own-vehicles-details">Check your own vehicle's details</a>
+                </th>
+
+                <td><abbr title="Department for Transport">DfT</abbr></td>
+
+                <td class="amount">
+                    &pound;50.7m
+                </td>
+
+                <td class="amount">
+                    &pound;1.77
+                </td>
+
+                <td class="amount">
+                    
+                </td>
+
+                <td class="amount">
+                    28,655,088
+                </td>
+
+            </tr>
+
+            <tr data-volume="23630000"
+                data-volumeLabel=" 23,630,000 "
+                data-category="Requesting information"
+                data-body="Department for Work and Pensions"
+                data-body-abbr="DWP"
+                data-url="https://www.gov.uk/moving-from-benefits-to-work"
+                data-href="/performance/transactions-explorer/service-details/dwp-adviser-interventions-jobsearch-advice"
+                data-label="Jobsearch advice"
+                data-title="Adviser interventions (jobsearch advice)"
+                data-text-color="#fff"
+                data-color="hotPink"
+                data-dept-class="DWP"
+                >
+
+                <th scope="row">
+                    <a href="/performance/transactions-explorer/service-details/dwp-adviser-interventions-jobsearch-advice">Adviser interventions (jobsearch advice)</a>
+                </th>
+
+                <td><abbr title="Department for Work and Pensions">DWP</abbr></td>
+
+                <td class="amount">
+                    &pound;1.21bn
+                </td>
+
+                <td class="amount">
+                    &pound;51.00
+                </td>
+
+                <td class="amount">
+                    0%
+                </td>
+
+                <td class="amount">
+                    23,630,000
+                </td>
+
+            </tr>
+
+            <tr data-volume="19742834"
+                data-volumeLabel=" 19,742,834 "
+                data-category="Requesting benefits, payments or loans"
+                data-body="HM Revenue and Customs"
+                data-body-abbr="HMRC"
+                data-url="http://www.hmrc.gov.uk/TAXCREDITS/"
+                data-href="/performance/transactions-explorer/service-details/hmrc-tax-credits"
+                data-label=""
+                data-title="Tax Credits"
+                data-text-color="#fff"
+                data-color="hotPink"
+                data-dept-class="HMRC"
+                >
+
+                <th scope="row">
+                    <a href="/performance/transactions-explorer/service-details/hmrc-tax-credits">Tax Credits</a>
+                </th>
+
+                <td><abbr title="HM Revenue and Customs">HMRC</abbr></td>
+
+                <td class="amount">
+                    
+                </td>
+
+                <td class="amount">
+                    
+                </td>
+
+                <td class="amount">
+                    0%
+                </td>
+
+                <td class="amount">
+                    19,742,834
+                </td>
+
+            </tr>
+
+            <tr data-volume="18796574"
+                data-volumeLabel=" 18,796,574 "
+                data-category="Providing/reporting information"
+                data-body="HM Revenue and Customs"
+                data-body-abbr="HMRC"
+                data-url=""
+                data-href="/performance/transactions-explorer/service-details/hmrc-vat"
+                data-label=""
+                data-title="VAT"
+                data-text-color="#fff"
+                data-color="hotPink"
+                data-dept-class="HMRC"
+                >
+
+                <th scope="row">
+                    <a href="/performance/transactions-explorer/service-details/hmrc-vat">VAT</a>
+                </th>
+
+                <td><abbr title="HM Revenue and Customs">HMRC</abbr></td>
+
+                <td class="amount">
+                    &pound;38.3m
+                </td>
+
+                <td class="amount">
+                    &pound;2.04
+                </td>
+
+                <td class="amount">
+                    79.8%
+                </td>
+
+                <td class="amount">
+                    18,796,574
+                </td>
+
+            </tr>
+
+            <tr data-volume="17461000"
+                data-volumeLabel=" 17,461,000 "
+                data-category="Providing/reporting information"
+                data-body="HM Revenue and Customs"
+                data-body-abbr="HMRC"
+                data-url="http://www.hmrc.gov.uk/ct/index.htm"
+                data-href="/performance/transactions-explorer/service-details/hmrc-corporation-tax"
+                data-label=""
+                data-title="Corporation Tax"
+                data-text-color="#fff"
+                data-color="hotPink"
+                data-dept-class="HMRC"
+                >
+
+                <th scope="row">
+                    <a href="/performance/transactions-explorer/service-details/hmrc-corporation-tax">Corporation Tax</a>
+                </th>
+
+                <td><abbr title="HM Revenue and Customs">HMRC</abbr></td>
+
+                <td class="amount">
+                    &pound;16.6m
+                </td>
+
+                <td class="amount">
+                    &pound;0.95
+                </td>
+
+                <td class="amount">
+                    29.4%
+                </td>
+
+                <td class="amount">
+                    17,461,000
+                </td>
+
+            </tr>
+
+            <tr data-volume="15735129"
+                data-volumeLabel=" 15,735,129 "
+                data-category="Providing/reporting information"
+                data-body="HM Revenue and Customs"
+                data-body-abbr="HMRC"
+                data-url="http://www.gov.uk/file-your-self-assessment-tax-return"
+                data-href="/performance/transactions-explorer/service-details/hmrc-self-assessment"
+                data-label=""
+                data-title="Self Assessment"
+                data-text-color="#fff"
+                data-color="hotPink"
+                data-dept-class="HMRC"
+                >
+
+                <th scope="row">
+                    <a href="/performance/transactions-explorer/service-details/hmrc-self-assessment">Self Assessment</a>
+                </th>
+
+                <td><abbr title="HM Revenue and Customs">HMRC</abbr></td>
+
+                <td class="amount">
+                    &pound;56.2m
+                </td>
+
+                <td class="amount">
+                    &pound;3.57
+                </td>
+
+                <td class="amount">
+                    63%
+                </td>
+
+                <td class="amount">
+                    15,735,129
+                </td>
+
+            </tr>
+
+            <tr data-volume="13710000"
+                data-volumeLabel=" 13,710,000 "
+                data-category="Providing/reporting information"
+                data-body="Rural Payments Agency"
+                data-body-abbr="RPA"
+                data-url="https://www.gov.uk/cattle-tracing-online"
+                data-href="/performance/transactions-explorer/service-details/defra-cattle-tracing-system-movements"
+                data-label="Cattle movements"
+                data-title="Cattle Tracing System: movements"
+                data-text-color="#fff"
+                data-color="hotPink"
+                data-dept-class="Defra"
+                >
+
+                <th scope="row">
+                    <a href="/performance/transactions-explorer/service-details/defra-cattle-tracing-system-movements">Cattle Tracing System: movements</a>
+                </th>
+
+                <td><abbr title="Department for Environment, Food and Rural Affairs">Defra</abbr></td>
+
+                <td class="amount">
+                    &pound;14.5m
+                </td>
+
+                <td class="amount">
+                    &pound;1.06
+                </td>
+
+                <td class="amount">
+                    89.7%
+                </td>
+
+                <td class="amount">
+                    13,710,000
+                </td>
+
+            </tr>
+
+            <tr data-volume="11560000"
+                data-volumeLabel=" 11,560,000 "
+                data-category="Requesting benefits, payments or loans"
+                data-body="Department for Work and Pensions"
+                data-body-abbr="DWP"
+                data-url="https://www.gov.uk/state-pension/how-to-claim"
+                data-href="/performance/transactions-explorer/service-details/dwp-state-pension-claims-maintained"
+                data-label=""
+                data-title="State Pension: claims maintained"
+                data-text-color="#fff"
+                data-color="hotPink"
+                data-dept-class="DWP"
+                >
+
+                <th scope="row">
+                    <a href="/performance/transactions-explorer/service-details/dwp-state-pension-claims-maintained">State Pension: claims maintained</a>
+                </th>
+
+                <td><abbr title="Department for Work and Pensions">DWP</abbr></td>
+
+                <td class="amount">
+                    &pound;139m
+                </td>
+
+                <td class="amount">
+                    &pound;12.00
+                </td>
+
+                <td class="amount">
+                    0%
+                </td>
+
+                <td class="amount">
+                    11,560,000
+                </td>
+
+            </tr>
+
+            <tr data-volume="9321067"
+                data-volumeLabel=" 9,321,067 "
+                data-category="Ordering goods"
+                data-body="Land Registry"
+                data-body-abbr="HMLR"
+                data-url="http://www.landregistry.gov.uk/professional/business-e-services"
+                data-href="/performance/transactions-explorer/service-details/bis-official-copies-from-land-registry"
+                data-label="Land Registry: offical copies"
+                data-title="Official copies from Land Registry"
+                data-text-color="#fff"
+                data-color="hotPink"
+                data-dept-class="BIS"
+                >
+
+                <th scope="row">
+                    <a href="/performance/transactions-explorer/service-details/bis-official-copies-from-land-registry">Official copies from Land Registry</a>
+                </th>
+
+                <td><abbr title="Department for Business, Innovation and Skills">BIS</abbr></td>
+
+                <td class="amount">
+                    <span class="olddata" title="Data received Q4 2012; latest data not provided">&pound;32.6m*</span>
+                </td>
+
+                <td class="amount">
+                    <span class="olddata" title="Data received Q4 2012; latest data not provided">&pound;3.50*</span>
+                </td>
+
+                <td class="amount">
+                    <span class="olddata" title="Data received Q4 2012; latest data not provided">94.8%*</span>
+                </td>
+
+                <td class="amount">
+                    <span class="olddata" title="Data received Q4 2012; latest data not provided">9,321,067*</span>
+                </td>
+
+            </tr>
+
+            <tr data-volume="9131250"
+                data-volumeLabel=" 9,131,250 "
+                data-category=""
+                data-body="HM Revenue and Customs"
+                data-body-abbr="HMRC"
+                data-url=""
+                data-href="/performance/transactions-explorer/service-details/hmrc-debt-management"
+                data-label=""
+                data-title="Debt Management"
+                data-text-color="#fff"
+                data-color="hotPink"
+                data-dept-class="HMRC"
+                >
+
+                <th scope="row">
+                    <a href="/performance/transactions-explorer/service-details/hmrc-debt-management">Debt Management</a>
+                </th>
+
+                <td><abbr title="HM Revenue and Customs">HMRC</abbr></td>
+
+                <td class="amount">
+                    
+                </td>
+
+                <td class="amount">
+                    
+                </td>
+
+                <td class="amount">
+                    0%
+                </td>
+
+                <td class="amount">
+                    9,131,250
+                </td>
+
+            </tr>
+
+            <tr data-volume="9082042"
+                data-volumeLabel=" 9,082,042 "
+                data-category="Providing/reporting information"
+                data-body="HM Revenue and Customs"
+                data-body-abbr="HMRC"
+                data-url="https://www.gov.uk/national-insurance/overview"
+                data-href="/performance/transactions-explorer/service-details/hmrc-national-insurance"
+                data-label="NI"
+                data-title="National Insurance"
+                data-text-color="#fff"
+                data-color="hotPink"
+                data-dept-class="HMRC"
+                >
+
+                <th scope="row">
+                    <a href="/performance/transactions-explorer/service-details/hmrc-national-insurance">National Insurance</a>
+                </th>
+
+                <td><abbr title="HM Revenue and Customs">HMRC</abbr></td>
+
+                <td class="amount">
+                    &pound;47.3m
+                </td>
+
+                <td class="amount">
+                    &pound;5.21
+                </td>
+
+                <td class="amount">
+                    0%
+                </td>
+
+                <td class="amount">
+                    9,082,042
+                </td>
+
+            </tr>
+
+            <tr data-volume="7927933"
+                data-volumeLabel=" 7,927,933 "
+                data-category="Requesting information"
+                data-body="Driver and Vehicle Licensing Agency"
+                data-body-abbr="DVLA"
+                data-url="https://www.gov.uk/check-vehicle-tax"
+                data-href="/performance/transactions-explorer/service-details/dft-check-a-vehicles-details"
+                data-label=""
+                data-title="Check a vehicle's details"
+                data-text-color="#fff"
+                data-color="hotPink"
+                data-dept-class="DfT"
+                >
+
+                <th scope="row">
+                    <a href="/performance/transactions-explorer/service-details/dft-check-a-vehicles-details">Check a vehicle's details</a>
+                </th>
+
+                <td><abbr title="Department for Transport">DfT</abbr></td>
+
+                <td class="amount">
+                    &pound;14.1m
+                </td>
+
+                <td class="amount">
+                    &pound;1.78
+                </td>
+
+                <td class="amount">
+                    
+                </td>
+
+                <td class="amount">
+                    7,927,933
+                </td>
+
+            </tr>
+
+            <tr data-volume="6153034"
+                data-volumeLabel=" 6,153,034 "
+                data-category="Providing/reporting information"
+                data-body="Driver and Vehicle Licensing Agency"
+                data-body-abbr="DVLA"
+                data-url="https://www.gov.uk/notifying-dvla-if-you-sell-your-vehicle"
+                data-href="/performance/transactions-explorer/service-details/dft-report-change-of-ownership-of-vehicle"
+                data-label="Change of vehicle ownership"
+                data-title="Report change of ownership of vehicle"
+                data-text-color="#fff"
+                data-color="hotPink"
+                data-dept-class="DfT"
+                >
+
+                <th scope="row">
+                    <a href="/performance/transactions-explorer/service-details/dft-report-change-of-ownership-of-vehicle">Report change of ownership of vehicle</a>
+                </th>
+
+                <td><abbr title="Department for Transport">DfT</abbr></td>
+
+                <td class="amount">
+                    &pound;20.4m
+                </td>
+
+                <td class="amount">
+                    &pound;3.31
+                </td>
+
+                <td class="amount">
+                    0%
+                </td>
+
+                <td class="amount">
+                    6,153,034
+                </td>
+
+            </tr>
+
+            <tr data-volume="5365323"
+                data-volumeLabel=" 5,365,323 "
+                data-category="Requesting a licence/authorisation"
+                data-body="HM Passport Office"
+                data-body-abbr="HMPO"
+                data-url="http://www.gov.uk/apply-renew-passport"
+                data-href="/performance/transactions-explorer/service-details/home-office-passport-applications"
+                data-label=""
+                data-title="Passport applications"
+                data-text-color="#fff"
+                data-color="hotPink"
+                data-dept-class="Home Office"
+                >
+
+                <th scope="row">
+                    <a href="/performance/transactions-explorer/service-details/home-office-passport-applications">Passport applications</a>
+                </th>
+
+                <td><abbr title="Home Office">Home Office</abbr></td>
+
+                <td class="amount">
+                    &pound;319m
+                </td>
+
+                <td class="amount">
+                    &pound;59.40
+                </td>
+
+                <td class="amount">
+                    15.4%
+                </td>
+
+                <td class="amount">
+                    5,365,323
+                </td>
+
+            </tr>
+
+            <tr data-volume="5261523"
+                data-volumeLabel=" 5,261,523 "
+                data-category="Requesting a licence/authorisation"
+                data-body="Department of Health"
+                data-body-abbr="DH"
+                data-url="https://www.ehic.org.uk/"
+                data-href="/performance/transactions-explorer/service-details/dh-european-health-insurance-card-ehic-applications"
+                data-label="EHIC applications"
+                data-title="European Health Insurance Card (EHIC) applications"
+                data-text-color="#fff"
+                data-color="hotPink"
+                data-dept-class="DH"
+                >
+
+                <th scope="row">
+                    <a href="/performance/transactions-explorer/service-details/dh-european-health-insurance-card-ehic-applications">European Health Insurance Card (EHIC) applications</a>
+                </th>
+
+                <td><abbr title="Department of Health">DH</abbr></td>
+
+                <td class="amount">
+                    &pound;3.31m
+                </td>
+
+                <td class="amount">
+                    &pound;0.63
+                </td>
+
+                <td class="amount">
+                    78.4%
+                </td>
+
+                <td class="amount">
+                    5,261,523
+                </td>
+
+            </tr>
+
+            <tr data-volume="5046366"
+                data-volumeLabel=" 5,046,366 "
+                data-category="Requesting benefits, payments or loans"
+                data-body="HM Revenue and Customs"
+                data-body-abbr="HMRC"
+                data-url="https://www.gov.uk/child-benefit/overview"
+                data-href="/performance/transactions-explorer/service-details/hmrc-child-benefit"
+                data-label=""
+                data-title="Child Benefit"
+                data-text-color="#fff"
+                data-color="hotPink"
+                data-dept-class="HMRC"
+                >
+
+                <th scope="row">
+                    <a href="/performance/transactions-explorer/service-details/hmrc-child-benefit">Child Benefit</a>
+                </th>
+
+                <td><abbr title="HM Revenue and Customs">HMRC</abbr></td>
+
+                <td class="amount">
+                    &pound;26.3m
+                </td>
+
+                <td class="amount">
+                    &pound;5.21
+                </td>
+
+                <td class="amount">
+                    0%
+                </td>
+
+                <td class="amount">
+                    5,046,366
+                </td>
+
+            </tr>
+
+            <tr data-volume="4740000"
+                data-volumeLabel=" 4,740,000 "
+                data-category="Requesting benefits, payments or loans"
+                data-body="Department for Work and Pensions"
+                data-body-abbr="DWP"
+                data-url="https://www.gov.uk/crisis-loans"
+                data-href="/performance/transactions-explorer/service-details/dwp-social-fund-grants-loans"
+                data-label="Social Fund"
+                data-title="Social Fund Grants and Loans"
+                data-text-color="#fff"
+                data-color="hotPink"
+                data-dept-class="DWP"
+                >
+
+                <th scope="row">
+                    <a href="/performance/transactions-explorer/service-details/dwp-social-fund-grants-loans">Social Fund Grants and Loans</a>
+                </th>
+
+                <td><abbr title="Department for Work and Pensions">DWP</abbr></td>
+
+                <td class="amount">
+                    &pound;237m
+                </td>
+
+                <td class="amount">
+                    &pound;50.00
+                </td>
+
+                <td class="amount">
+                    0%
+                </td>
+
+                <td class="amount">
+                    4,740,000
+                </td>
+
+            </tr>
+
+            <tr data-volume="4490000"
+                data-volumeLabel=" 4,490,000 "
+                data-category="Providing/reporting information"
+                data-body="Government Digital Service"
+                data-body-abbr="GDS"
+                data-url="https://www.gov.uk/petition-government"
+                data-href="/performance/transactions-explorer/service-details/co-signing-an-e-petition"
+                data-label="e-petitions: signing"
+                data-title="Signing an e-petition"
+                data-text-color="#fff"
+                data-color="hotPink"
+                data-dept-class="CO"
+                >
+
+                <th scope="row">
+                    <a href="/performance/transactions-explorer/service-details/co-signing-an-e-petition">Signing an e-petition</a>
+                </th>
+
+                <td><abbr title="Cabinet Office">CO</abbr></td>
+
+                <td class="amount">
+                    &pound;44.9k
+                </td>
+
+                <td class="amount">
+                    &pound;0.01
+                </td>
+
+                <td class="amount">
+                    100%
+                </td>
+
+                <td class="amount">
+                    4,490,000
+                </td>
+
+            </tr>
+
+            <tr data-volume="4419947"
+                data-volumeLabel=" 4,419,947 "
+                data-category="Requesting benefits, payments or loans"
+                data-body="Department of Health"
+                data-body-abbr="DH"
+                data-url="http://www.healthystart.nhs.uk/"
+                data-href="/performance/transactions-explorer/service-details/dh-healthy-start-reimbursements"
+                data-label=""
+                data-title="Healthy Start reimbursements"
+                data-text-color="#fff"
+                data-color="hotPink"
+                data-dept-class="DH"
+                >
+
+                <th scope="row">
+                    <a href="/performance/transactions-explorer/service-details/dh-healthy-start-reimbursements">Healthy Start reimbursements</a>
+                </th>
+
+                <td><abbr title="Department of Health">DH</abbr></td>
+
+                <td class="amount">
+                    &pound;707k
+                </td>
+
+                <td class="amount">
+                    &pound;0.16
+                </td>
+
+                <td class="amount">
+                    
+                </td>
+
+                <td class="amount">
+                    4,419,947
+                </td>
+
+            </tr>
+
+            <tr data-volume="4278901"
+                data-volumeLabel=" 4,278,901 "
+                data-category="Providing/reporting information"
+                data-body="Driver and Vehicle Licensing Agency"
+                data-body-abbr="DVLA"
+                data-url="https://www.gov.uk/renew-driving-licence"
+                data-href="/performance/transactions-explorer/service-details/dft-renew-driving-licence"
+                data-label=""
+                data-title="Renew driving licence"
+                data-text-color="#fff"
+                data-color="hotPink"
+                data-dept-class="DfT"
+                >
+
+                <th scope="row">
+                    <a href="/performance/transactions-explorer/service-details/dft-renew-driving-licence">Renew driving licence</a>
+                </th>
+
+                <td><abbr title="Department for Transport">DfT</abbr></td>
+
+                <td class="amount">
+                    &pound;14.1m
+                </td>
+
+                <td class="amount">
+                    &pound;3.29
+                </td>
+
+                <td class="amount">
+                    19%
+                </td>
+
+                <td class="amount">
+                    4,278,901
+                </td>
+
+            </tr>
+
+            <tr data-volume="4223315"
+                data-volumeLabel=" 4,223,315 "
+                data-category="Providing/reporting information"
+                data-body="Driver and Vehicle Licensing Agency"
+                data-body-abbr="DVLA"
+                data-url="https://www.gov.uk/register-sorn-statutory-off-road-notification"
+                data-href="/performance/transactions-explorer/service-details/dft-request-statutory-off-road-notice-sorn"
+                data-label="SORN"
+                data-title="Request statutory off-road notice (SORN)"
+                data-text-color="#fff"
+                data-color="hotPink"
+                data-dept-class="DfT"
+                >
+
+                <th scope="row">
+                    <a href="/performance/transactions-explorer/service-details/dft-request-statutory-off-road-notice-sorn">Request statutory off-road notice (SORN)</a>
+                </th>
+
+                <td><abbr title="Department for Transport">DfT</abbr></td>
+
+                <td class="amount">
+                    &pound;2.79m
+                </td>
+
+                <td class="amount">
+                    &pound;0.66
+                </td>
+
+                <td class="amount">
+                    83.5%
+                </td>
+
+                <td class="amount">
+                    4,223,315
+                </td>
+
+            </tr>
+
+            <tr data-volume="3847098"
+                data-volumeLabel=" 3,847,098 "
+                data-category="Requesting information"
+                data-body="Land Registry"
+                data-body-abbr="HMLR"
+                data-url="http://www.landregistry.gov.uk/professional/business-e-services"
+                data-href="/performance/transactions-explorer/service-details/bis-title-register-views"
+                data-label=""
+                data-title="Title register views"
+                data-text-color="#fff"
+                data-color="hotPink"
+                data-dept-class="BIS"
+                >
+
+                <th scope="row">
+                    <a href="/performance/transactions-explorer/service-details/bis-title-register-views">Title register views</a>
+                </th>
+
+                <td><abbr title="Department for Business, Innovation and Skills">BIS</abbr></td>
+
+                <td class="amount">
+                    <span class="olddata" title="Data received Q4 2012; latest data not provided">&pound;5.89m*</span>
+                </td>
+
+                <td class="amount">
+                    <span class="olddata" title="Data received Q4 2012; latest data not provided">&pound;1.53*</span>
+                </td>
+
+                <td class="amount">
+                    <span class="olddata" title="Data received Q4 2012; latest data not provided">100%*</span>
+                </td>
+
+                <td class="amount">
+                    <span class="olddata" title="Data received Q4 2012; latest data not provided">3,847,098*</span>
+                </td>
+
+            </tr>
+
+            <tr data-volume="3618015"
+                data-volumeLabel=" 3,618,015 "
+                data-category="Requesting information"
+                data-body="Driver and Vehicle Licensing Agency"
+                data-body-abbr="DVLA"
+                data-url=""
+                data-href="/performance/transactions-explorer/service-details/dft-check-other-drivers-details"
+                data-label=""
+                data-title="Check other drivers' details"
+                data-text-color="#fff"
+                data-color="hotPink"
+                data-dept-class="DfT"
+                >
+
+                <th scope="row">
+                    <a href="/performance/transactions-explorer/service-details/dft-check-other-drivers-details">Check other drivers' details</a>
+                </th>
+
+                <td><abbr title="Department for Transport">DfT</abbr></td>
+
+                <td class="amount">
+                    &pound;7.67m
+                </td>
+
+                <td class="amount">
+                    &pound;2.12
+                </td>
+
+                <td class="amount">
+                    78.4%
+                </td>
+
+                <td class="amount">
+                    3,618,015
+                </td>
+
+            </tr>
+
+            <tr data-volume="3550332"
+                data-volumeLabel=" 3,550,332 "
+                data-category="Providing/reporting information"
+                data-body="HM Revenue and Customs"
+                data-body-abbr="HMRC"
+                data-url="http://www.hmrc.gov.uk/cis/"
+                data-href="/performance/transactions-explorer/service-details/hmrc-construction-industry-scheme"
+                data-label="CIS"
+                data-title="Construction Industry Scheme"
+                data-text-color="#fff"
+                data-color="hotPink"
+                data-dept-class="HMRC"
+                >
+
+                <th scope="row">
+                    <a href="/performance/transactions-explorer/service-details/hmrc-construction-industry-scheme">Construction Industry Scheme</a>
+                </th>
+
+                <td><abbr title="HM Revenue and Customs">HMRC</abbr></td>
+
+                <td class="amount">
+                    &pound;4.58m
+                </td>
+
+                <td class="amount">
+                    &pound;1.29
+                </td>
+
+                <td class="amount">
+                    69.9%
+                </td>
+
+                <td class="amount">
+                    3,550,332
+                </td>
+
+            </tr>
+
+            <tr data-volume="3404261"
+                data-volumeLabel=" 3,404,261 "
+                data-category="Providing/reporting information"
+                data-body="Land Registry"
+                data-body-abbr="HMLR"
+                data-url="http://www.landregistry.gov.uk/professional/business-e-services"
+                data-href="/performance/transactions-explorer/service-details/bis-land-register-updates-including-transfers-of-ownership"
+                data-label="Land Register: updates"
+                data-title="Land Register updates (including transfers of ownership)"
+                data-text-color="#fff"
+                data-color="hotPink"
+                data-dept-class="BIS"
+                >
+
+                <th scope="row">
+                    <a href="/performance/transactions-explorer/service-details/bis-land-register-updates-including-transfers-of-ownership">Land Register updates (including transfers of ownership)</a>
+                </th>
+
+                <td><abbr title="Department for Business, Innovation and Skills">BIS</abbr></td>
+
+                <td class="amount">
+                    <span class="olddata" title="Data received Q4 2012; latest data not provided">&pound;96.1m*</span>
+                </td>
+
+                <td class="amount">
+                    <span class="olddata" title="Data received Q4 2012; latest data not provided">&pound;28.23*</span>
+                </td>
+
+                <td class="amount">
+                    <span class="olddata" title="Data received Q4 2012; latest data not provided">30%*</span>
+                </td>
+
+                <td class="amount">
+                    <span class="olddata" title="Data received Q4 2012; latest data not provided">3,404,261*</span>
+                </td>
+
+            </tr>
+
+            <tr data-volume="3326302"
+                data-volumeLabel=" 3,326,302 "
+                data-category="Requesting a licence/authorisation"
+                data-body="UK Border Agency"
+                data-body-abbr="UKBA"
+                data-url="http://www.gov.uk/uk-visa"
+                data-href="/performance/transactions-explorer/service-details/home-office-visas-immigration-applications"
+                data-label="Visa applications"
+                data-title="Visas and immigration applications"
+                data-text-color="#fff"
+                data-color="hotPink"
+                data-dept-class="Home Office"
+                >
+
+                <th scope="row">
+                    <a href="/performance/transactions-explorer/service-details/home-office-visas-immigration-applications">Visas and immigration applications</a>
+                </th>
+
+                <td><abbr title="Home Office">Home Office</abbr></td>
+
+                <td class="amount">
+                    &pound;605m
+                </td>
+
+                <td class="amount">
+                    &pound;182
+                </td>
+
+                <td class="amount">
+                    68.1%
+                </td>
+
+                <td class="amount">
+                    3,326,302
+                </td>
+
+            </tr>
+
+            <tr data-volume="3280000"
+                data-volumeLabel=" 3,280,000 "
+                data-category="Requesting benefits, payments or loans"
+                data-body="Department for Work and Pensions"
+                data-body-abbr="DWP"
+                data-url="https://www.gov.uk/dla-disability-living-allowance-benefit"
+                data-href="/performance/transactions-explorer/service-details/dwp-disability-living-allowance-dla-claims-maintained"
+                data-label="DLA claims maintained"
+                data-title="Disability Living Allowance (DLA): claims maintained"
+                data-text-color="#fff"
+                data-color="hotPink"
+                data-dept-class="DWP"
+                >
+
+                <th scope="row">
+                    <a href="/performance/transactions-explorer/service-details/dwp-disability-living-allowance-dla-claims-maintained">Disability Living Allowance (DLA): claims maintained</a>
+                </th>
+
+                <td><abbr title="Department for Work and Pensions">DWP</abbr></td>
+
+                <td class="amount">
+                    &pound;78.7m
+                </td>
+
+                <td class="amount">
+                    &pound;24.00
+                </td>
+
+                <td class="amount">
+                    0%
+                </td>
+
+                <td class="amount">
+                    3,280,000
+                </td>
+
+            </tr>
+
+            <tr data-volume="3210000"
+                data-volumeLabel=" 3,210,000 "
+                data-category="Requesting benefits, payments or loans"
+                data-body="Department for Work and Pensions"
+                data-body-abbr="DWP"
+                data-url="https://www.dwpe-services.direct.gov.uk/portal/page/portal/jsaol/lp"
+                data-href="/performance/transactions-explorer/service-details/dwp-jobseekers-allowance-jsa-new-claims"
+                data-label="JSA new claims"
+                data-title="Jobseeker's Allowance (JSA): new claims"
+                data-text-color="#fff"
+                data-color="hotPink"
+                data-dept-class="DWP"
+                >
+
+                <th scope="row">
+                    <a href="/performance/transactions-explorer/service-details/dwp-jobseekers-allowance-jsa-new-claims">Jobseeker's Allowance (JSA): new claims</a>
+                </th>
+
+                <td><abbr title="Department for Work and Pensions">DWP</abbr></td>
+
+                <td class="amount">
+                    &pound;225m
+                </td>
+
+                <td class="amount">
+                    &pound;70.00
+                </td>
+
+                <td class="amount">
+                    38.8%
+                </td>
+
+                <td class="amount">
+                    3,210,000
+                </td>
+
+            </tr>
+
+            <tr data-volume="2952947"
+                data-volumeLabel=" 2,952,947 "
+                data-category=""
+                data-body="Driver and Vehicle Licensing Agency"
+                data-body-abbr="DVLA"
+                data-url="https://www.gov.uk/apply-for-tax-disc-refund-form-v14"
+                data-href="/performance/transactions-explorer/service-details/dft-request-vehicle-tax-refund"
+                data-label="Vehicle tax refunds"
+                data-title="Request vehicle tax refund"
+                data-text-color="#fff"
+                data-color="hotPink"
+                data-dept-class="DfT"
+                >
+
+                <th scope="row">
+                    <a href="/performance/transactions-explorer/service-details/dft-request-vehicle-tax-refund">Request vehicle tax refund</a>
+                </th>
+
+                <td><abbr title="Department for Transport">DfT</abbr></td>
+
+                <td class="amount">
+                    &pound;7.23m
+                </td>
+
+                <td class="amount">
+                    &pound;2.45
+                </td>
+
+                <td class="amount">
+                    0%
+                </td>
+
+                <td class="amount">
+                    2,952,947
+                </td>
+
+            </tr>
+
+            <tr data-volume="2516362"
+                data-volumeLabel=" 2,516,362 "
+                data-category="Requesting a licence/authorisation"
+                data-body="Driver and Vehicle Licensing Agency"
+                data-body-abbr="DVLA"
+                data-url="https://www.gov.uk/vehicle-registration"
+                data-href="/performance/transactions-explorer/service-details/dft-register-a-vehicle"
+                data-label=""
+                data-title="Register a vehicle"
+                data-text-color="#fff"
+                data-color="hotPink"
+                data-dept-class="DfT"
+                >
+
+                <th scope="row">
+                    <a href="/performance/transactions-explorer/service-details/dft-register-a-vehicle">Register a vehicle</a>
+                </th>
+
+                <td><abbr title="Department for Transport">DfT</abbr></td>
+
+                <td class="amount">
+                    &pound;6.09m
+                </td>
+
+                <td class="amount">
+                    &pound;2.42
+                </td>
+
+                <td class="amount">
+                    93.3%
+                </td>
+
+                <td class="amount">
+                    2,516,362
+                </td>
+
+            </tr>
+
+            <tr data-volume="2510000"
+                data-volumeLabel=" 2,510,000 "
+                data-category="Requesting benefits, payments or loans"
+                data-body="Department for Work and Pensions"
+                data-body-abbr="DWP"
+                data-url="https://www.gov.uk/pension-credit"
+                data-href="/performance/transactions-explorer/service-details/dwp-pension-credit-claims-maintained"
+                data-label=""
+                data-title="Pension Credit: claims maintained"
+                data-text-color="#fff"
+                data-color="hotPink"
+                data-dept-class="DWP"
+                >
+
+                <th scope="row">
+                    <a href="/performance/transactions-explorer/service-details/dwp-pension-credit-claims-maintained">Pension Credit: claims maintained</a>
+                </th>
+
+                <td><abbr title="Department for Work and Pensions">DWP</abbr></td>
+
+                <td class="amount">
+                    &pound;141m
+                </td>
+
+                <td class="amount">
+                    &pound;56.00
+                </td>
+
+                <td class="amount">
+                    0%
+                </td>
+
+                <td class="amount">
+                    2,510,000
+                </td>
+
+            </tr>
+
+            <tr data-volume="2500000"
+                data-volumeLabel=" 2,500,000 "
+                data-category="Requesting benefits, payments or loans"
+                data-body="Department for Work and Pensions"
+                data-body-abbr="DWP"
+                data-url="https://www.gov.uk/employment-support-allowance/eligibility"
+                data-href="/performance/transactions-explorer/service-details/dwp-incapacity-benefit-employment-support-allowance-esa-claims-maintained"
+                data-label="Incapacity Benefit/ESA: claims maintained"
+                data-title="Incapacity Benefit/ Employment and Support Allowance (ESA): claims maintained"
+                data-text-color="#fff"
+                data-color="hotPink"
+                data-dept-class="DWP"
+                >
+
+                <th scope="row">
+                    <a href="/performance/transactions-explorer/service-details/dwp-incapacity-benefit-employment-support-allowance-esa-claims-maintained">Incapacity Benefit/ Employment and Support Allowance (ESA): claims maintained</a>
+                </th>
+
+                <td><abbr title="Department for Work and Pensions">DWP</abbr></td>
+
+                <td class="amount">
+                    &pound;440m
+                </td>
+
+                <td class="amount">
+                    &pound;176
+                </td>
+
+                <td class="amount">
+                    0%
+                </td>
+
+                <td class="amount">
+                    2,500,000
+                </td>
+
+            </tr>
+
+            <tr data-volume="2468832"
+                data-volumeLabel=" 2,468,832 "
+                data-category="Providing/reporting information"
+                data-body="Driver and Vehicle Licensing Agency"
+                data-body-abbr="DVLA"
+                data-url="https://www.gov.uk/change-address-driving-licence"
+                data-href="/performance/transactions-explorer/service-details/dft-amend-driving-licence-details"
+                data-label=""
+                data-title="Amend driving licence details"
+                data-text-color="#fff"
+                data-color="hotPink"
+                data-dept-class="DfT"
+                >
+
+                <th scope="row">
+                    <a href="/performance/transactions-explorer/service-details/dft-amend-driving-licence-details">Amend driving licence details</a>
+                </th>
+
+                <td><abbr title="Department for Transport">DfT</abbr></td>
+
+                <td class="amount">
+                    &pound;7.80m
+                </td>
+
+                <td class="amount">
+                    &pound;3.16
+                </td>
+
+                <td class="amount">
+                    25.6%
+                </td>
+
+                <td class="amount">
+                    2,468,832
+                </td>
+
+            </tr>
+
+            <tr data-volume="2440000"
+                data-volumeLabel=" 2,440,000 "
+                data-category="Registering"
+                data-body="Department for Work and Pensions"
+                data-body-abbr="DWP"
+                data-url="https://www.gov.uk/jobsearch"
+                data-href="/performance/transactions-explorer/service-details/dwp-universal-jobmatch-accounts-created"
+                data-label=""
+                data-title="Universal Jobmatch: accounts created"
+                data-text-color="#fff"
+                data-color="hotPink"
+                data-dept-class="DWP"
+                >
+
+                <th scope="row">
+                    <a href="/performance/transactions-explorer/service-details/dwp-universal-jobmatch-accounts-created">Universal Jobmatch: accounts created</a>
+                </th>
+
+                <td><abbr title="Department for Work and Pensions">DWP</abbr></td>
+
+                <td class="amount">
+                    
+                </td>
+
+                <td class="amount">
+                    
+                </td>
+
+                <td class="amount">
+                    100%
+                </td>
+
+                <td class="amount">
+                    2,440,000
+                </td>
+
+            </tr>
+
+            <tr data-volume="2420000"
+                data-volumeLabel=" 2,420,000 "
+                data-category="Providing/reporting information"
+                data-body="Department for Work and Pensions"
+                data-body-abbr="DWP"
+                data-url="https://www.gov.uk/jobsearch"
+                data-href="/performance/transactions-explorer/service-details/dwp-universal-jobmatch-cv-uploads"
+                data-label="CV uploads"
+                data-title="Universal Jobmatch: CV uploads"
+                data-text-color="#fff"
+                data-color="hotPink"
+                data-dept-class="DWP"
+                >
+
+                <th scope="row">
+                    <a href="/performance/transactions-explorer/service-details/dwp-universal-jobmatch-cv-uploads">Universal Jobmatch: CV uploads</a>
+                </th>
+
+                <td><abbr title="Department for Work and Pensions">DWP</abbr></td>
+
+                <td class="amount">
+                    
+                </td>
+
+                <td class="amount">
+                    
+                </td>
+
+                <td class="amount">
+                    100%
+                </td>
+
+                <td class="amount">
+                    2,420,000
+                </td>
+
+            </tr>
+
+            <tr data-volume="2386535"
+                data-volumeLabel=" 2,386,535 "
+                data-category="Providing/reporting information"
+                data-body="Companies House"
+                data-body-abbr=""
+                data-url="http://www.gov.uk/file-an-annual-return-with-companies-house"
+                data-href="/performance/transactions-explorer/service-details/bis-annual-returns"
+                data-label=""
+                data-title="Annual returns"
+                data-text-color="#fff"
+                data-color="hotPink"
+                data-dept-class="BIS"
+                >
+
+                <th scope="row">
+                    <a href="/performance/transactions-explorer/service-details/bis-annual-returns">Annual returns</a>
+                </th>
+
+                <td><abbr title="Department for Business, Innovation and Skills">BIS</abbr></td>
+
+                <td class="amount">
+                    &pound;6.20m
+                </td>
+
+                <td class="amount">
+                    &pound;2.60
+                </td>
+
+                <td class="amount">
+                    97.9%
+                </td>
+
+                <td class="amount">
+                    2,386,535
+                </td>
+
+            </tr>
+
+            <tr data-volume="2176312"
+                data-volumeLabel=" 2,176,312 "
+                data-category="Providing/reporting information"
+                data-body="Companies House"
+                data-body-abbr=""
+                data-url="http://www.gov.uk/file-your-company-accounts-and-tax-return"
+                data-href="/performance/transactions-explorer/service-details/bis-accounts-filing"
+                data-label=""
+                data-title="Accounts filing"
+                data-text-color="#fff"
+                data-color="hotPink"
+                data-dept-class="BIS"
+                >
+
+                <th scope="row">
+                    <a href="/performance/transactions-explorer/service-details/bis-accounts-filing">Accounts filing</a>
+                </th>
+
+                <td><abbr title="Department for Business, Innovation and Skills">BIS</abbr></td>
+
+                <td class="amount">
+                    &pound;17.5m
+                </td>
+
+                <td class="amount">
+                    &pound;8.02
+                </td>
+
+                <td class="amount">
+                    50.1%
+                </td>
+
+                <td class="amount">
+                    2,176,312
+                </td>
+
+            </tr>
+
+            <tr data-volume="2164642"
+                data-volumeLabel=" 2,164,642 "
+                data-category="Providing/reporting information"
+                data-body="Companies House"
+                data-body-abbr=""
+                data-url="http://www.companieshouse.gov.uk/"
+                data-href="/performance/transactions-explorer/service-details/bis-other-document-filing-filing-transactions"
+                data-label="Other document filing"
+                data-title="Other document filing (filing transactions)"
+                data-text-color="#fff"
+                data-color="hotPink"
+                data-dept-class="BIS"
+                >
+
+                <th scope="row">
+                    <a href="/performance/transactions-explorer/service-details/bis-other-document-filing-filing-transactions">Other document filing (filing transactions)</a>
+                </th>
+
+                <td><abbr title="Department for Business, Innovation and Skills">BIS</abbr></td>
+
+                <td class="amount">
+                    &pound;8.16m
+                </td>
+
+                <td class="amount">
+                    &pound;3.77
+                </td>
+
+                <td class="amount">
+                    87.6%
+                </td>
+
+                <td class="amount">
+                    2,164,642
+                </td>
+
+            </tr>
+
+            <tr data-volume="2144906"
+                data-volumeLabel=" 2,144,906 "
+                data-category=""
+                data-body="HM Revenue and Customs"
+                data-body-abbr="HMRC"
+                data-url=""
+                data-href="/performance/transactions-explorer/service-details/hmrc-kana"
+                data-label=""
+                data-title="KANA"
+                data-text-color="#fff"
+                data-color="hotPink"
+                data-dept-class="HMRC"
+                >
+
+                <th scope="row">
+                    <a href="/performance/transactions-explorer/service-details/hmrc-kana">KANA</a>
+                </th>
+
+                <td><abbr title="HM Revenue and Customs">HMRC</abbr></td>
+
+                <td class="amount">
+                    &pound;214k
+                </td>
+
+                <td class="amount">
+                    &pound;0.10
+                </td>
+
+                <td class="amount">
+                    100%
+                </td>
+
+                <td class="amount">
+                    2,144,906
+                </td>
+
+            </tr>
+
+            <tr data-volume="2048639"
+                data-volumeLabel=" 2,048,639 "
+                data-category="Providing/reporting information"
+                data-body="Driver and Vehicle Licensing Agency"
+                data-body-abbr="DVLA"
+                data-url="https://www.gov.uk/penalty-points-endorsements"
+                data-href="/performance/transactions-explorer/service-details/dft-amend-or-remove-endorsements-or-fixed-penalty-details"
+                data-label="Amend driving endorsements and penalties"
+                data-title="Amend or remove endorsements or fixed penalty details"
+                data-text-color="#fff"
+                data-color="hotPink"
+                data-dept-class="DfT"
+                >
+
+                <th scope="row">
+                    <a href="/performance/transactions-explorer/service-details/dft-amend-or-remove-endorsements-or-fixed-penalty-details">Amend or remove endorsements or fixed penalty details</a>
+                </th>
+
+                <td><abbr title="Department for Transport">DfT</abbr></td>
+
+                <td class="amount">
+                    &pound;4.18m
+                </td>
+
+                <td class="amount">
+                    &pound;2.04
+                </td>
+
+                <td class="amount">
+                    83.4%
+                </td>
+
+                <td class="amount">
+                    2,048,639
+                </td>
+
+            </tr>
+
+            <tr data-volume="1900000"
+                data-volumeLabel=" 1,900,000 "
+                data-category="Making a payment (taxes and fines)"
+                data-body="HM Courts & Tribunals Service"
+                data-body-abbr="HMCTS"
+                data-url="http://www.gov.uk/pay-court-fine-online"
+                data-href="/performance/transactions-explorer/service-details/moj-court-fine-payments"
+                data-label="Court fines"
+                data-title="Court fine payments   "
+                data-text-color="#fff"
+                data-color="hotPink"
+                data-dept-class="MoJ"
+                >
+
+                <th scope="row">
+                    <a href="/performance/transactions-explorer/service-details/moj-court-fine-payments">Court fine payments   </a>
+                </th>
+
+                <td><abbr title="Ministry of Justice">MoJ</abbr></td>
+
+                <td class="amount">
+                    
+                </td>
+
+                <td class="amount">
+                    
+                </td>
+
+                <td class="amount">
+                    
+                </td>
+
+                <td class="amount">
+                    1,900,000
+                </td>
+
+            </tr>
+
+            <tr data-volume="1877051"
+                data-volumeLabel=" 1,877,051 "
+                data-category="Booking an appointment"
+                data-body="Driving Standards Agency"
+                data-body-abbr="DSA"
+                data-url="https://www.gov.uk/book-practical-driving-test"
+                data-href="/performance/transactions-explorer/service-details/dft-book-practical-driving-test"
+                data-label=""
+                data-title="Book practical driving test"
+                data-text-color="#fff"
+                data-color="hotPink"
+                data-dept-class="DfT"
+                >
+
+                <th scope="row">
+                    <a href="/performance/transactions-explorer/service-details/dft-book-practical-driving-test">Book practical driving test</a>
+                </th>
+
+                <td><abbr title="Department for Transport">DfT</abbr></td>
+
+                <td class="amount">
+                    &pound;2.31m
+                </td>
+
+                <td class="amount">
+                    &pound;1.23
+                </td>
+
+                <td class="amount">
+                    81.5%
+                </td>
+
+                <td class="amount">
+                    1,877,051
+                </td>
+
+            </tr>
+
+            <tr data-volume="1873478"
+                data-volumeLabel=" 1,873,478 "
+                data-category="Requesting information"
+                data-body="Companies House"
+                data-body-abbr=""
+                data-url="http://www.companieshouse.gov.uk/"
+                data-href="/performance/transactions-explorer/service-details/bis-director-mortgage-detail-searches"
+                data-label="Director and mortgage searches"
+                data-title="Director and mortgage detail searches"
+                data-text-color="#fff"
+                data-color="hotPink"
+                data-dept-class="BIS"
+                >
+
+                <th scope="row">
+                    <a href="/performance/transactions-explorer/service-details/bis-director-mortgage-detail-searches">Director and mortgage detail searches</a>
+                </th>
+
+                <td><abbr title="Department for Business, Innovation and Skills">BIS</abbr></td>
+
+                <td class="amount">
+                    &pound;1.87m
+                </td>
+
+                <td class="amount">
+                    &pound;1.00
+                </td>
+
+                <td class="amount">
+                    100%
+                </td>
+
+                <td class="amount">
+                    1,873,478
+                </td>
+
+            </tr>
+
+            <tr data-volume="1871310"
+                data-volumeLabel=" 1,871,310 "
+                data-category="Requesting a licence/authorisation"
+                data-body="HM Revenue and Customs"
+                data-body-abbr="HMRC"
+                data-url=""
+                data-href="/performance/transactions-explorer/service-details/hmrc-agent-authorisation"
+                data-label=""
+                data-title="Agent Authorisation"
+                data-text-color="#fff"
+                data-color="hotPink"
+                data-dept-class="HMRC"
+                >
+
+                <th scope="row">
+                    <a href="/performance/transactions-explorer/service-details/hmrc-agent-authorisation">Agent Authorisation</a>
+                </th>
+
+                <td><abbr title="HM Revenue and Customs">HMRC</abbr></td>
+
+                <td class="amount">
+                    &pound;11.8m
+                </td>
+
+                <td class="amount">
+                    &pound;6.30
+                </td>
+
+                <td class="amount">
+                    25.3%
+                </td>
+
+                <td class="amount">
+                    1,871,310
+                </td>
+
+            </tr>
+
+            <tr data-volume="1764632"
+                data-volumeLabel=" 1,764,632 "
+                data-category="Providing/reporting information"
+                data-body="Driver and Vehicle Licensing Agency"
+                data-body-abbr="DVLA"
+                data-url="https://www.gov.uk/record-driver-cpc-training-you-deliver"
+                data-href="/performance/transactions-explorer/service-details/dft-create-or-update-driver-certificate-of-professional-competence-cpc-records"
+                data-label="Update CPC records"
+                data-title="Create or update driver Certificate of Professional Competence (CPC) records"
+                data-text-color="#fff"
+                data-color="hotPink"
+                data-dept-class="DfT"
+                >
+
+                <th scope="row">
+                    <a href="/performance/transactions-explorer/service-details/dft-create-or-update-driver-certificate-of-professional-competence-cpc-records">Create or update driver Certificate of Professional Competence (CPC) records</a>
+                </th>
+
+                <td><abbr title="Department for Transport">DfT</abbr></td>
+
+                <td class="amount">
+                    &pound;4.76m
+                </td>
+
+                <td class="amount">
+                    &pound;2.70
+                </td>
+
+                <td class="amount">
+                    86.9%
+                </td>
+
+                <td class="amount">
+                    1,764,632
+                </td>
+
+            </tr>
+
+            <tr data-volume="1733839"
+                data-volumeLabel=" 1,733,839 "
+                data-category="Requesting information"
+                data-body="Land Registry"
+                data-body-abbr="HMLR"
+                data-url="https://www.gov.uk/search-property-information-land-registry"
+                data-href="/performance/transactions-explorer/service-details/bis-search-of-whole-land-registry"
+                data-label="Search of whole"
+                data-title="Search of whole (Land Registry)"
+                data-text-color="#fff"
+                data-color="hotPink"
+                data-dept-class="BIS"
+                >
+
+                <th scope="row">
+                    <a href="/performance/transactions-explorer/service-details/bis-search-of-whole-land-registry">Search of whole (Land Registry)</a>
+                </th>
+
+                <td><abbr title="Department for Business, Innovation and Skills">BIS</abbr></td>
+
+                <td class="amount">
+                    <span class="olddata" title="Data received Q4 2012; latest data not provided">&pound;4.58m*</span>
+                </td>
+
+                <td class="amount">
+                    <span class="olddata" title="Data received Q4 2012; latest data not provided">&pound;2.64*</span>
+                </td>
+
+                <td class="amount">
+                    <span class="olddata" title="Data received Q4 2012; latest data not provided">95.1%*</span>
+                </td>
+
+                <td class="amount">
+                    <span class="olddata" title="Data received Q4 2012; latest data not provided">1,733,839*</span>
+                </td>
+
+            </tr>
+
+            <tr data-volume="1700000"
+                data-volumeLabel=" 1,700,000 "
+                data-category="Requesting benefits, payments or loans"
+                data-body="Department for Work and Pensions"
+                data-body-abbr="DWP"
+                data-url="https://www.gov.uk/attendance-allowance"
+                data-href="/performance/transactions-explorer/service-details/dwp-attendance-allowance-claims-maintained"
+                data-label="AA: claims maintained"
+                data-title="Attendance Allowance: claims maintained"
+                data-text-color="#fff"
+                data-color="hotPink"
+                data-dept-class="DWP"
+                >
+
+                <th scope="row">
+                    <a href="/performance/transactions-explorer/service-details/dwp-attendance-allowance-claims-maintained">Attendance Allowance: claims maintained</a>
+                </th>
+
+                <td><abbr title="Department for Work and Pensions">DWP</abbr></td>
+
+                <td class="amount">
+                    &pound;25.5m
+                </td>
+
+                <td class="amount">
+                    &pound;15.00
+                </td>
+
+                <td class="amount">
+                    0%
+                </td>
+
+                <td class="amount">
+                    1,700,000
+                </td>
+
+            </tr>
+
+            <tr data-volume="1636205"
+                data-volumeLabel=" 1,636,205 "
+                data-category="Requesting information"
+                data-body="Land Registry"
+                data-body-abbr="HMLR"
+                data-url="http://www.landregistry.gov.uk/professional/business-e-services"
+                data-href="/performance/transactions-explorer/service-details/bis-search-of-the-index-map-land-registry"
+                data-label="Search of the index map"
+                data-title="Search of the index map (Land Registry)"
+                data-text-color="#fff"
+                data-color="hotPink"
+                data-dept-class="BIS"
+                >
+
+                <th scope="row">
+                    <a href="/performance/transactions-explorer/service-details/bis-search-of-the-index-map-land-registry">Search of the index map (Land Registry)</a>
+                </th>
+
+                <td><abbr title="Department for Business, Innovation and Skills">BIS</abbr></td>
+
+                <td class="amount">
+                    <span class="olddata" title="Data received Q4 2012; latest data not provided">&pound;15.2m*</span>
+                </td>
+
+                <td class="amount">
+                    <span class="olddata" title="Data received Q4 2012; latest data not provided">&pound;9.28*</span>
+                </td>
+
+                <td class="amount">
+                    <span class="olddata" title="Data received Q4 2012; latest data not provided">64.8%*</span>
+                </td>
+
+                <td class="amount">
+                    <span class="olddata" title="Data received Q4 2012; latest data not provided">1,636,205*</span>
+                </td>
+
+            </tr>
+
+            <tr data-volume="1616758"
+                data-volumeLabel=" 1,616,758 "
+                data-category="Booking an appointment"
+                data-body="Driving Standards Agency"
+                data-body-abbr="DSA"
+                data-url="https://www.gov.uk/book-a-driving-theory-test"
+                data-href="/performance/transactions-explorer/service-details/dft-book-theory-driving-test"
+                data-label=""
+                data-title="Book theory driving test"
+                data-text-color="#fff"
+                data-color="hotPink"
+                data-dept-class="DfT"
+                >
+
+                <th scope="row">
+                    <a href="/performance/transactions-explorer/service-details/dft-book-theory-driving-test">Book theory driving test</a>
+                </th>
+
+                <td><abbr title="Department for Transport">DfT</abbr></td>
+
+                <td class="amount">
+                    
+                </td>
+
+                <td class="amount">
+                    
+                </td>
+
+                <td class="amount">
+                    92.4%
+                </td>
+
+                <td class="amount">
+                    1,616,758
+                </td>
+
+            </tr>
+
+            <tr data-volume="1563900"
+                data-volumeLabel=" 1,563,900 "
+                data-category="Providing/reporting information"
+                data-body="Skills Funding Agency"
+                data-body-abbr=""
+                data-url="http://www.learningrecordsservice.org.uk/products/lrs/"
+                data-href="/performance/transactions-explorer/service-details/bis-create-unique-learner-number-uln"
+                data-label="Create unique learner number"
+                data-title="Create unique learner number (ULN)"
+                data-text-color="#fff"
+                data-color="hotPink"
+                data-dept-class="BIS"
+                >
+
+                <th scope="row">
+                    <a href="/performance/transactions-explorer/service-details/bis-create-unique-learner-number-uln">Create unique learner number (ULN)</a>
+                </th>
+
+                <td><abbr title="Department for Business, Innovation and Skills">BIS</abbr></td>
+
+                <td class="amount">
+                    
+                </td>
+
+                <td class="amount">
+                    
+                </td>
+
+                <td class="amount">
+                    
+                </td>
+
+                <td class="amount">
+                    <span class="olddata" title="Data received Q1 2013; latest data not provided">1,563,900*</span>
+                </td>
+
+            </tr>
+
+            <tr data-volume="1548094"
+                data-volumeLabel=" 1,548,094 "
+                data-category="Providing/reporting information"
+                data-body="Driver and Vehicle Licensing Agency"
+                data-body-abbr="DVLA"
+                data-url=""
+                data-href="/performance/transactions-explorer/service-details/dft-report-destroyed-or-seriously-damaged-vehicle"
+                data-label=""
+                data-title="Report destroyed or seriously damaged vehicle"
+                data-text-color="#fff"
+                data-color="hotPink"
+                data-dept-class="DfT"
+                >
+
+                <th scope="row">
+                    <a href="/performance/transactions-explorer/service-details/dft-report-destroyed-or-seriously-damaged-vehicle">Report destroyed or seriously damaged vehicle</a>
+                </th>
+
+                <td><abbr title="Department for Transport">DfT</abbr></td>
+
+                <td class="amount">
+                    &pound;2.71m
+                </td>
+
+                <td class="amount">
+                    &pound;1.75
+                </td>
+
+                <td class="amount">
+                    96.4%
+                </td>
+
+                <td class="amount">
+                    1,548,094
+                </td>
+
+            </tr>
+
+            <tr data-volume="1500000"
+                data-volumeLabel=" 1,500,000 "
+                data-category="Booking an appointment"
+                data-body="National Offender Management Service"
+                data-body-abbr="NOMS"
+                data-url=""
+                data-href="/performance/transactions-explorer/service-details/moj-prison-visit-booking"
+                data-label="Prison appointments"
+                data-title="Prison visit booking"
+                data-text-color="#fff"
+                data-color="hotPink"
+                data-dept-class="MoJ"
+                >
+
+                <th scope="row">
+                    <a href="/performance/transactions-explorer/service-details/moj-prison-visit-booking">Prison visit booking</a>
+                </th>
+
+                <td><abbr title="Ministry of Justice">MoJ</abbr></td>
+
+                <td class="amount">
+                    &pound;4.01m
+                </td>
+
+                <td class="amount">
+                    &pound;2.67
+                </td>
+
+                <td class="amount">
+                    0%
+                </td>
+
+                <td class="amount">
+                    1,500,000
+                </td>
+
+            </tr>
+
+            <tr data-volume="1470000"
+                data-volumeLabel=" 1,470,000 "
+                data-category="Requesting benefits, payments or loans"
+                data-body="Department for Work and Pensions"
+                data-body-abbr="DWP"
+                data-url="https://www.gov.uk/jobseekers-allowance"
+                data-href="/performance/transactions-explorer/service-details/dwp-jobseekers-allowance-jsa-claims-maintained"
+                data-label="JSA: claims maintained"
+                data-title="Jobseeker's Allowance (JSA): claims maintained"
+                data-text-color="#fff"
+                data-color="hotPink"
+                data-dept-class="DWP"
+                >
+
+                <th scope="row">
+                    <a href="/performance/transactions-explorer/service-details/dwp-jobseekers-allowance-jsa-claims-maintained">Jobseeker's Allowance (JSA): claims maintained</a>
+                </th>
+
+                <td><abbr title="Department for Work and Pensions">DWP</abbr></td>
+
+                <td class="amount">
+                    &pound;472m
+                </td>
+
+                <td class="amount">
+                    &pound;321
+                </td>
+
+                <td class="amount">
+                    0%
+                </td>
+
+                <td class="amount">
+                    1,470,000
+                </td>
+
+            </tr>
+
+            <tr data-volume="1371082"
+                data-volumeLabel=" 1,371,082 "
+                data-category="Ordering goods"
+                data-body="HM Passport Office"
+                data-body-abbr="HMPO"
+                data-url="https://www.gov.uk/order-copy-birth-death-marriage-certificate"
+                data-href="/performance/transactions-explorer/service-details/home-office-ordering-certificates-births-adoptions-marriages-civil-partnerships-deaths"
+                data-label="Ordering certificates"
+                data-title="Ordering certificates (births, adoptions, marriages, civil partnerships, deaths)"
+                data-text-color="#fff"
+                data-color="hotPink"
+                data-dept-class="Home Office"
+                >
+
+                <th scope="row">
+                    <a href="/performance/transactions-explorer/service-details/home-office-ordering-certificates-births-adoptions-marriages-civil-partnerships-deaths">Ordering certificates (births, adoptions, marriages, civil partnerships, deaths)</a>
+                </th>
+
+                <td><abbr title="Home Office">Home Office</abbr></td>
+
+                <td class="amount">
+                    &pound;14.5m
+                </td>
+
+                <td class="amount">
+                    &pound;10.60
+                </td>
+
+                <td class="amount">
+                    85.8%
+                </td>
+
+                <td class="amount">
+                    1,371,082
+                </td>
+
+            </tr>
+
+            <tr data-volume="1358000"
+                data-volumeLabel=" 1,358,000 "
+                data-category="Requesting benefits, payments or loans"
+                data-body="Legal Aid Agency"
+                data-body-abbr=""
+                data-url=""
+                data-href="/performance/transactions-explorer/service-details/moj-legal-aid-applications-criminal-cases"
+                data-label="Legal aid: criminal cases"
+                data-title="Legal aid applications: criminal cases"
+                data-text-color="#fff"
+                data-color="hotPink"
+                data-dept-class="MoJ"
+                >
+
+                <th scope="row">
+                    <a href="/performance/transactions-explorer/service-details/moj-legal-aid-applications-criminal-cases">Legal aid applications: criminal cases</a>
+                </th>
+
+                <td><abbr title="Ministry of Justice">MoJ</abbr></td>
+
+                <td class="amount">
+                    
+                </td>
+
+                <td class="amount">
+                    
+                </td>
+
+                <td class="amount">
+                    
+                </td>
+
+                <td class="amount">
+                    1,358,000
+                </td>
+
+            </tr>
+
+            <tr data-volume="1350000"
+                data-volumeLabel=" 1,350,000 "
+                data-category="Providing/reporting information"
+                data-body="Department for Work and Pensions"
+                data-body-abbr="DWP"
+                data-url="http://jobvacancies.businesslink.gov.uk/IndexDwp.aspx"
+                data-href="/performance/transactions-explorer/service-details/dwp-universal-jobmatch-vacancies-placed-by-employers"
+                data-label="Job vacancies"
+                data-title="Universal Jobmatch: vacancies placed by employers"
+                data-text-color="#fff"
+                data-color="hotPink"
+                data-dept-class="DWP"
+                >
+
+                <th scope="row">
+                    <a href="/performance/transactions-explorer/service-details/dwp-universal-jobmatch-vacancies-placed-by-employers">Universal Jobmatch: vacancies placed by employers</a>
+                </th>
+
+                <td><abbr title="Department for Work and Pensions">DWP</abbr></td>
+
+                <td class="amount">
+                    
+                </td>
+
+                <td class="amount">
+                    
+                </td>
+
+                <td class="amount">
+                    87.4%
+                </td>
+
+                <td class="amount">
+                    1,350,000
+                </td>
+
+            </tr>
+
+            <tr data-volume="1284111"
+                data-volumeLabel=" 1,284,111 "
+                data-category="Requesting a licence/authorisation"
+                data-body="Environment Agency"
+                data-body-abbr="EA"
+                data-url="http://www.gov.uk/buy-a-uk-fishing-rod-licence"
+                data-href="/performance/transactions-explorer/service-details/defra-fishing-rod-licences"
+                data-label="Rod licences"
+                data-title="Fishing rod licences"
+                data-text-color="#fff"
+                data-color="hotPink"
+                data-dept-class="Defra"
+                >
+
+                <th scope="row">
+                    <a href="/performance/transactions-explorer/service-details/defra-fishing-rod-licences">Fishing rod licences</a>
+                </th>
+
+                <td><abbr title="Department for Environment, Food and Rural Affairs">Defra</abbr></td>
+
+                <td class="amount">
+                    &pound;2.04m
+                </td>
+
+                <td class="amount">
+                    &pound;1.59
+                </td>
+
+                <td class="amount">
+                    19.5%
+                </td>
+
+                <td class="amount">
+                    1,284,111
+                </td>
+
+            </tr>
+
+            <tr data-volume="1274260"
+                data-volumeLabel=" 1,274,260 "
+                data-category="Providing/reporting information"
+                data-body="National Apprenticeship Service"
+                data-body-abbr="NAS"
+                data-url="http://www.gov.uk/apply-apprenticeship"
+                data-href="/performance/transactions-explorer/service-details/bis-apprenticeship-vacancies-applications"
+                data-label="Apprenticeship applications"
+                data-title="Apprenticeship vacancies: applications "
+                data-text-color="#fff"
+                data-color="hotPink"
+                data-dept-class="BIS"
+                >
+
+                <th scope="row">
+                    <a href="/performance/transactions-explorer/service-details/bis-apprenticeship-vacancies-applications">Apprenticeship vacancies: applications </a>
+                </th>
+
+                <td><abbr title="Department for Business, Innovation and Skills">BIS</abbr></td>
+
+                <td class="amount">
+                    &pound;395k
+                </td>
+
+                <td class="amount">
+                    &pound;0.31
+                </td>
+
+                <td class="amount">
+                    100%
+                </td>
+
+                <td class="amount">
+                    1,274,260
+                </td>
+
+            </tr>
+
+            <tr data-volume="1250260"
+                data-volumeLabel=" 1,250,260 "
+                data-category="Requesting a licence/authorisation"
+                data-body="Driver and Vehicle Licensing Agency"
+                data-body-abbr="DVLA"
+                data-url=""
+                data-href="/performance/transactions-explorer/service-details/dft-request-certificate-of-entitlement-to-drive"
+                data-label=""
+                data-title="Request certificate of entitlement to drive"
+                data-text-color="#fff"
+                data-color="hotPink"
+                data-dept-class="DfT"
+                >
+
+                <th scope="row">
+                    <a href="/performance/transactions-explorer/service-details/dft-request-certificate-of-entitlement-to-drive">Request certificate of entitlement to drive</a>
+                </th>
+
+                <td><abbr title="Department for Transport">DfT</abbr></td>
+
+                <td class="amount">
+                    &pound;3.70m
+                </td>
+
+                <td class="amount">
+                    &pound;2.96
+                </td>
+
+                <td class="amount">
+                    0%
+                </td>
+
+                <td class="amount">
+                    1,250,260
+                </td>
+
+            </tr>
+
+            <tr data-volume="1250000"
+                data-volumeLabel=" 1,250,000 "
+                data-category="Requesting benefits, payments or loans"
+                data-body="Department for Work and Pensions"
+                data-body-abbr="DWP"
+                data-url="https://www.gov.uk/income-support/overview"
+                data-href="/performance/transactions-explorer/service-details/dwp-income-support-claims-maintained"
+                data-label="IS: claims maintained"
+                data-title="Income Support: claims maintained"
+                data-text-color="#fff"
+                data-color="hotPink"
+                data-dept-class="DWP"
+                >
+
+                <th scope="row">
+                    <a href="/performance/transactions-explorer/service-details/dwp-income-support-claims-maintained">Income Support: claims maintained</a>
+                </th>
+
+                <td><abbr title="Department for Work and Pensions">DWP</abbr></td>
+
+                <td class="amount">
+                    &pound;204m
+                </td>
+
+                <td class="amount">
+                    &pound;163
+                </td>
+
+                <td class="amount">
+                    0%
+                </td>
+
+                <td class="amount">
+                    1,250,000
+                </td>
+
+            </tr>
+
+            <tr data-volume="1245786"
+                data-volumeLabel=" 1,245,786 "
+                data-category="Providing/reporting information"
+                data-body="HM Revenue and Customs"
+                data-body-abbr="HMRC"
+                data-url="https://www.gov.uk/buy-sell-your-home/stamp-duty-land-tax"
+                data-href="/performance/transactions-explorer/service-details/hmrc-stamp-duty-land-tax"
+                data-label="SDLT"
+                data-title="Stamp Duty Land Tax"
+                data-text-color="#fff"
+                data-color="hotPink"
+                data-dept-class="HMRC"
+                >
+
+                <th scope="row">
+                    <a href="/performance/transactions-explorer/service-details/hmrc-stamp-duty-land-tax">Stamp Duty Land Tax</a>
+                </th>
+
+                <td><abbr title="HM Revenue and Customs">HMRC</abbr></td>
+
+                <td class="amount">
+                    &pound;2.54m
+                </td>
+
+                <td class="amount">
+                    &pound;2.04
+                </td>
+
+                <td class="amount">
+                    80.8%
+                </td>
+
+                <td class="amount">
+                    1,245,786
+                </td>
+
+            </tr>
+
+            <tr data-volume="1230000"
+                data-volumeLabel=" 1,230,000 "
+                data-category="Requesting benefits, payments or loans"
+                data-body="Department for Work and Pensions"
+                data-body-abbr="DWP"
+                data-url="https://www.gov.uk/state-pension-if-you-retire-abroad"
+                data-href="/performance/transactions-explorer/service-details/dwp-overseas-state-pension-claims-maintained"
+                data-label=""
+                data-title="Overseas State Pension: claims maintained"
+                data-text-color="#fff"
+                data-color="hotPink"
+                data-dept-class="DWP"
+                >
+
+                <th scope="row">
+                    <a href="/performance/transactions-explorer/service-details/dwp-overseas-state-pension-claims-maintained">Overseas State Pension: claims maintained</a>
+                </th>
+
+                <td><abbr title="Department for Work and Pensions">DWP</abbr></td>
+
+                <td class="amount">
+                    &pound;12.3m
+                </td>
+
+                <td class="amount">
+                    &pound;10.00
+                </td>
+
+                <td class="amount">
+                    0%
+                </td>
+
+                <td class="amount">
+                    1,230,000
+                </td>
+
+            </tr>
+
+            <tr data-volume="1223773"
+                data-volumeLabel=" 1,223,773 "
+                data-category="Requesting a licence/authorisation"
+                data-body="Disclosure and Barring Service"
+                data-body-abbr="DBS"
+                data-url="https://www.gov.uk/crb-criminal-records-bureau-check"
+                data-href="/performance/transactions-explorer/service-details/home-office-enhanced-criminal-records-checks"
+                data-label="Criminal records checks"
+                data-title="Enhanced criminal records checks"
+                data-text-color="#fff"
+                data-color="hotPink"
+                data-dept-class="Home Office"
+                >
+
+                <th scope="row">
+                    <a href="/performance/transactions-explorer/service-details/home-office-enhanced-criminal-records-checks">Enhanced criminal records checks</a>
+                </th>
+
+                <td><abbr title="Home Office">Home Office</abbr></td>
+
+                <td class="amount">
+                    &pound;41.3m
+                </td>
+
+                <td class="amount">
+                    &pound;33.71
+                </td>
+
+                <td class="amount">
+                    39.2%
+                </td>
+
+                <td class="amount">
+                    1,223,773
+                </td>
+
+            </tr>
+
+            <tr data-volume="1174000"
+                data-volumeLabel=" 1,174,000 "
+                data-category="Providing/reporting information"
+                data-body="HM Courts & Tribunals Service"
+                data-body-abbr="HMCTS"
+                data-url="http://www.gov.uk/make-money-claim-online"
+                data-href="/performance/transactions-explorer/service-details/moj-money-claims"
+                data-label=""
+                data-title="Money claims"
+                data-text-color="#fff"
+                data-color="hotPink"
+                data-dept-class="MoJ"
+                >
+
+                <th scope="row">
+                    <a href="/performance/transactions-explorer/service-details/moj-money-claims">Money claims</a>
+                </th>
+
+                <td><abbr title="Ministry of Justice">MoJ</abbr></td>
+
+                <td class="amount">
+                    
+                </td>
+
+                <td class="amount">
+                    
+                </td>
+
+                <td class="amount">
+                    
+                </td>
+
+                <td class="amount">
+                    1,174,000
+                </td>
+
+            </tr>
+
+            <tr data-volume="1107390"
+                data-volumeLabel=" 1,107,390 "
+                data-category="Requesting a licence/authorisation"
+                data-body="Driver and Vehicle Licensing Agency"
+                data-body-abbr="DVLA"
+                data-url="https://www.gov.uk/apply-online-to-replace-a-driving-licence"
+                data-href="/performance/transactions-explorer/service-details/dft-replace-driving-licence"
+                data-label=""
+                data-title="Replace driving licence"
+                data-text-color="#fff"
+                data-color="hotPink"
+                data-dept-class="DfT"
+                >
+
+                <th scope="row">
+                    <a href="/performance/transactions-explorer/service-details/dft-replace-driving-licence">Replace driving licence</a>
+                </th>
+
+                <td><abbr title="Department for Transport">DfT</abbr></td>
+
+                <td class="amount">
+                    &pound;4.12m
+                </td>
+
+                <td class="amount">
+                    &pound;3.72
+                </td>
+
+                <td class="amount">
+                    49.2%
+                </td>
+
+                <td class="amount">
+                    1,107,390
+                </td>
+
+            </tr>
+
+            <tr data-volume="1063199"
+                data-volumeLabel=" 1,063,199 "
+                data-category="Requesting benefits, payments or loans"
+                data-body="Student Loans Company"
+                data-body-abbr="SLC"
+                data-url="http://www.gov.uk/apply-online-for-student-finance"
+                data-href="/performance/transactions-explorer/service-details/bis-apply-for-student-finance-full-time-study"
+                data-label="Student finance (FT)"
+                data-title="Apply for student finance (full time study)"
+                data-text-color="#fff"
+                data-color="hotPink"
+                data-dept-class="BIS"
+                >
+
+                <th scope="row">
+                    <a href="/performance/transactions-explorer/service-details/bis-apply-for-student-finance-full-time-study">Apply for student finance (full time study)</a>
+                </th>
+
+                <td><abbr title="Department for Business, Innovation and Skills">BIS</abbr></td>
+
+                <td class="amount">
+                    &pound;51.5m
+                </td>
+
+                <td class="amount">
+                    &pound;48.45
+                </td>
+
+                <td class="amount">
+                    93%
+                </td>
+
+                <td class="amount">
+                    1,063,199
+                </td>
+
+            </tr>
+
+            <tr data-volume="1040000"
+                data-volumeLabel=" 1,040,000 "
+                data-category="Requesting benefits, payments or loans"
+                data-body="Department for Work and Pensions"
+                data-body-abbr="DWP"
+                data-url="https://www.gov.uk/carers-allowance"
+                data-href="/performance/transactions-explorer/service-details/dwp-carers-allowance-claims-maintained"
+                data-label=""
+                data-title="Carer's Allowance: claims maintained"
+                data-text-color="#fff"
+                data-color="hotPink"
+                data-dept-class="DWP"
+                >
+
+                <th scope="row">
+                    <a href="/performance/transactions-explorer/service-details/dwp-carers-allowance-claims-maintained">Carer's Allowance: claims maintained</a>
+                </th>
+
+                <td><abbr title="Department for Work and Pensions">DWP</abbr></td>
+
+                <td class="amount">
+                    &pound;33.3m
+                </td>
+
+                <td class="amount">
+                    &pound;32.00
+                </td>
+
+                <td class="amount">
+                    0%
+                </td>
+
+                <td class="amount">
+                    1,040,000
+                </td>
+
+            </tr>
+
+            <tr data-volume="935083"
+                data-volumeLabel=" 935,083 "
+                data-category="Requesting a licence/authorisation"
+                data-body="Driver and Vehicle Licensing Agency"
+                data-body-abbr="DVLA"
+                data-url="https://www.gov.uk/apply-first-provisional-driving-licence"
+                data-href="/performance/transactions-explorer/service-details/dft-apply-for-a-provisional-driving-licence"
+                data-label=""
+                data-title="Apply for a provisional driving licence"
+                data-text-color="#fff"
+                data-color="hotPink"
+                data-dept-class="DfT"
+                >
+
+                <th scope="row">
+                    <a href="/performance/transactions-explorer/service-details/dft-apply-for-a-provisional-driving-licence">Apply for a provisional driving licence</a>
+                </th>
+
+                <td><abbr title="Department for Transport">DfT</abbr></td>
+
+                <td class="amount">
+                    &pound;3.84m
+                </td>
+
+                <td class="amount">
+                    &pound;4.11
+                </td>
+
+                <td class="amount">
+                    34.2%
+                </td>
+
+                <td class="amount">
+                    935,083
+                </td>
+
+            </tr>
+
+            <tr data-volume="925000"
+                data-volumeLabel=" 925,000 "
+                data-category="Requesting benefits, payments or loans"
+                data-body="Legal Aid Agency"
+                data-body-abbr=""
+                data-url=""
+                data-href="/performance/transactions-explorer/service-details/moj-legal-aid-applications-civil-cases"
+                data-label="Legal aid: civil cases"
+                data-title="Legal aid applications: civil cases"
+                data-text-color="#fff"
+                data-color="hotPink"
+                data-dept-class="MoJ"
+                >
+
+                <th scope="row">
+                    <a href="/performance/transactions-explorer/service-details/moj-legal-aid-applications-civil-cases">Legal aid applications: civil cases</a>
+                </th>
+
+                <td><abbr title="Ministry of Justice">MoJ</abbr></td>
+
+                <td class="amount">
+                    
+                </td>
+
+                <td class="amount">
+                    
+                </td>
+
+                <td class="amount">
+                    
+                </td>
+
+                <td class="amount">
+                    925,000
+                </td>
+
+            </tr>
+
+            <tr data-volume="924551"
+                data-volumeLabel=" 924,551 "
+                data-category="Providing/reporting information"
+                data-body="Driver and Vehicle Licensing Agency"
+                data-body-abbr="DVLA"
+                data-url="https://www.gov.uk/personalised-vehicle-registration-numbers/assigning-a-personalised-number-to-a-vehicle"
+                data-href="/performance/transactions-explorer/service-details/dft-assign-a-personalised-registration-number-to-a-vehicle"
+                data-label=""
+                data-title="Assign a personalised registration number to a vehicle"
+                data-text-color="#fff"
+                data-color="hotPink"
+                data-dept-class="DfT"
+                >
+
+                <th scope="row">
+                    <a href="/performance/transactions-explorer/service-details/dft-assign-a-personalised-registration-number-to-a-vehicle">Assign a personalised registration number to a vehicle</a>
+                </th>
+
+                <td><abbr title="Department for Transport">DfT</abbr></td>
+
+                <td class="amount">
+                    &pound;9.63m
+                </td>
+
+                <td class="amount">
+                    &pound;10.42
+                </td>
+
+                <td class="amount">
+                    4.17%
+                </td>
+
+                <td class="amount">
+                    924,551
+                </td>
+
+            </tr>
+
+            <tr data-volume="900000"
+                data-volumeLabel=" 900,000 "
+                data-category="Requesting benefits, payments or loans"
+                data-body="Department for Work and Pensions"
+                data-body-abbr="DWP"
+                data-url="https://www.gov.uk/child-maintenance"
+                data-href="/performance/transactions-explorer/service-details/dwp-child-maintenance"
+                data-label=""
+                data-title="Child Maintenance"
+                data-text-color="#fff"
+                data-color="hotPink"
+                data-dept-class="DWP"
+                >
+
+                <th scope="row">
+                    <a href="/performance/transactions-explorer/service-details/dwp-child-maintenance">Child Maintenance</a>
+                </th>
+
+                <td><abbr title="Department for Work and Pensions">DWP</abbr></td>
+
+                <td class="amount">
+                    &pound;408m
+                </td>
+
+                <td class="amount">
+                    &pound;453
+                </td>
+
+                <td class="amount">
+                    0%
+                </td>
+
+                <td class="amount">
+                    900,000
+                </td>
+
+            </tr>
+
+            <tr data-volume="810000"
+                data-volumeLabel=" 810,000 "
+                data-category="Requesting benefits, payments or loans"
+                data-body="Department for Work and Pensions"
+                data-body-abbr="DWP"
+                data-url="https://www.gov.uk/employment-support-allowance/eligibility"
+                data-href="/performance/transactions-explorer/service-details/dwp-employment-support-allowance-esa-new-claims"
+                data-label="ESA: new claims"
+                data-title="Employment and Support Allowance (ESA): new claims"
+                data-text-color="#fff"
+                data-color="hotPink"
+                data-dept-class="DWP"
+                >
+
+                <th scope="row">
+                    <a href="/performance/transactions-explorer/service-details/dwp-employment-support-allowance-esa-new-claims">Employment and Support Allowance (ESA): new claims</a>
+                </th>
+
+                <td><abbr title="Department for Work and Pensions">DWP</abbr></td>
+
+                <td class="amount">
+                    &pound;168m
+                </td>
+
+                <td class="amount">
+                    &pound;208
+                </td>
+
+                <td class="amount">
+                    0%
+                </td>
+
+                <td class="amount">
+                    810,000
+                </td>
+
+            </tr>
+
+            <tr data-volume="797942"
+                data-volumeLabel=" 797,942 "
+                data-category="Amending/deleting information"
+                data-body="Driving Standards Agency"
+                data-body-abbr="DSA"
+                data-url="https://www.gov.uk/change-date-practical-driving-test"
+                data-href="/performance/transactions-explorer/service-details/dft-amend-practical-driving-test"
+                data-label=""
+                data-title="Amend practical driving test"
+                data-text-color="#fff"
+                data-color="hotPink"
+                data-dept-class="DfT"
+                >
+
+                <th scope="row">
+                    <a href="/performance/transactions-explorer/service-details/dft-amend-practical-driving-test">Amend practical driving test</a>
+                </th>
+
+                <td><abbr title="Department for Transport">DfT</abbr></td>
+
+                <td class="amount">
+                    &pound;702k
+                </td>
+
+                <td class="amount">
+                    &pound;0.88
+                </td>
+
+                <td class="amount">
+                    83.4%
+                </td>
+
+                <td class="amount">
+                    797,942
+                </td>
+
+            </tr>
+
+            <tr data-volume="105000"
+                data-volumeLabel=" 105,000 "
+                data-category="Requesting benefits, payments or loans"
+                data-body="Rural Payments Agency"
+                data-body-abbr="RPA"
+                data-url="http://www.gov.uk/single-payment-scheme-online"
+                data-href="/performance/transactions-explorer/service-details/defra-single-payment-scheme-sps-claims"
+                data-label="SPS claims"
+                data-title="Single Payment Scheme (SPS) claims"
+                data-text-color="#fff"
+                data-color="hotPink"
+                data-dept-class="Defra"
+                >
+
+                <th scope="row">
+                    <a href="/performance/transactions-explorer/service-details/defra-single-payment-scheme-sps-claims">Single Payment Scheme (SPS) claims</a>
+                </th>
+
+                <td><abbr title="Department for Environment, Food and Rural Affairs">Defra</abbr></td>
+
+                <td class="amount">
+                    &pound;76.3m
+                </td>
+
+                <td class="amount">
+                    &pound;727
+                </td>
+
+                <td class="amount">
+                    40.6%
+                </td>
+
+                <td class="amount">
+                    105,000
+                </td>
+
+            </tr>
+    </tbody>
+</table>
+<!--[if gt IE 8]><!-->
+<script type="text/javascript" src="https://assets.digital.cabinet-office.gov.uk/transactions-explorer/javascripts/lib/d3.v3.js"></script>
+<script type="text/javascript" src="https://assets.digital.cabinet-office.gov.uk/transactions-explorer/javascripts/table-to-tree-map.js"></script>
+<script>
+  $(document).ready(function() {
+      if ($(".treemap").length) {
+ 
+        var tree = Tree.fromHtmlTable(d3.selectAll("tbody tr"));
+        TreeMapLayout.display("services-treemap", tree);
+        $(window).on('resize', function () {
+          TreeMapLayout.display("services-treemap", tree);
+        });
+
+      }
+  });
+</script>
+<!--<![endif]-->
+
+<script>
+  $(document).ready(function() {
+      if ($(".treemap").length) {
+        if (typeof(d3) === 'undefined') {
+          $('.treemap').load($('.treemap').data('treemap-url'));
+          return;
+        }
+      }
+    });
+</script>
+
+            <div id="old-data" class="application-notice info-notice table-margin">
+                <p>*Q2 2013 data not provided for this metric; previous quarter's metric shown if available. See service page for information on obtaining latest data</p>
+            </div>
+
+<div class="transactions-explorer-download">
+    <p>
+        <a href="/performance/transactions-explorer/data/transaction-volumes.csv" title="Download the full data set (CSV)" download="transaction-volumes.csv">Download the full data set (CSV)</a>
+    </p>
+</div>
+        </section>
+    </article>
+</div>
+
+        </section>
+
+    </div><!--end wrapper-->
+
+
+    <footer class="group js-footer" id="footer" role="contentinfo">
+        <div class="footer-wrapper">
+            <div class="footer-categories">
+                <div class="footer-explore">
+                    <h2>Services and information</h2>
+
+                    <ul>
+                        <li><a href="/browse/driving">Driving and transport</a></li>
+                        <li><a href="/browse/benefits">Benefits</a></li>
+                        <li><a href="/browse/business">Businesses and self-employed</a></li>
+                        <li><a href="/browse/employing-people">Employing people</a></li>
+                        <li><a href="/browse/abroad">Passports, travel and living abroad</a></li>
+                        <li><a href="/browse/education">Education and learning</a></li>
+                        <li><a href="/browse/working">Working, jobs and pensions</a></li>
+                        <li><a href="/browse/housing">Housing and local services</a></li>
+                        <li><a href="/browse/justice">Crime, justice and the law</a></li>
+                        <li><a href="/browse/tax">Money and tax</a></li>
+                        <li><a href="/browse/births-deaths-marriages">Births, deaths, marriages and care</a></li>
+                        <li><a href="/browse/disabilities">Disabled people</a></li>
+                        <li><a href="/browse/citizenship">Citizenship and life in the UK</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-inside-government">
+                    <h2>Departments and policy</h2>
+
+                    <ul>
+                        <li><a href="/government/how-government-works">How government works</a></li>
+                        <li><a href="/government/organisations">Departments</a></li>
+                        <li><a href="/government/world">Worldwide</a></li>
+                        <li><a href="/government/topics">Topics</a></li>
+                        <li><a href="/government/policies">Policies</a></li>
+                        <li><a href="/government/publications">Publications</a></li>
+                        <li><a href="/government/announcements">Announcements</a></li>
+                    </ul>
+                </div>
+
+            </div>
+            <div class="footer-meta">
+                <div class="footer-meta-inner">
+                    <h2 class="visuallyhidden">Support links</h2>
+                    <ul>
+                        <li><a href="/support">Support</a></li>
+                        <li><a href="/support/cookies">Cookies</a></li>
+                        <li><a href="/feedback">Feedback</a></li>
+                        <li><a href="/cymraeg">Cymraeg</a></li>
+                        <li>Built by the <a href="http://digital.cabinetoffice.gov.uk/">Government Digital Service</a></li>
+                    </ul>
+                    <div class="open-government-licence">
+                        <h2><a href="http://www.nationalarchives.gov.uk/doc/open-government-licence/version/2"><img alt="OGL" src="https://assets-origin.preview.alphagov.co.uk/static/open-government-licence_2x-d273d7eca3045d3b710a863d9bfc0b33.png"></a></h2>
+                        <p>All content is available under the <a href="http://www.nationalarchives.gov.uk/doc/open-government-licence/version/2">Open Government Licence v2.0</a>, except where otherwise stated</p>
+                    </div>
+                </div>
+
+                <div class="copyright">
+                    <a href="http://www.nationalarchives.gov.uk/information-management/our-services/crown-copyright.htm">© Crown Copyright</a>
+                </div>
+            </div>
+        </div>
+    </footer><!--end footer-->
+
+    </body>
+</html>

@@ -1,0 +1,154 @@
+@font-face {
+  font-family: GDS-Logo;
+  src: local("HelveticaNeue"), local("Helvetica Neue"), local("Arial"), local("Helvetica");
+}
+
+@-ms-viewport {
+  width: device-width;
+}
+
+@-o-viewport {
+  width: device-width;
+}
+
+/* line 6, ../../app/assets/stylesheets/index.scss */
+#content .index header {
+  border: none;
+}
+/* line 8, ../../app/assets/stylesheets/index.scss */
+#content .index header p.explanatory {
+  font-family: "nta", Arial, sans-serif;
+  font-size: 24px;
+  line-height: 1.25;
+  font-weight: 400;
+  text-transform: none;
+  width: 100%;
+}
+@media (max-width: 640px) {
+  /* line 8, ../../app/assets/stylesheets/index.scss */
+  #content .index header p.explanatory {
+    font-size: 20px;
+    line-height: 1.2;
+  }
+}
+@media (min-width: 641px) {
+  /* line 8, ../../app/assets/stylesheets/index.scss */
+  #content .index header p.explanatory {
+    width: 65.625%;
+  }
+}
+/* line 17, ../../app/assets/stylesheets/index.scss */
+#content .index h2, #content .index h3 {
+  font-family: "nta", Arial, sans-serif;
+  font-size: 24px;
+  line-height: 1.25;
+  font-weight: 400;
+  text-transform: none;
+  font-weight: 700;
+  border-bottom: 5px solid #097f96;
+}
+@media (max-width: 640px) {
+  /* line 17, ../../app/assets/stylesheets/index.scss */
+  #content .index h2, #content .index h3 {
+    font-size: 20px;
+    line-height: 1.2;
+  }
+}
+/* line 22, ../../app/assets/stylesheets/index.scss */
+#content .index h4 {
+  font-family: "nta", Arial, sans-serif;
+  font-size: 19px;
+  line-height: 1.31579;
+  font-weight: 400;
+  text-transform: none;
+  font-weight: 700;
+}
+@media (max-width: 640px) {
+  /* line 22, ../../app/assets/stylesheets/index.scss */
+  #content .index h4 {
+    font-size: 16px;
+    line-height: 1.25;
+  }
+}
+/* line 26, ../../app/assets/stylesheets/index.scss */
+#content .index p, #content .index dl, #content .index ul {
+  font-family: "nta", Arial, sans-serif;
+  font-size: 19px;
+  line-height: 1.31579;
+  font-weight: 400;
+  text-transform: none;
+}
+@media (max-width: 640px) {
+  /* line 26, ../../app/assets/stylesheets/index.scss */
+  #content .index p, #content .index dl, #content .index ul {
+    font-size: 16px;
+    line-height: 1.25;
+  }
+}
+/* line 30, ../../app/assets/stylesheets/index.scss */
+#content .index article {
+  min-height: 0;
+}
+/* line 34, ../../app/assets/stylesheets/index.scss */
+#content .index img {
+  display: block;
+  max-width: 100%;
+  margin-top: 1.579em;
+}
+
+/* line 43, ../../app/assets/stylesheets/index.scss */
+.service-listing dl, .service-listing ol, .service-listing ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+/* line 49, ../../app/assets/stylesheets/index.scss */
+.service-listing dt {
+  margin: 0;
+  padding: 0;
+}
+/* line 53, ../../app/assets/stylesheets/index.scss */
+.service-listing dd {
+  margin: 0 0 0.75em 0;
+  padding: 0;
+  border-bottom: 1px solid #dee0e2;
+}
+/* line 59, ../../app/assets/stylesheets/index.scss */
+.service-listing li {
+  border-top: 1px solid #dee0e2;
+  padding: .3em 0;
+}
+
+@media (min-width: 641px) {
+  /* line 68, ../../app/assets/stylesheets/index.scss */
+  .cols2,
+  main#content section.cols2,
+  main#content article.cols2 {
+    width: 48.4375%;
+    float: left;
+    clear: none;
+    margin-right: 0;
+    margin-left: 3.125%;
+  }
+
+  /* line 77, ../../app/assets/stylesheets/index.scss */
+  .cols2,
+  main#content section.cols2:first-of-type,
+  main#content article.cols2:first-of-type {
+    margin-left: 0;
+  }
+
+  /* line 80, ../../app/assets/stylesheets/index.scss */
+  .cols3 {
+    width: 31.25%;
+    float: left;
+    clear: none;
+    margin-right: 0;
+    margin-left: 3.125%;
+  }
+
+  /* line 87, ../../app/assets/stylesheets/index.scss */
+  .cols3:first-of-type {
+    margin-left: 0;
+  }
+}
