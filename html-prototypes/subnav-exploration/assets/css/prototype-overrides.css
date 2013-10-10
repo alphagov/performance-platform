@@ -1,6 +1,7 @@
 /* override border colour on global breadrumb */
 #global-breadcrumb ol {
-    border-color: #097F96;
+  border-top-color: #097F96;
+  border-bottom: 1px solid #BFC1C3;
 }
 .performance-platform-outer {
     border-top: 0;
