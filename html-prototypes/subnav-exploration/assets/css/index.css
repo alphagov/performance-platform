@@ -23,6 +23,7 @@
   font-weight: 400;
   text-transform: none;
   width: 100%;
+  margin-bottom: -1em;
 }
 @media (max-width: 640px) {
   /* line 8, ../../app/assets/stylesheets/index.scss */

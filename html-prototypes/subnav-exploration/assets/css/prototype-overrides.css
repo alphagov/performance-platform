@@ -6,3 +6,14 @@
 .performance-platform-outer {
     border-top: 0;
 }
+
+main#content header p.explanatory,
+#content header p.explanatory {
+  font-family: "nta", Arial, sans-serif;
+  font-size: 24px;
+  line-height: 1.25;
+  font-weight: 400;
+  text-transform: none;
+  width: 65.625%;
+  margin-bottom: 0;
+}
