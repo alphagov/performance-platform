@@ -3,11 +3,16 @@
   border-top-color: #097F96;
   border-bottom: 1px solid #BFC1C3;
 }
+
 .performance-platform-outer {
     border-top: 0;
 }
 
-main#content header p.explanatory,
+.home {
+  border-top: 10px solid #097f96 ;
+}
+
+#content header p.explanatory,
 #content header p.explanatory {
   font-family: "nta", Arial, sans-serif;
   font-size: 24px;
@@ -17,3 +22,4 @@ main#content header p.explanatory,
   width: 65.625%;
   margin-bottom: 0;
 }
+
