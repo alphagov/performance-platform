@@ -23,3 +23,11 @@
   margin-bottom: 0;
 }
 
+.performance-placeholder {
+  display: block;
+  width: 956px;
+}
+
+#content-explorer .performance-placeholder img {
+  margin-left: -7px;
+}

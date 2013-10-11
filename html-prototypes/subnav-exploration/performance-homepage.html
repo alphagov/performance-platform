@@ -60,6 +60,10 @@
 <div id="wrapper" class="wrapper ie7 datainsight"><![endif]--><!--[if IE 8]>
 <div id="wrapper" class="wrapper ie8 datainsight"><![endif]--><!--[if gte IE 9]>
 <div id="wrapper" class="wrapper ie9 datainsight"><![endif]-->
+
+<!-- temp overrides -->
+<link href="assets/css/prototype-overrides.css" media="all" rel="stylesheet" type="text/css">
+
 </head>
 <body>
       <script type="text/javascript">document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script><div id="skiplink-container">
@@ -114,18 +118,30 @@
         <p class="right"><a href="#survey-no-thanks" id="survey-no-thanks">No thanks</a></p>
         <p><a href="https://www.surveymonkey.com/s/6HZFSVC" id="take-survey" target="_blank">Take the 3 minute survey</a> This will open a short survey on another website</p>
       </div>
-    </section><div id="wrapper" class="wrapper datainsight">
+    </section>
+
+
+<!-- breadcrumbs -->
+<div class="" id="global-breadcrumb">
+  <ol class="group" role="breadcrumbs">
+    <li><a href="homepage.html">Home</a></li>
+  </ol>
+</div>
+
+
+    <div id="wrapper" class="wrapper datainsight">
 <!-- [endif]-->
 
-  <section id="content" class="group category-page" role="main"><div class="header-bar"></div>
+  <section id="content" class="group category-page" role="main">
 
+<!--
     <div class="performance-nav">
       <nav><ul>
 <li><a href="/performance/dashboard" class="active">GOV.UK overview</a></li>
           <li><a href="/performance/dashboard/government" class="">Departments and policy</a></li>
         </ul></nav>
 </div>
-
+-->
     
 
 <article id="datainsight-dashboard"><section class="content-group"><header><h1 class="page-title">
@@ -138,7 +154,7 @@
   </hgroup></header></section><section class="content-group"><h1>Web traffic</h1>
     
 
-<article id="hourly-traffic-module" class="dashboard one-up"><img src="/performance/dashboard/hourly-traffic.png?1381311075"><div class="datainsight-hidden">
+<article id="hourly-traffic-module" class="dashboard one-up"><img src="//www.gov.uk/performance/dashboard/hourly-traffic.png?1381311075"><div class="datainsight-hidden">
     <hgroup class="module-header left"><h1 class="graph-info">GOV.UK's traffic yesterday</h1>
       <h2 class="graph-heading">Hourly unique visitors on <span class="for_day"></span> <span class="for_date"></span> compared with the
         <strong>average of the last six <span class="for_day"></span>s</strong>
@@ -152,63 +168,24 @@
 </li>
         </ul></figcaption></figure><p class="graph-source">Source: Google Analytics</p>
   </div>
-</article><article id="visits-module" class="dashboard two-up start"><img src="/performance/dashboard/visits.png?1381311081"><div class="datainsight-hidden">
-    <hgroup class="module-header"><h1 class="graph-info">Weekly visits</h1>
+</article>
 
-      <h2 class="graph-heading">
-        Visits to GOV.UK for the last 6 months compared to this time last year for
-        <span class="directgov-label">Directgov</span> and <span class="businesslink-label">Business Link</span>
-      </h2>
-    </hgroup><figure id="visits" class="time-series graph-container"></figure><p class="graph-source">Sources: Google Analytics, Celebrus, Omniture</p>
-  </div>
-</article><article id="unique-visitors-module" class="dashboard two-up"><img src="/performance/dashboard/unique-visitors.png?1381311086"><div class="datainsight-hidden">
-    <hgroup class="module-header"><h1 class="graph-info">Weekly unique visitors</h1>
-
-      <h2 class="graph-heading">
-        Unique visitors to GOV.UK for the last 6 months compared to this time last year for
-        <span class="directgov-label">Directgov</span> and <span class="businesslink-label">Business Link</span>
-      </h2>
-    </hgroup><figure id="unique-visitors" class="time-series graph-container"></figure><p class="graph-source">Sources: Google Analytics, Celebrus, Omniture</p>
-  </div>
-</article></section><section id="content-explorer" class="content-group"><h1 class="one-up">Content</h1>
-    
-<article id="format-success-module" class="dashboard one-up static govuk"><hgroup class="module-header left"><h1 class="graph-info">Content explorer</h1>
-
-    <h2 class="graph-heading">Explore how different pieces of content on GOV.UK were used last week.</h2>
-  </hgroup><div id="format-success-legend"></div>
-
-  <nav><ul id="format-success-tabs" class="tabs">
-<li class="active" data-format="guide"><span>Guides</span></li>
-    <li data-format="answer"><span>Answers</span></li>
-    <li data-format="smart_answer"><span>Smart Answers</span></li>
-    <li data-format="programme"><span>Benefits</span></li>
-  </ul></nav><div id="format-success-wrapper">
-    <div class="graph-header">
-      <div id="scatterplot-filter-wrapper">
-        <label for="scatterplot-filter">Filter:</label>
-        <input id="scatterplot-filter" type="text" placeholder="keyword or title" value="">
+<!-- dummy -->
+<div class="performance-placeholder">
+  <img src="assets/images/performance-overview-1.png">
 </div>
-      <h3> </h3>
-      <div class="tagline"> </div>
-    </div>
-    <figure id="format-success" class="placeholder graph-container"><p class="loading">Loading data…</p>
-    </figure><div class="legend">
-      <p class="sizes">Size of items based on number of views</p>
-      <p class="colour-key">Colour of items based on engagement level</p>
-      <div class="stopfloat"></div>
-    </div>
-    <figcaption><div class="left">
-        <h4>Data sources</h4>
-        <p>GOV.UK engagement criteria measured with Google Analytics</p>
-      </div>
-      <div id="engagement-criteria" class="right">
-        <h4></h4>
-        <p></p>
-      </div>
-      <div class="stopfloat"></div>
-    </figcaption>
+
+</section>
+
+<section id="content-explorer" class="content-group">
+  <h1 class="one-up">Content</h1>
+
+<!-- dummy -->
+<div class="performance-placeholder">
+  <img src="assets/images/performance-overview-2.png">
 </div>
-</article></section></article><!-- report_a_problem -->
+
+</section></article><!-- report_a_problem -->
 <p class="report-a-problem-toggle js-footer"><a href="">Is there anything wrong with this page?</a></p>
 <div class="report-a-problem-container">
   <h2>Help us improve GOV.UK by telling us:</h2>
