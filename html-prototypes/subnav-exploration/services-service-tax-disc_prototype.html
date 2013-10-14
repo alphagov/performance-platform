@@ -95,7 +95,7 @@
     <!--<ul id="proposition-links">
       <li><a href="/performance/services" class="active">Services</a></li>
       <li><a href="/performance/dashboard" class="">GOV.UK performance</a></li>
-      <li><a href="/performance/transactions-explorer" class="">Transactions Explorer</a></li>   
+      <li><a href="/performance/transactions-explorer" class="">Transactions Explorer</a></li>
     </ul>-->
   </nav>
 </div>
@@ -127,8 +127,8 @@
 <div data-backdrop-url="https://www.gov.uk" data-base-url="https://assets.digital.cabinet-office.gov.uk/limelight" data-controller="vehicle-licensing/controllers/vehicle-licensing-service" data-d3-url="vendor/d3.v3-354238118d3385ecb422663642248682" data-environment="production" data-preprocessors="partial_experience_warning,module_touch_actions" data-service-name="tax-disc" id="wrapper">
 
   <main id="content" class="group"><div class="performance-platform-outer">
-      
-      
+
+
 
 <!--
 <nav class="performance-nav"><ul>
@@ -212,9 +212,39 @@
       </div>
     </li>
   </ul>
-<p id="tax-disc-takeup-number" class="impact-number"></p>
-  <figure class="graph timeseries-graph" id="tax-disc-takeup"></figure>
+  <nav id="applications-nav">
+    <ul>
+      <li id="users-within-one" class="active">One</li>
+      <li id="users-within-two"><a href="#">Two</a></li>
+    </ul>
+  </nav>
+  <img src="foo" id="users-within-image" />
 </section>
+
+<script type="text/javascript">
+
+$(document).ready(function() {
+  $("#users-within-one").click(function(e) {
+    $("#users-within-one").addClass('active')
+    $("#users-within-one").html('One')
+    $("#users-within-two").removeClass('active')
+    $("#users-within-two").html('<a href="#">Two</a>')
+    $("#users-within-image").attr('src', 'bar');
+    e.preventDefault();
+  })
+
+  $("#users-within-two").click(function(e) {
+    $("#users-within-one").removeClass('active')
+    $("#users-within-one").html('<a href="#">One</a>')
+    $("#users-within-two").addClass('active')
+    $("#users-within-two").html('Two')
+    $("#users-within-image").attr('src', 'baz');
+    e.preventDefault();
+  })
+
+})
+
+</script>
 
 
 <section id="tax-disc-failures" class="failures"><h1>Error codes (web)</h1>
@@ -324,7 +354,7 @@
       </div>
     </footer><!--end footer--><div id="global-app-error" class="app-error hidden"></div>
 
-    
+
   <script data-main="https://assets.digital.cabinet-office.gov.uk/limelight/production-96da174e0aaa1615ee8b0fcc5e296542.js" src="https://assets.digital.cabinet-office.gov.uk/limelight/vendor/require-926f92b91f5e3f5962f6029147f710aa.js" type="text/javascript"></script>
 </body>
 </html>
