@@ -214,11 +214,11 @@
   </ul>
   <nav id="applications-nav">
     <ul>
-      <li id="users-within-one" class="active">One</li>
-      <li id="users-within-two"><a href="#">Two</a></li>
+      <li id="users-within-one" class="active">Drop-offs</li>
+      <li id="users-within-two"><a href="#">Total Users</a></li>
     </ul>
   </nav>
-  <img src="foo" id="users-within-image" />
+  <img width="100%" src="assets/images/drop-offs-total-users.png" id="users-within-image" />
 </section>
 
 <script type="text/javascript">
@@ -226,19 +226,19 @@
 $(document).ready(function() {
   $("#users-within-one").click(function(e) {
     $("#users-within-one").addClass('active')
-    $("#users-within-one").html('One')
+    $("#users-within-one").html('Drop-offs')
     $("#users-within-two").removeClass('active')
-    $("#users-within-two").html('<a href="#">Two</a>')
-    $("#users-within-image").attr('src', 'bar');
+    $("#users-within-two").html('<a href="#">Total users</a>')
+    $("#users-within-image").attr('src', 'assets/images/drop-offs-total-users.png');
     e.preventDefault();
   })
 
   $("#users-within-two").click(function(e) {
     $("#users-within-one").removeClass('active')
-    $("#users-within-one").html('<a href="#">One</a>')
+    $("#users-within-one").html('<a href="#">Drop-offs</a>')
     $("#users-within-two").addClass('active')
-    $("#users-within-two").html('Two')
-    $("#users-within-image").attr('src', 'baz');
+    $("#users-within-two").html('Total users')
+    $("#users-within-image").attr('src', 'assets/images/drop-offs-dropped-users.png');
     e.preventDefault();
   })
 
