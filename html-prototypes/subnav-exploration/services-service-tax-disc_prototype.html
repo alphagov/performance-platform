@@ -203,7 +203,7 @@
   <figure class="graph timeseries-graph" id="tax-disc-takeup"></figure>
 </section>
 
-  <section class="graph digital-takeup"><h1>Users within the service</h1>
+  <section class="graph digital-takeup"><h1>Where users drop off</h1>
   <ul class="module-actions">
 <li class="info">
       <div>
@@ -214,8 +214,8 @@
   </ul>
   <nav id="applications-nav">
     <ul>
-      <li id="users-within-one" class="active" style="width:12em">Users who dropped off</li>
-      <li id="users-within-two" style="width:12em"><a href="#">Total Users</a></li>
+      <li id="users-within-one" class="active" style="width:12em">Drop offs per stage</li>
+      <li id="users-within-two" style="width:12em"><a href="#">Total users per stage</a></li>
     </ul>
   </nav>
   <img width="100%" src="assets/images/drop-offs-dropped-users.png" id="users-within-image" />
@@ -226,18 +226,18 @@
 $(document).ready(function() {
   $("#users-within-one").click(function(e) {
     $("#users-within-one").addClass('active')
-    $("#users-within-one").html('Users who dropped off')
+    $("#users-within-one").html('Drop offs per stage')
     $("#users-within-two").removeClass('active')
-    $("#users-within-two").html('<a href="#">Total users</a>')
+    $("#users-within-two").html('<a href="#">Total users per stage</a>')
     $("#users-within-image").attr('src', 'assets/images/drop-offs-dropped-users.png');
     e.preventDefault();
   })
 
   $("#users-within-two").click(function(e) {
     $("#users-within-one").removeClass('active')
-    $("#users-within-one").html('<a href="#">Users who dropped off</a>')
+    $("#users-within-one").html('<a href="#">Drop offs per stage</a>')
     $("#users-within-two").addClass('active')
-    $("#users-within-two").html('Total users')
+    $("#users-within-two").html('Total users per stage')
     $("#users-within-image").attr('src', 'assets/images/drop-offs-total-users.png');
     e.preventDefault();
   })
