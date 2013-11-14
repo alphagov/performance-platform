@@ -217,7 +217,7 @@ main#content header.bordered {
 .service-items tbody td:nth-child(4) {
   width: 18%;
   padding-right: 45px;
-  background-image: url("/assets/images/chevron-bg.svg");
+  background-image: url("../images/chevron-bg.svg");
   background-repeat: no-repeat;
   background-position: 90% center;
   background-size: 26px 43px;
@@ -249,7 +249,7 @@ a.service-block-link {
   color: #0b0c0c;
   text-decoration: none;
   background-color: #f8f8f8;
-  background-image: url("/assets/images/chevron-bg.svg");
+  background-image: url("../images/chevron-bg.svg");
   background-repeat: no-repeat;
   background-position: 98% center;
   background-size: 26px 43px;

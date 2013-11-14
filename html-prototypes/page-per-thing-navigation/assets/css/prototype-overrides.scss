@@ -117,7 +117,7 @@ main#content header.bordered {
   tbody td:nth-child(4) {
     width: 18%;
     padding-right: 45px;
-    background-image: url('/assets/images/chevron-bg.svg');
+    background-image: url('../images/chevron-bg.svg');
     background-repeat: no-repeat;
     background-position: 90% center;
     background-size: 26px 43px;
@@ -138,7 +138,7 @@ a.service-block-link {
   color: $black;
   text-decoration: none;
   background-color: $grey-4;
-  background-image: url('/assets/images/chevron-bg.svg');
+  background-image: url('../images/chevron-bg.svg');
   background-repeat: no-repeat;
   background-position: 98% center;
   background-size: 26px 43px;
