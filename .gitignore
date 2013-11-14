@@ -37,3 +37,6 @@ showtime/chromedriver.log
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+# Ignore sass-cache files.
+*.sass-cache*
