@@ -126,6 +126,9 @@ main#content header.bordered {
     line-height: 1.14286;
   }
 }
+.contents h1:first-of-type {
+  margin-top: 0;
+}
 .contents ol, .contents li {
   list-style: none;
   margin: inherit 0;
@@ -166,6 +169,7 @@ main#content header.bordered {
   text-transform: none;
   font-weight: 700;
   padding: 0.75em 0 0 0;
+  margin-top: 30px;
   border-top: 3px solid #097f96;
 }
 @media (max-width: 640px) {
@@ -173,6 +177,9 @@ main#content header.bordered {
     font-size: 20px;
     line-height: 1.2;
   }
+}
+.service-group:first-of-type {
+  margin-top: 0;
 }
 .service-group:first-of-type {
   border-top: 0;
