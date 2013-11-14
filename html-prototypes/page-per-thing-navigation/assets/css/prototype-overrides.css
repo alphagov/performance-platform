@@ -256,6 +256,7 @@ a.service-block-link {
   background-repeat: no-repeat;
   background-position: 98% center;
   background-size: 26px 43px;
+  border-top: 15px solid #fff;
 }
 a.service-block-link thead {
   background-color: white;
