@@ -60,6 +60,7 @@
 
 <!-- temp overrides -->
 <link href="assets/css/prototype-overrides.css" media="all" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="assets/js/prototype-only.js"></script>
 
 </head>
 <body>
@@ -144,19 +145,21 @@
       <!-- "graphing" area -->
       <div class="graphing">
         <!-- prototype only. non functional. non accessible -->
-        <form class="graph-controls">
+        <form class="graph-controls" id="graphControls">
 
           <div class="selections">
             <label>
               Date range:
-              <select>
-                <option>Last 6 months</option>
+              <select id="dateRange">
+                <option value="months6">Last 6 months</option>
+                <option value="months12">Last 12 months</option>
               </select>
             </label>
             <label>
               Period:
-              <select>
-                <option>Weekly</option>
+              <select id="period">
+                <option value="weekly">Weekly</option>
+                <option value="monthly">Monthly</option>
               </select>
             </label>
           </div>
@@ -165,10 +168,10 @@
             <span class="label">Options</span>
             <ul class="graph-controls--options">
               <li>
-                <a href="#">per month</a>
+                <a href="#" id="optsMonth">per month</a>
               </li>
               <li>
-                <a href="#">cumulative</a>
+                <a href="#" id="optsCumulative">cumulative</a>
               </li>
             </ul>
           </div>
@@ -176,8 +179,21 @@
         </form>
         
         <div class="graph">
-          <img src="assets/images/graph.svg" width="930" height="400" />
+          <img src="assets/images/graph-1.svg" width="930" height="400" id="graph" />
         </div>
+
+        <!-- container for image swaps -->
+        <script type="text/javascript">
+          var graphs = {
+            intial: 'assets/images/graph-1.svg',
+            months6 : 'assets/images/graph-2.svg',
+            months12 : 'assets/images/graph-3.svg',
+            weekly : 'assets/images/graph-4.svg',
+            monthly: 'assets/images/graph-5.svg',
+            optsMonth: 'assets/images/graph-6.svg',
+            optsCumulative: 'assets/images/graph-7.svg'
+          };
+        </script>
 
       </div>
 
@@ -201,12 +217,48 @@
             <h3>More tax disc metrics</h3>
             <ol>
               <li><a href="#applications">Real time usage</a></li>
-              <li><a href="#usage">Customer satisfaction</a></li>
-              <li><a href="#performance">Application volumes</a></li>
-              <li><a href="#availability">Digital take-up</a></li>
-              <li><a href="#performance">Error codes (web)</a></li>
-              <li><a href="#availability">Service avaiability</a></li>
-              <li><a href="#availability">Key Performance Indicators</a></li>
+              <li>
+                <details open="open">
+                  <summary>Service usage</summary>
+                  <ul>
+                    <li><a href="#">KPI: Digital take-up (%)</a></li>
+                    <li><a href="#">Completed applications</a></li>
+                    <li><a href="#">Applications by channel</a></li>
+                    <li><a href="#">Visitors to service</a></li>
+                  </ul>
+                </details>
+              </li>
+              <li>
+                <details>
+                  <summary>User experience</summary>
+                  <ul>
+                    <li><a href="#">KPI: User satisfaction (%)</a></li>
+                    <li><a href="#">Trust</a></li>
+                  </ul>
+                </details>
+              </li>
+              <li>
+                <details>
+                  <summary>User journey</summary>
+                  <ul>
+                    <li><a href="#">KPI: Completion rate (%)</a></li>
+                    <li><a href="#">Users at each stage</a></li>
+                    <li><a href="#">Users flow</a></li>
+                    <li><a href="#">Start page referrers</a></li>
+                    <li><a href="#">Recorded errors</a></li>
+                  </ul>
+                </details>
+              </li>
+              <li>
+                <details>
+                  <summary>Operational effectiveness</summary>
+                  <ul>
+                    <li><a href="#">KPI: Cost per transaction (&pound;)</a></li>
+                    <li><a href="#">Site speed &amp; availability (latency &amp; uptime)</a></li>
+                    <li><a href="#">Estimated fraud rates</a></li>
+                  </ul>
+                </details>
+              </li>
             </ol>
           </nav>
         </div>

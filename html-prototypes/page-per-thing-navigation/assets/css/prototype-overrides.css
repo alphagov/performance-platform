@@ -225,6 +225,9 @@ main#content header.bordered {
 .service-items tbody tr:hover td {
   background-color: #dee0e2;
 }
+.service-items tbody tr:hover td a.service-title {
+  text-decoration: underline;
+}
 
 a.service-title,
 .service-title {
@@ -269,6 +272,9 @@ a.service-block-link tbody td:nth-child(4) {
 }
 a.service-block-link:hover {
   background-color: #dee0e2;
+}
+a.service-block-link:hover .service-title {
+  text-decoration: underline;
 }
 
 /* "Detail" items */

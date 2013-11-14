@@ -124,6 +124,9 @@ main#content header.bordered {
   }
   tbody tr:hover td {
     background-color: $grey-3;
+    a.service-title {
+      text-decoration: underline;
+    }
   }
 }
 a.service-title,
@@ -157,6 +160,9 @@ a.service-block-link {
   }
   &:hover {
     background-color: $grey-3;
+    .service-title {
+      text-decoration: underline;
+    }
   }
 }
 
