@@ -34,6 +34,15 @@ main#content header.bordered {
   margin-bottom: 0;
 }
 
+// service details
+.service-details-info dl {
+  margin: 0 0 0 0;
+  display: inline-block; }
+  .service-details-info dl dt {
+    float: left; }
+  .service-details-info dl dd {
+    margin-left: 120px; }
+
 /* 2 col layout */
 .container {
   @extend %contain-floats;
@@ -56,6 +65,7 @@ main#content header.bordered {
 .contents {
   h1 {
     @include bold-16;
+    margin-top:16px
   }
   ol, li {
     list-style: none;
@@ -82,8 +92,13 @@ main#content header.bordered {
   @include bold-24;
   padding: 0.75em 0 0 0; 
   border-top: 3px solid $performance;
+      &:first-of-type{
+      border-top: 0;
+      padding: 0;
+    }
 }
 .service-items {
+  margin-top: 16px;
   width: $full-width;
   border-spacing: 0;
   border-collapse: collapse;
@@ -104,6 +119,10 @@ main#content header.bordered {
     background-color: $grey-4;
     border-top: 15px solid #fff;
     cursor: pointer;
+  }
+
+  tr:first-of-type td{
+      border-top: 0px solid #fff;
   }
   tbody td:first-of-type {
     padding-left: 14px;

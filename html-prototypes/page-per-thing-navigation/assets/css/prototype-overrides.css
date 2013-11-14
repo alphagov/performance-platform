@@ -78,6 +78,19 @@ main#content header.bordered {
   margin-bottom: 0;
 }
 
+.service-details-info dl {
+  margin: 0 0 0 0;
+  display: inline-block;
+}
+
+.service-details-info dl dt {
+  float: left;
+}
+
+.service-details-info dl dd {
+  margin-left: 120px;
+}
+
 /* 2 col layout */
 /* 1/3 cols */
 .contents {
@@ -105,6 +118,7 @@ main#content header.bordered {
   font-weight: 300;
   text-transform: none;
   font-weight: 700;
+  margin-top: 16px;
 }
 @media (max-width: 640px) {
   .contents h1 {
@@ -160,8 +174,13 @@ main#content header.bordered {
     line-height: 1.2;
   }
 }
+.service-group:first-of-type {
+  border-top: 0;
+  padding: 0;
+}
 
 .service-items {
+  margin-top: 16px;
   width: 100%;
   border-spacing: 0;
   border-collapse: collapse;
@@ -204,6 +223,9 @@ main#content header.bordered {
   background-color: #f8f8f8;
   border-top: 15px solid #fff;
   cursor: pointer;
+}
+.service-items tr:first-of-type td {
+  border-top: 0px solid #fff;
 }
 .service-items tbody td:first-of-type {
   padding-left: 14px;
