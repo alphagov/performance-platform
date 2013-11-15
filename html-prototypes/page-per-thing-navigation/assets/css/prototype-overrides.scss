@@ -83,6 +83,13 @@ main#content header.bordered {
   padding-left: 25px;
   nav {
     border-top: 10px solid $performance;
+    details summary{
+      font-weight: 700;
+      cursor: pointer;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
   }
   h3 {
     @include bold-24;

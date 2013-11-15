@@ -145,6 +145,13 @@ main#content header.bordered {
 .subnav-links nav {
   border-top: 10px solid #097f96;
 }
+.subnav-links nav details summary {
+  font-weight: 700;
+  cursor: pointer;
+}
+.subnav-links nav details summary:hover {
+  text-decoration: underline;
+}
 .subnav-links h3 {
   font-family: "nta", Arial, sans-serif;
   font-size: 24px;
