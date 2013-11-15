@@ -136,60 +136,18 @@
       <header>
         <h1>
           <span class="strapline"><a href="index.html">Tax disc</a></span>
-          Completed applications
+          User flow
         </h1>
-        <p class="explanatory">Applications received for tax disc relicensing (digital channel only).</p>
+        <p class="explanatory">How users move in and out of the transaction stages</p>
       </header>
       <!-- end intro header -->
-
-      <!-- table area -->
-      <article class="table-container">
-        <table>
-          <thead>
-            <tr>
-              <th class="empty"></th>
-              <th>Last year (2012)</th>
-              <th>This year (so far)</th>
-              <th>Last month (October)</th>
-              <th>This month (so far)</th>
-              <th>Last week</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td class="empty"></td>
-              <td>39.8m</td>
-              <td>33.7m</td>
-              <td>4.03m</td>
-              <td>3.08m</td>
-              <td>1.75m</td>
-            </tr>
-            <tr>
-              <th scope="row">Compared to previous year</th>
-              <td><span class="increase">thing</span></td>
-              <td><span class="increase">thing</span></td>
-              <td><span class="decrease">thing</span></td>
-              <td><span class="decrease">thing</span></td>
-              <td><span class="decrease">thing</span></td>
-            </tr>
-<!--             <tr>
-              <td class="empty"></td>
-              <td><span class="increase">thing</span></td>
-              <td><span class="increase">thing</span></td>
-              <td><span class="decrease">thing</span></td>
-              <td><span class="decrease">thing</span></td>
-              <td><span class="decrease">thing</span></td>
-            </tr> -->
-          </tbody>
-        </table>
-      </article>
 
       <!-- "graphing" area -->
       <div class="graphing">
         <!-- prototype only. non functional. non accessible -->
         <form class="graph-controls" id="graphControls">
 
-          <div class="selections">
+<!--           <div class="selections">
             <label>
               Date range:
               <select id="dateRange">
@@ -204,24 +162,24 @@
                 <option value="monthly">Monthly</option>
               </select>
             </label>
-          </div>
+          </div> -->
 
-          <div class="options">
-            <span class="label">Options</span>
+<!--           <div class="options">
+            <span class="label">View:</span>
             <ul class="graph-controls--options">
               <li>
-                <a href="#" id="optsMonth">per month</a>
+                <a href="#" id="optsMonth">graph</a>
               </li>
               <li>
-                <a href="#" id="optsCumulative">cumulative</a>
+                <a href="#" id="optsCumulative">table</a>
               </li>
             </ul>
-          </div>
+          </div> -->
 
         </form>
         
         <div class="graph">
-          <img src="assets/images/graph-1.svg" width="930" height="400" id="graph" />
+          <img src="assets/images/user-flow.svg" id="graph" />
         </div>
 
         <!-- container for image swaps -->
@@ -232,8 +190,8 @@
             months12 : 'assets/images/graph-1.svg',
             weekly : 'assets/images/graph-1.svg',
             monthly: 'assets/images/graph-1.svg',
-            optsMonth: 'assets/images/graph-1.svg',
-            optsCumulative: 'assets/images/graph-1.svg'
+            optsMonth: 'assets/images/drop-offs-graph.svg',
+            optsCumulative: 'assets/images/drop-offs-table.svg'
           };
         </script>
 
@@ -246,9 +204,9 @@
         <div class="article-area">
           <div class="detail">
             <h2>About the data</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent dapibus leo sem. Nullam  placerat nibh in neque vestibulum ultrices. Sed ornare nulla cursus nibh pellentesque, at convallis sapien venenatis. Phasellus at egestas massa. Proin at rhoncus libero. Proin urna dolor, ullamcorper vitae metus convallis, accumsan faucibus velit.</p>
-            <h3>Notes</h3>
-            <p>Pellentesque rutrum lorem nec diam facilisis elementum. Nulla at tincidunt nisl. Nulla bibendum turpis id odio lacinia dignissim. Curabitur eleifend fermentum laoreet. Vivamus vestibulum, tellus nec aliquam rhoncus, nunc metus elementum nisl, ac imperdiet leo nibh ut purus.</p>
+              <p>Data source: Google Analytics</p>
+              <p>User flow measures the paths users took whilst moving through the transaction.</p>
+              <p>Users may leave the transaction and return some days later, which may be indicated by large drop-offs at certain points.</p>
           </div>
         </div>
 

@@ -136,53 +136,11 @@
       <header>
         <h1>
           <span class="strapline"><a href="index.html">Tax disc</a></span>
-          Completed applications
+          Speed and availability
         </h1>
-        <p class="explanatory">Applications received for tax disc relicensing (digital channel only).</p>
+        <p class="explanatory">How fast and how reliable the service is</p>
       </header>
       <!-- end intro header -->
-
-      <!-- table area -->
-      <article class="table-container">
-        <table>
-          <thead>
-            <tr>
-              <th class="empty"></th>
-              <th>Last year (2012)</th>
-              <th>This year (so far)</th>
-              <th>Last month (October)</th>
-              <th>This month (so far)</th>
-              <th>Last week</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td class="empty"></td>
-              <td>39.8m</td>
-              <td>33.7m</td>
-              <td>4.03m</td>
-              <td>3.08m</td>
-              <td>1.75m</td>
-            </tr>
-            <tr>
-              <th scope="row">Compared to previous year</th>
-              <td><span class="increase">thing</span></td>
-              <td><span class="increase">thing</span></td>
-              <td><span class="decrease">thing</span></td>
-              <td><span class="decrease">thing</span></td>
-              <td><span class="decrease">thing</span></td>
-            </tr>
-<!--             <tr>
-              <td class="empty"></td>
-              <td><span class="increase">thing</span></td>
-              <td><span class="increase">thing</span></td>
-              <td><span class="decrease">thing</span></td>
-              <td><span class="decrease">thing</span></td>
-              <td><span class="decrease">thing</span></td>
-            </tr> -->
-          </tbody>
-        </table>
-      </article>
 
       <!-- "graphing" area -->
       <div class="graphing">
@@ -191,22 +149,22 @@
 
           <div class="selections">
             <label>
-              Date range:
+              Time period:
               <select id="dateRange">
-                <option value="months6">Last 6 months</option>
-                <option value="months12">Last 12 months</option>
+                <option value="months6">Last 30 days</option>
+                <option value="months12">Last 24 hours</option>
               </select>
             </label>
-            <label>
+            <!-- <label>
               Period:
               <select id="period">
                 <option value="weekly">Weekly</option>
                 <option value="monthly">Monthly</option>
               </select>
-            </label>
+            </label> -->
           </div>
 
-          <div class="options">
+<!--           <div class="options">
             <span class="label">Options</span>
             <ul class="graph-controls--options">
               <li>
@@ -216,20 +174,20 @@
                 <a href="#" id="optsCumulative">cumulative</a>
               </li>
             </ul>
-          </div>
+          </div> -->
 
         </form>
         
         <div class="graph">
-          <img src="assets/images/graph-1.svg" width="930" height="400" id="graph" />
+          <img src="assets/images/speed-and-availability-30-days.svg" id="graph" />
         </div>
 
         <!-- container for image swaps -->
         <script type="text/javascript">
           var graphs = {
             intial: 'assets/images/graph-1.svg',
-            months6 : 'assets/images/graph-1.svg',
-            months12 : 'assets/images/graph-1.svg',
+            months6 : 'assets/images/speed-and-availability-30-days.svg',
+            months12 : 'assets/images/speed-and-availability-24-hours.svg',
             weekly : 'assets/images/graph-1.svg',
             monthly: 'assets/images/graph-1.svg',
             optsMonth: 'assets/images/graph-1.svg',
@@ -246,9 +204,13 @@
         <div class="article-area">
           <div class="detail">
             <h2>About the data</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent dapibus leo sem. Nullam  placerat nibh in neque vestibulum ultrices. Sed ornare nulla cursus nibh pellentesque, at convallis sapien venenatis. Phasellus at egestas massa. Proin at rhoncus libero. Proin urna dolor, ullamcorper vitae metus convallis, accumsan faucibus velit.</p>
+            <p>Data source: Pingdom</p>
+            <p>Page load time measures the time taken for a sample page within the service to load.
+            </p>
+            <p>Uptime measures the percentage of time that the service was observed to be available.
+            </p>
             <h3>Notes</h3>
-            <p>Pellentesque rutrum lorem nec diam facilisis elementum. Nulla at tincidunt nisl. Nulla bibendum turpis id odio lacinia dignissim. Curabitur eleifend fermentum laoreet. Vivamus vestibulum, tellus nec aliquam rhoncus, nunc metus elementum nisl, ac imperdiet leo nibh ut purus.</p>
+            <p>Page load time and response time are measured from a single representative url. Some pages may perform faster or slower than this representative url.</p>
           </div>
         </div>
 

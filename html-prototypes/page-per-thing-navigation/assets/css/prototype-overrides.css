@@ -78,6 +78,11 @@ main#content header.bordered {
   margin-bottom: 0;
 }
 
+main#content header {
+  padding-bottom: 0em;
+  margin-bottom: 1em;
+}
+
 .service-details-info dl {
   margin: 0 0 0 0;
   display: inline-block;
@@ -404,7 +409,7 @@ article.table-wrapper {
 
 article.table-container {
   min-height: 0;
-  padding-bottom: 3em;
+  padding-bottom: 1em;
 }
 
 article table {
