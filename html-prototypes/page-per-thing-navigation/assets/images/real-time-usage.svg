@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.4, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="930px" height="400px" viewBox="0 0 930 400" enable-background="new 0 0 930 400" xml:space="preserve">
+<symbol  id="Arrow" viewBox="-5.689 -9.033 11.379 18.066">
+	<polygon fill="#FFFFFF" points="0.447,-9.033 2.311,-8.03 3.926,-7.191 1.357,-2.375 5.689,-2.375 -5.689,9.033 -5.689,-6.982 
+		-2.373,-3.762 	"/>
+	<polygon points="2.506,-6.619 0.741,-7.561 -3.022,-0.502 -1.259,0.439 	"/>
+	<polygon points="-4.689,6.625 -4.689,-4.562 -1.432,-1.418 3.336,-1.418 	"/>
+</symbol>
+<symbol  id="Sparkline_endpoint_2" viewBox="-2 -2 4 4">
+	<path fill="#158094" d="M2,0c0-1.102-0.895-2-2-2c-1.104,0-2,0.898-2,2c0,1.104,0.896,2,2,2C1.105,2,2,1.104,2,0z"/>
+</symbol>
+<path fill="none" stroke="#158094" stroke-width="3.5" d="M89.089,290.148h12.027l7.283-2.775l16.766,2.775l14.521,10.191
+	l9.537-16.584l7.281-2.778l16.765,2.778l14.522-4.946l9.531,4.946l12.024,3.639h12.026H233.4l12.025-3.639l12.027-6.393
+	l14.518,2.868l9.53-2.778l12.029-4.134l12.025,6.393h12.024l12.029,4.044l12.025,6.393l12.025-6.393l12.024,6.393h12.029h12.024
+	l12.026-30.043h12.025l12.029,10.188l12.024-0.4l7.285-2.778l16.764,7.627l12.027-4.849L485.943,265h12.021l12.024-4.895
+	L522.019,265l12.029-4.895c0,0,3.527-2.977,7.282-2.777c3.758,0.202,16.767-1.154,16.767-1.154l12.025-57.396l12.029-4.329
+	l12.024-10.108l7.285,16.333l16.766,2.778l7.288-2.778l16.763-1.561l12.024-9.188h12.027l12.03,4.277l12.021,4.894l7.286-2.778
+	h12.026l12.027,4.527l16.764,2.774h12.023l12.03,10.192h12.023l7.286-12.967l16.766,2.774l12.028,1.021l12.023-10.191h12.026h12.025
+	"/>
+<use xlink:href="#Sparkline_endpoint_2"  width="4" height="4" id="XMLID_6_" x="-2" y="-2" transform="matrix(1.4976 0 0 -1.5811 89.4521 290.3379)" overflow="visible"/>
+<use xlink:href="#Sparkline_endpoint_2"  width="4" height="4" id="XMLID_5_" x="-2" y="-2" transform="matrix(1.4976 0 0 -1.5811 843.7217 194.7568)" overflow="visible"/>
+<g>
+	<rect x="34.136" y="280.838" fill="none" width="42" height="19"/>
+	<text transform="matrix(1 0 0 1 42.2373 292.041)" fill="#343433" font-family="'GDSTransportWebsite'" font-size="16">1.21k</text>
+</g>
+<g>
+	<rect x="846.717" y="174.84" fill="none" width="42" height="19"/>
+	<text transform="matrix(1 0 0 1 851.0361 186.043)" fill="#343433" font-family="'GDSTransportWebsite'" font-size="16">1.85k</text>
+</g>
+<g>
+	<rect x="725.976" y="182.095" fill="none" width="42" height="19"/>
+	<text transform="matrix(1 0 0 1 733.8418 193.2979)" fill="#343433" font-family="'GDSTransportWebsite'" font-size="16">1.81k</text>
+</g>
+<text transform="matrix(1 0 0 1 784.9902 308.3145)" fill="#343433" font-family="'GDSTransportWebsite'" font-size="16">14 minutes ago</text>
+<g>
+	<text transform="matrix(1 0 0 1 13.2363 72.3193)" fill="#097F95" font-family="'NTATabular-Bold'" font-size="80">1852</text>
+	<text transform="matrix(1 0 0 1 13.2363 94.3193)" fill="#0E0E0E" font-family="'GDSTransportWebsite'" font-size="16">users at 2:38pm, 14 minutes ago</text>
+</g>
+<g>
+	<text transform="matrix(1 0 0 1 302.7383 72.3193)"><tspan x="0" y="0" fill="#097F95" font-family="'NTATabular-Bold'" font-size="80">76</tspan><tspan x="99.877" y="0" fill="#097F95" font-family="'GDSTransportWebsite-Bold'" font-size="80">%</tspan></text>
+	<text transform="matrix(1 0 0 1 305.7334 94.6523)" fill="#0E0E0E" font-family="'GDSTransportWebsite'" font-size="16">returning</text>
+</g>
+<ellipse fill="#FFFFFF" stroke="#158094" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" cx="730.219" cy="202.472" rx="4.243" ry="4.199"/>
+<use xlink:href="#Arrow"  width="11.379" height="18.066" x="-5.689" y="-9.033" transform="matrix(1 0 0 -1 735.8057 212.1484)" overflow="visible"/>
+</svg>

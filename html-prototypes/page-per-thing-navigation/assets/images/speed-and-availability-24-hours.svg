@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.4, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="930px" height="265.887px" viewBox="0 0 930 265.887" enable-background="new 0 0 930 265.887" xml:space="preserve">
+<g>
+	<text transform="matrix(1 0 0 1 2.8008 74.5857)" fill="#097F96" font-family="'NTATabular-Bold'" font-size="46.143">1867</text>
+	<text transform="matrix(1 0 0 1 116.356 74.5857)" fill="#097F96" font-family="'GDSTransportWebsite-Bold'" font-size="46.143">ms</text>
+	<text transform="matrix(1 0 0 1 2.8008 95.7346)"><tspan x="0" y="0" fill="#0B0C0C" font-family="'GDSTransportWebsite'" font-size="15.381">mean </tspan><tspan x="39.714" y="0" fill="#0B0C0C" font-family="'GDSTransportWebsite'" font-size="15.381">f</tspan><tspan x="44.511" y="0" fill="#0B0C0C" font-family="'GDSTransportWebsite'" font-size="15.381">o</tspan><tspan x="52.967" y="0" fill="#0B0C0C" font-family="'GDSTransportWebsite'" font-size="15.381">r</tspan><tspan x="58.044" y="0" fill="#0B0C0C" font-family="'GDSTransportWebsite'" font-size="15.381"> the last </tspan></text>
+	<text transform="matrix(1 0 0 1 116.6641 95.7346)" fill="#0B0C0C" font-family="'NTATabularNumbers-Light'" font-size="15.381">24</text>
+	<text transform="matrix(1 0 0 1 135.124 95.7346)" fill="#0B0C0C" font-family="'GDSTransportWebsite'" font-size="15.381"> hours</text>
+	<text transform="matrix(1 0 0 1 2.8008 204.3635)" fill="#097F96" font-family="'NTATabular-Bold'" font-size="46.143">100</text>
+	<text transform="matrix(1 0 0 1 87.9673 204.3635)" fill="#097F96" font-family="'GDSTransportWebsite-Bold'" font-size="46.143">%</text>
+	<text transform="matrix(1 0 0 1 2.8008 225.512)"><tspan x="0" y="0" fill="#0B0C0C" font-family="'GDSTransportWebsite'" font-size="15.381">f</tspan><tspan x="4.796" y="0" fill="#0B0C0C" font-family="'GDSTransportWebsite'" font-size="15.381">o</tspan><tspan x="13.253" y="0" fill="#0B0C0C" font-family="'GDSTransportWebsite'" font-size="15.381">r</tspan><tspan x="18.33" y="0" fill="#0B0C0C" font-family="'GDSTransportWebsite'" font-size="15.381"> the last </tspan></text>
+	<text transform="matrix(1 0 0 1 76.9497 225.512)" fill="#0B0C0C" font-family="'NTATabularNumbers-Light'" font-size="15.381">24</text>
+	<text transform="matrix(1 0 0 1 95.4102 225.512)" fill="#0B0C0C" font-family="'GDSTransportWebsite'" font-size="15.381"> hours</text>
+	<text transform="matrix(1 0 0 1 2.8008 23.6365)" fill="#0B0C0C" font-family="'GDSTransportWebsite-Bold'" font-size="18.2649">Page load time</text>
+	<text transform="matrix(1 0 0 1 2.8008 153.4133)" fill="#0B0C0C" font-family="'GDSTransportWebsite-Bold'" font-size="18.2649">Uptime</text>
+	<line fill="none" stroke="#444444" stroke-width="0.9613" x1="291.194" y1="124.574" x2="291.194" y2="130.342"/>
+	<line fill="none" stroke="#444444" stroke-width="0.9613" x1="464.23" y1="124.574" x2="464.23" y2="130.342"/>
+	<line fill="none" stroke="#444444" stroke-width="0.9613" x1="637.267" y1="124.574" x2="637.267" y2="130.342"/>
+	<line fill="none" stroke="#444444" stroke-width="0.9613" x1="810.303" y1="124.574" x2="810.303" y2="130.342"/>
+	<text transform="matrix(1 0 0 1 227.7632 121.8054)" font-family="'NTATabularNumbers-Light'" font-size="15.381">0</text>
+	<text transform="matrix(1 0 0 1 236.9937 121.8054)" font-family="'GDSTransportWebsite'" font-size="15.381">ms</text>
+	<text transform="matrix(1 0 0 1 200.0732 91.0437)" font-family="'NTATabularNumbers-Light'" font-size="15.381">2000</text>
+	<text transform="matrix(1 0 0 1 236.9937 91.0437)" font-family="'GDSTransportWebsite'" font-size="15.381">ms</text>
+	<text transform="matrix(1 0 0 1 200.0732 61.2429)" font-family="'NTATabularNumbers-Light'" font-size="15.381">4000</text>
+	<text transform="matrix(1 0 0 1 236.9937 61.2429)" font-family="'GDSTransportWebsite'" font-size="15.381">ms</text>
+	<text transform="matrix(1 0 0 1 200.0732 30.4812)" font-family="'NTATabularNumbers-Light'" font-size="15.381">6000</text>
+	<text transform="matrix(1 0 0 1 236.9937 30.4812)" font-family="'GDSTransportWebsite'" font-size="15.381">ms</text>
+	<polygon fill="#C1DFE4" points="262.836,82.276 291.675,91.889 320.515,93.812 349.354,94.773 378.193,91.889 407.033,68.818 
+		435.872,92.85 464.711,95.735 493.551,83.238 522.391,93.812 551.229,93.812 580.068,89.967 608.908,91.889 637.748,91.889 
+		666.587,94.773 695.426,95.735 724.266,91.889 753.105,93.812 781.944,92.85 810.784,82.276 839.623,90.928 868.463,76.508 
+		897.302,55.36 926.142,93.812 926.142,116.884 897.302,116.884 868.463,116.884 839.623,116.884 810.784,116.884 781.944,116.884 
+		753.105,116.884 724.266,116.884 695.426,116.884 666.587,116.884 637.748,116.884 608.908,116.884 580.068,116.884 
+		551.229,116.884 522.391,116.884 493.551,116.884 464.711,116.884 435.872,116.884 407.033,116.884 378.193,116.884 
+		349.354,116.884 320.515,116.884 291.675,116.884 262.836,116.884 	"/>
+	
+		<polyline fill="none" stroke="#097F96" stroke-width="2.4033" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
+		262.836,82.276 291.675,91.889 320.515,93.812 349.354,94.773 378.193,91.889 407.033,68.818 435.872,92.85 464.711,95.735 
+		493.551,83.238 522.391,93.812 551.229,93.812 580.068,89.967 608.908,91.889 637.748,91.889 666.587,94.773 695.426,95.735 
+		724.266,91.889 753.105,93.812 781.944,92.85 810.784,82.276 839.623,90.928 868.463,76.508 897.302,55.36 926.142,93.812 	"/>
+	<rect x="195.063" y="6.332" fill="none" width="759.437" height="129.777"/>
+	<line fill="none" stroke="#444444" stroke-width="0.9613" x1="291.194" y1="230.319" x2="291.194" y2="236.086"/>
+	<text transform="matrix(1 0 0 1 276.0054 252.7747)" font-family="'NTATabularNumbers-Light'" font-size="15.381">6</text>
+	<text transform="matrix(1 0 0 1 285.2354 252.7747)" font-family="'GDSTransportWebsite'" font-size="15.381">pm</text>
+	<line fill="none" stroke="#444444" stroke-width="0.9613" x1="464.23" y1="230.319" x2="464.23" y2="236.086"/>
+	<text transform="matrix(1 0 0 1 434.7231 252.7747)" font-family="'GDSTransportWebsite'" font-size="15.381">midnight</text>
+	<line fill="none" stroke="#444444" stroke-width="0.9613" x1="637.267" y1="230.319" x2="637.267" y2="236.086"/>
+	<text transform="matrix(1 0 0 1 622.5244 252.7747)" font-family="'NTATabularNumbers-Light'" font-size="15.381">6</text>
+	<text transform="matrix(1 0 0 1 631.7549 252.7747)" font-family="'GDSTransportWebsite'" font-size="15.381">am</text>
+	<line fill="none" stroke="#444444" stroke-width="0.9613" x1="810.303" y1="230.319" x2="810.303" y2="236.086"/>
+	<text transform="matrix(1 0 0 1 786.1729 252.7747)"><tspan x="0" y="0" font-family="'GDSTransportWebsite'" font-size="15.381">midd</tspan><tspan x="33.346" y="0" font-family="'GDSTransportWebsite'" font-size="15.381">a</tspan><tspan x="41.035" y="0" font-family="'GDSTransportWebsite'" font-size="15.381">y</tspan></text>
+	<text transform="matrix(1 0 0 1 234.8379 227.55)" font-family="'NTATabularNumbers-Light'" font-size="15.381">0</text>
+	<text transform="matrix(1 0 0 1 244.0684 227.55)" font-family="'GDSTransportWebsite'" font-size="15.381">%</text>
+	<text transform="matrix(1 0 0 1 225.6079 193.9045)" font-family="'NTATabularNumbers-Light'" font-size="15.381">50</text>
+	<text transform="matrix(1 0 0 1 244.0684 193.9045)" font-family="'GDSTransportWebsite'" font-size="15.381">%</text>
+	<text transform="matrix(1 0 0 1 216.3779 160.2581)" font-family="'NTATabularNumbers-Light'" font-size="15.381">100</text>
+	<text transform="matrix(1 0 0 1 244.0684 160.2581)" font-family="'GDSTransportWebsite'" font-size="15.381">%</text>
+	<polygon fill="#C1DFE4" points="262.836,155.336 291.675,155.336 320.515,155.336 349.354,155.336 378.193,155.336 
+		407.033,155.336 435.872,155.336 464.711,155.336 493.551,155.336 522.391,155.336 551.229,155.336 580.068,155.336 
+		608.908,155.336 637.748,155.336 666.587,155.336 695.426,155.336 724.266,155.336 753.105,155.336 781.944,155.336 
+		810.784,155.336 839.623,155.336 868.463,155.336 897.302,155.336 926.142,155.336 926.142,222.628 897.302,222.628 
+		868.463,222.628 839.623,222.628 810.784,222.628 781.944,222.628 753.105,222.628 724.266,222.628 695.426,222.628 
+		666.587,222.628 637.748,222.628 608.908,222.628 580.068,222.628 551.229,222.628 522.391,222.628 493.551,222.628 
+		464.711,222.628 435.872,222.628 407.033,222.628 378.193,222.628 349.354,222.628 320.515,222.628 291.675,222.628 
+		262.836,222.628 	"/>
+	
+		<polyline fill="none" stroke="#097F96" stroke-width="2.4033" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
+		262.836,155.336 291.675,155.336 320.515,155.336 349.354,155.336 378.193,155.336 407.033,155.336 435.872,155.336 
+		464.711,155.336 493.551,155.336 522.391,155.336 551.229,155.336 580.068,155.336 608.908,155.336 637.748,155.336 
+		666.587,155.336 695.426,155.336 724.266,155.336 753.105,155.336 781.944,155.336 810.784,155.336 839.623,155.336 
+		868.463,155.336 897.302,155.336 926.142,155.336 	"/>
+	<rect x="195.063" y="136.11" fill="none" width="759.437" height="129.777"/>
+</g>
+</svg>
