@@ -14,6 +14,6 @@ $(function() {
   });
 
   // on load, replace all images with a placeholder (just do this once)
-  $('.graph > img').attr('src', 'http://placehold.it/930x400');
+  $('.graph > img').attr('src', 'http://placehold.it/930x450');
 
 });
