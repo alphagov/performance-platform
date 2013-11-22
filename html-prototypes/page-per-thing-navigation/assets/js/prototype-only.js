@@ -7,6 +7,9 @@ $(function() {
   $('#graphControls a').on('click', function(e) {
     e.preventDefault();
     swapGraph($(this).attr('id'));
+
+    $('#graphControls a').removeClass('active');
+    $(this).addClass('active');
   });
   $('#graphControls select').on('change', function(e) {
     e.preventDefault();

@@ -75,7 +75,7 @@ main#content header.bordered {
   font-weight: 400;
   text-transform: none;
   width: 65.625%;
-  margin-bottom: 10px;
+  margin-bottom: 0;
 }
 
 main#content header {
@@ -359,6 +359,10 @@ a.service-block-link:hover .service-title {
 }
 .graph-controls select {
   margin-left: 8px;
+}
+.graph-controls a.active {
+  color: #0b0c0c;
+  text-decoration: none;
 }
 
 .selections {
