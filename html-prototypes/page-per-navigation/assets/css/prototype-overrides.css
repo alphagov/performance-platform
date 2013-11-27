@@ -461,10 +461,6 @@ a.service-block-link:hover .service-title {
 .graph-controls select {
   margin-left: 8px;
 }
-.graph-controls a.active {
-  color: #0b0c0c;
-  text-decoration: none;
-}
 
 .selections {
   float: left;
@@ -577,6 +573,11 @@ article table th.descending:after {
 }
 
 /* ************************************************* */
+a.active {
+  color: #0b0c0c;
+  text-decoration: none;
+}
+
 .increase:after,
 .decrease:after {
   margin: 0 0.25em;
