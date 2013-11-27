@@ -309,11 +309,11 @@ a.service-block-link {
   @extend %contain-floats;
   display: block;
   padding-bottom: 20px;
-  border-bottom: 1px solid $grey-2;
+  /*border-bottom: 1px solid $grey-2;*/
   /* remove border for ppg */
-  .ppg & {
+  /*.ppg & {
     border-bottom: none;
-  }
+  }*/
   label, .label {
     font-weight: bold;
   }

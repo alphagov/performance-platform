@@ -446,11 +446,11 @@ a.service-block-link:hover .service-title {
 .graph-controls {
   display: block;
   padding-bottom: 20px;
-  border-bottom: 1px solid #bfc1c3;
+  /*border-bottom: 1px solid $grey-2;*/
   /* remove border for ppg */
-}
-.ppg .graph-controls {
-  border-bottom: none;
+  /*.ppg & {
+    border-bottom: none;
+  }*/
 }
 .graph-controls label, .graph-controls .label {
   font-weight: bold;
