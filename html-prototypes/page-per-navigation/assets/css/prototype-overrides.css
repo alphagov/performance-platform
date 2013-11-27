@@ -192,6 +192,20 @@ main#content header {
     line-height: 1.2;
   }
 }
+.subnav-links.ppg h3:after {
+  content: '';
+  display: inline-block;
+  position: relative;
+  top: 5px;
+  height: 1em;
+  width: 0.8em;
+  margin-left: 0.25em;
+  background: url(../images/icon-download.svg) center center no-repeat;
+  background-size: contain;
+}
+.subnav-links.ppg p > a {
+  font-weight: bold;
+}
 .subnav-links.ppg h4 {
   font-family: "nta", Arial, sans-serif;
   font-size: 19px;
