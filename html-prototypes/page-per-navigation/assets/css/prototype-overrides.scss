@@ -12,6 +12,11 @@ $performance: #097F96;
   border-bottom: 1px solid #BFC1C3;
 }
 
+/* remove breadcrumb border on page-per-group */
+.ppg #global-breadcrumb ol {
+  border-bottom: none;
+}
+
 .performance-platform-outer {
     border-top: 0;
 }
@@ -52,11 +57,17 @@ margin-bottom: 1em;
 #content header h1 span.strapline a {
 color: #6f777b;
 text-decoration: none;
-&:hover {
-  text-decoration: underline;
-}
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
+/* smaller secondary h1 on ppg */
+.ppg #content header h1 {
+  font-size: 36px;
+}
+
+/* ************************************************* */
 /* 2 col layout */
 .container {
   @extend %contain-floats;
@@ -75,6 +86,7 @@ text-decoration: none;
 }
 
 
+/* ************************************************* */
 /* subnavs */
 .contents {
   h1 {
@@ -108,9 +120,64 @@ text-decoration: none;
   h3 {
     @include bold-24;
   }
+  /* page per group tweaks */
+  &.ppg {
+    h4 {
+      @include bold-19;
+    }
+    ul {
+      margin: 0;
+      padding: 0;
+    }
+  }
+}
+
+/* page-per-group header/subnav area */
+main#content header.ppg-header {
+  padding-bottom: 2em;
+  margin-bottom: 2em;
+  border-bottom: 1px solid $grey-3;
+
+  @extend %contain-floats;
+
+  .lh {
+    float: left;
+    width: $two-thirds;
+  }
+  .rh {
+    margin-top: -1.25em;
+    float: left;
+    width: $one-third;
+  }
+
+}
+.group-nav {
+  ol {
+    list-style: decimal;
+    padding-left: 1.5em;
+    float: left;
+    width: $one-third;
+  }
+}
+.service-link {
+  display: block;
+  padding: 1em 0; 
+  font-weight: bold;
+  border-top: 10px solid $performance;
+}
+.metrics-links {
+  h3 {
+    @include bold-24;
+  }
+  ul {
+    list-style: none; 
+    margin: 0;
+    padding: 0; 
+  }
 }
 
 
+/* ************************************************* */
 /* index TOC */
 .service-group {
   @include bold-24;
@@ -215,6 +282,7 @@ a.service-block-link {
 }
 
 
+/* ************************************************* */
 /* "Detail" items */
 .detail {
     border-top: 10px solid $performance;
@@ -228,6 +296,10 @@ a.service-block-link {
   display: block;
   padding-bottom: 20px;
   border-bottom: 1px solid $grey-2;
+  /* remove border for ppg */
+  .ppg & {
+    border-bottom: none;
+  }
   label, .label {
     font-weight: bold;
   }
@@ -242,6 +314,7 @@ a.service-block-link {
     text-decoration: none;
   }
 }
+
 .selections {
   float: left;
 }
@@ -263,6 +336,7 @@ a.service-block-link {
   }
 }
 
+/* ************************************************* */
 article {
     th, td {
         font-family: ntatabularnumbers, nta, Arial, sans-serif;
@@ -360,6 +434,9 @@ article table {
         }
     }
 }
+
+
+/* ************************************************* */
 
 .increase:after,
 .decrease:after {

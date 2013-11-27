@@ -63,7 +63,7 @@
 <script type="text/javascript" src="../assets/js/prototype-only.js"></script>
 
 </head>
-<body>
+<body class="ppg">
     <script type="text/javascript">document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script><div id="skiplink-container">
       <div>
         <a href="#content" class="skiplink">Skip to main content</a>
@@ -132,57 +132,57 @@
   <main id="content" class="group">
     <div class="performance-platform-outer">
 
+      <!-- Page per group nav header area -->
+      <header class="ppg-header">
+
+        <div class="lh">
+          <h1>
+            <span class="strapline"><a href="index.html">Tax disc performance</a></span>
+            Service usage
+          </h1>
+
+          <div class="group-nav">
+            <ol start="1">
+              <li><a href="#">Overview</a></li>
+              <li><a href="#">Digital take-up</a></li>
+              <li><a href="#">Completed applications</a></li>
+            </ol>
+            <ol start="4">
+              <li><a href="#">Applications by channel</a></li>
+              <li><a href="#">Visitors to service</a></li>
+              <li><a href="#">Real time usage</a></li>
+            </ol>
+          </div>
+        </div>
+
+        <div class="rh">
+
+          <div class="service-link">
+            <a href="#" rel="external">Visit the digital service</a>
+          </div>
+
+          <nav class="metrics-links">
+            <h3>More metrics</h3>
+            <ul>
+              <li><a href="#">User experience</a></li>
+              <li><a href="#">User journey</a></li>
+              <li><a href="#">Operational effectiveness</a></li>
+            </ul>
+          </nav>
+
+        </div>
+
+      </header>
+      <!-- end -->
+
       <!-- intro header -->
       <header>
         <h1>
-          <span class="strapline"><a href="index.html">Tax disc</a></span>
-          Digital take-up
+          3. Digital take-up
         </h1>
         <p class="explanatory">Users completing the transaction online, including assisted digital users</p>
       </header>
       <!-- end intro header -->
-
-      <!-- table area -->
-      <article class="table-container">
-        <table>
-          <thead>
-            <tr>
-              <th class="empty"></th>
-              <th>Last year (2012)</th>
-              <th>This year (so far)</th>
-              <th>Last month (October)</th>
-              <th>This month (so far)</th>
-              <th>Last week</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td class="empty"></td>
-              <td>39.8m</td>
-              <td>33.7m</td>
-              <td>4.03m</td>
-              <td>3.08m</td>
-              <td>1.75m</td>
-            </tr>
-            <tr>
-              <th scope="row">Compared to previous year</th>
-              <td><span class="increase">thing</span></td>
-              <td><span class="increase">thing</span></td>
-              <td><span class="decrease">thing</span></td>
-              <td><span class="decrease">thing</span></td>
-              <td><span class="decrease">thing</span></td>
-            </tr>
-            <tr>
-              <td class="empty"></td>
-              <td><span class="increase">thing</span></td>
-              <td><span class="increase">thing</span></td>
-              <td><span class="decrease">thing</span></td>
-              <td><span class="decrease">thing</span></td>
-              <td><span class="decrease">thing</span></td>
-            </tr>
-          </tbody>
-        </table>
-      </article>
 
       <!-- "graphing" area -->
       <div class="graphing">
@@ -206,16 +206,15 @@
           </div>
 
           <div class="options">
-            <span class="label">Options</span>
-            <ul class="graph-controls--options">
-              <li>
-                <a href="#" id="optsMonth">per month</a>
-              </li>
-              <li>
-                <a href="#" id="optsCumulative">cumulative</a>
-              </li>
-            </ul>
+            <label>
+              Options:
+              <select id="options">
+                <option value="optsMonth">per month</option>
+                <option value="optsCumulative">cumulative</option>
+              </select>
+            </label>
           </div>
+
         </form>
         
         <div class="graph">
@@ -243,62 +242,26 @@
         <!-- main area -->
         <div class="article-area">
           <div class="detail">
-            <h2>About the data</h2>
+            <h2>About the digital take up data</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent dapibus leo sem. Nullam  placerat nibh in neque vestibulum ultrices. Sed ornare nulla cursus nibh pellentesque, at convallis sapien venenatis. Phasellus at egestas massa. Proin at rhoncus libero. Proin urna dolor, ullamcorper vitae metus convallis, accumsan faucibus velit.</p>
-            <h3>Notes</h3>
+            <h3>Methodology</h3>
             <p>Pellentesque rutrum lorem nec diam facilisis elementum. Nulla at tincidunt nisl. Nulla bibendum turpis id odio lacinia dignissim. Curabitur eleifend fermentum laoreet. Vivamus vestibulum, tellus nec aliquam rhoncus, nunc metus elementum nisl, ac imperdiet leo nibh ut purus.</p>
           </div>
         </div>
 
         <!-- sub nav -->
-        <div class="contents subnav-links">
+        <div class="contents subnav-links ppg">
           <nav role="navigation">
-            <h3>More tax disc metrics</h3>
-            <ol>
-              <li>
-                <details open="open">
-                  <summary>Service usage</summary>
-                  <ul>
-                    <li><a href="tax-disc--real-time-usage.html">Real time usage</a></li>
-                    <li><a href="tax-disc--digital-take-up.html">KPI: Digital take-up</a></li>
-                    <li><a href="tax-disc--completed-applications.html">Completed applications</a></li>
-                    <li><a href="tax-disc--applications-by-channel.html">Applications by channel</a></li>
-                    <li><a href="tax-disc--visitors-to-service.html">Visitors to service</a></li>
-                  </ul>
-                </details>
-              </li>
-              <li>
-                <details open="open">
-                  <summary>User experience</summary>
-                  <ul>
-                    <li><a href="tax-disc--user-satisfaction.html">KPI: User satisfaction</a></li>
-                    <li><a href="tax-disc--trust.html">Trust</a></li>
-                  </ul>
-                </details>
-              </li>
-              <li>
-                <details open="open">
-                  <summary>User journey</summary>
-                  <ul>
-                    <li><a href="tax-disc--completion-rate.html">KPI: Completion rate</a></li>
-                    <li><a href="tax-disc--drop-offs-at-each-stage.html">Drop-offs at each stage</a></li>
-                    <li><a href="tax-disc--user-flow.html">User flow</a></li>
-                    <li><a href="tax-disc--start-page-referrers.html">Start page referrers</a></li>
-                    <li><a href="tax-disc--recorded-errors.html">Recorded errors</a></li>
-                  </ul>
-                </details>
-              </li>
-              <li>
-                <details open="open">
-                  <summary>Operational effectiveness</summary>
-                  <ul>
-                    <li><a href="tax-disc--cost-per-transaction.html">KPI: Cost per transaction</a></li>
-                    <li><a href="tax-disc--speed-and-availability.html">Site speed &amp; availability</a></li>
-                    <li><a href="tax-disc--estimated-fraud-rates.html">Estimated fraud rates</a></li>
-                  </ul>
-                </details>
-              </li>
-            </ol>
+            <h3>Alternate formats</h3>
+            <p>
+              <a href="#">CSV download of this data</a>
+            </p>
+            <h4>Source datasets (json)</h4>
+            <ul>
+              <li><a href="#">Online applications .json</a></li>
+              <li><a href="#">Post office applications .json</a></li>
+              <li><a href="#">Manual applications .json</a></li>
+            </ul>
           </nav>
         </div>
         <!-- end sub nav -->

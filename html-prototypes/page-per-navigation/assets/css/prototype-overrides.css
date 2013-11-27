@@ -39,7 +39,7 @@
    }
 
 */
-.container:after, .graph-controls:after {
+.container:after, main#content header.ppg-header:after, .graph-controls:after {
   content: "";
   display: block;
   clear: both;
@@ -53,6 +53,11 @@
 #global-breadcrumb ol {
   border-top-color: #097f96;
   border-bottom: 1px solid #BFC1C3;
+}
+
+/* remove breadcrumb border on page-per-group */
+.ppg #global-breadcrumb ol {
+  border-bottom: none;
 }
 
 .performance-platform-outer {
@@ -104,6 +109,12 @@ main#content header {
   text-decoration: underline;
 }
 
+/* smaller secondary h1 on ppg */
+.ppg #content header h1 {
+  font-size: 36px;
+}
+
+/* ************************************************* */
 /* 2 col layout */
 /* 1/3 cols */
 .contents {
@@ -123,6 +134,7 @@ main#content header {
   box-sizing: border;
 }
 
+/* ************************************************* */
 /* subnavs */
 .contents h1 {
   font-family: "nta", Arial, sans-serif;
@@ -154,6 +166,7 @@ main#content header {
 
 .subnav-links {
   padding-left: 25px;
+  /* page per group tweaks */
 }
 .subnav-links nav {
   border-top: 10px solid #097f96;
@@ -179,7 +192,76 @@ main#content header {
     line-height: 1.2;
   }
 }
+.subnav-links.ppg h4 {
+  font-family: "nta", Arial, sans-serif;
+  font-size: 19px;
+  line-height: 1.31579;
+  font-weight: 400;
+  text-transform: none;
+  font-weight: 700;
+}
+@media (max-width: 640px) {
+  .subnav-links.ppg h4 {
+    font-size: 16px;
+    line-height: 1.25;
+  }
+}
+.subnav-links.ppg ul {
+  margin: 0;
+  padding: 0;
+}
 
+/* page-per-group header/subnav area */
+main#content header.ppg-header {
+  padding-bottom: 2em;
+  margin-bottom: 2em;
+  border-bottom: 1px solid #dee0e2;
+}
+main#content header.ppg-header .lh {
+  float: left;
+  width: 66.66667%;
+}
+main#content header.ppg-header .rh {
+  margin-top: -1.25em;
+  float: left;
+  width: 33.33333%;
+}
+
+.group-nav ol {
+  list-style: decimal;
+  padding-left: 1.5em;
+  float: left;
+  width: 33.33333%;
+}
+
+.service-link {
+  display: block;
+  padding: 1em 0;
+  font-weight: bold;
+  border-top: 10px solid #097f96;
+}
+
+.metrics-links h3 {
+  font-family: "nta", Arial, sans-serif;
+  font-size: 24px;
+  line-height: 1.25;
+  font-weight: 400;
+  text-transform: none;
+  font-weight: 700;
+}
+@media (max-width: 640px) {
+  .metrics-links h3 {
+    font-size: 20px;
+    line-height: 1.2;
+  }
+}
+.metrics-links ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* ************************************************* */
 /* index TOC */
 .service-group {
   font-family: "nta", Arial, sans-serif;
@@ -327,6 +409,7 @@ a.service-block-link:hover .service-title {
   text-decoration: underline;
 }
 
+/* ************************************************* */
 /* "Detail" items */
 .detail {
   border-top: 10px solid #097f96;
@@ -350,6 +433,10 @@ a.service-block-link:hover .service-title {
   display: block;
   padding-bottom: 20px;
   border-bottom: 1px solid #bfc1c3;
+  /* remove border for ppg */
+}
+.ppg .graph-controls {
+  border-bottom: none;
 }
 .graph-controls label, .graph-controls .label {
   font-weight: bold;
@@ -388,6 +475,7 @@ a.service-block-link:hover .service-title {
   width: 100%;
 }
 
+/* ************************************************* */
 article th, article td {
   font-family: ntatabularnumbers, nta, Arial, sans-serif;
 }
@@ -474,6 +562,7 @@ article table th.descending:after {
   content: " \25BC";
 }
 
+/* ************************************************* */
 .increase:after,
 .decrease:after {
   margin: 0 0.25em;
