@@ -143,9 +143,9 @@
 
           <div class="group-nav">
             <ol start="1">
-              <li><a href="tax-disc--user-journey--overview.html" class="active">Overview</a></li>
+              <li><a href="tax-disc--user-journey--overview.html">Overview</a></li>
               <li><a href="tax-disc--user-journey--completion-rate.html">Completion rate</a></li>
-              <li><a href="tax-disc--user-journey--drop-offs-at-each-stage.html">Drop-offs at each stage</a></li>
+              <li><a href="tax-disc--user-journey--drop-offs-at-each-stage.html" class="active">Drop-offs at each stage</a></li>
             </ol>
             <ol start="4">
               <li><a href="tax-disc--user-journey--user-flow.html">User flow</a></li>
@@ -179,9 +179,10 @@
       <!-- intro header -->
       <header>
         <h1>
-          1. Overview
+          
+          3. Drop-offs at each stage
         </h1>
-        <p class="explanatory">Users completing the transaction online, including assisted digital users</p>
+        <p class="explanatory">Comparing total users at each stage with those who dropped off</p>
       </header>
       <!-- end intro header -->
 
@@ -189,7 +190,8 @@
       <div class="graphing">
         <!-- prototype only. non functional. non accessible -->
         <form class="graph-controls" id="graphControls">
-          <div class="selections">
+
+<!--           <div class="selections">
             <label>
               Date range:
               <select id="dateRange">
@@ -204,14 +206,28 @@
                 <option value="monthly">Monthly</option>
               </select>
             </label>
+          </div> -->
+
+          <!--
+          <div class="options">
+            <span class="label">View:</span>
+            <ul class="graph-controls--options">
+              <li>
+                <a href="#" id="optsMonth" class="active">graph</a>
+              </li>
+              <li>
+                <a href="#" id="optsCumulative">table</a>
+              </li>
+            </ul>
           </div>
+          -->
 
           <div class="options">
             <label>
               Options:
               <select id="options">
-                <option value="optsMonth">per month</option>
-                <option value="optsCumulative">cumulative</option>
+                <option value="optsMonth">graph</option>
+                <option value="optsCumulative">table</option>
               </select>
             </label>
           </div>
@@ -219,19 +235,19 @@
         </form>
         
         <div class="graph">
-          <img src="../assets/images/digital-take-up.svg" id="graph" />
+          <img src="../assets/images/drop-offs-graph.svg" id="graph" />
         </div>
 
         <!-- container for image swaps -->
         <script type="text/javascript">
           var graphs = {
             intial: '../assets/images/graph-1.svg',
-            months6 : '../assets/images/graph-2.svg',
-            months12 : '../assets/images/graph-3.svg',
-            weekly : '../assets/images/graph-4.svg',
-            monthly: '../assets/images/graph-5.svg',
-            optsMonth: '../assets/images/graph-6.svg',
-            optsCumulative: '../assets/images/graph-7.svg'
+            months6 : '../assets/images/graph-1.svg',
+            months12 : '../assets/images/graph-1.svg',
+            weekly : '../assets/images/graph-1.svg',
+            monthly: '../assets/images/graph-1.svg',
+            optsMonth: '../assets/images/drop-offs-graph.svg',
+            optsCumulative: '../assets/images/drop-offs-table.svg'
           };
         </script>
 
@@ -243,10 +259,13 @@
         <!-- main area -->
         <div class="article-area">
           <div class="detail">
-            <h2>About the digital take up data</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent dapibus leo sem. Nullam  placerat nibh in neque vestibulum ultrices. Sed ornare nulla cursus nibh pellentesque, at convallis sapien venenatis. Phasellus at egestas massa. Proin at rhoncus libero. Proin urna dolor, ullamcorper vitae metus convallis, accumsan faucibus velit.</p>
-            <h3>Methodology</h3>
-            <p>Pellentesque rutrum lorem nec diam facilisis elementum. Nulla at tincidunt nisl. Nulla bibendum turpis id odio lacinia dignissim. Curabitur eleifend fermentum laoreet. Vivamus vestibulum, tellus nec aliquam rhoncus, nunc metus elementum nisl, ac imperdiet leo nibh ut purus.</p>
+            <h2>About the data</h2>
+              <p>Data source: Google Analytics</p>
+              <p>A drop off is when a user leaves a transaction from a specific point, rather than moving on to another section within the transaction. In most cases, a service will want to minimise the number of drop offs in their transaction.</p>
+
+
+            <h3>Notes</h3>
+            <p>Only users with javascript turned on can be tracked.</p>
           </div>
         </div>
 

@@ -62,8 +62,12 @@ text-decoration: none;
   }
 }
 
+/* full width primary h1 on ppg */
+.ppg main#content header .lh h1 {
+  width: auto;
+}
 /* smaller secondary h1 on ppg */
-.ppg #content header h1 {
+.ppg #content header:not(.ppg-header) h1 {
   font-size: 36px;
 }
 

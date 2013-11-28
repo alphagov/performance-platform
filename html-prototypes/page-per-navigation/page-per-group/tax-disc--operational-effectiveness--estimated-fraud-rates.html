@@ -138,19 +138,17 @@
         <div class="lh">
           <h1>
             <span class="strapline"><a href="index.html">Tax disc performance</a></span>
-            User journey
+            Operational effectiveness
           </h1>
 
           <div class="group-nav">
             <ol start="1">
-              <li><a href="tax-disc--user-journey--overview.html" class="active">Overview</a></li>
-              <li><a href="tax-disc--user-journey--completion-rate.html">Completion rate</a></li>
-              <li><a href="tax-disc--user-journey--drop-offs-at-each-stage.html">Drop-offs at each stage</a></li>
+              <li><a href="tax-disc--operational-effectiveness--overview.html">Overview</a></li>
+              <li><a href="tax-disc--operational-effectiveness--cost-per-transaction.html">Cost per transaction</a></li>
+              <li><a href="tax-disc--operational-effectiveness--speed-and-availability.html">Speed and availability</a></li>
             </ol>
             <ol start="4">
-              <li><a href="tax-disc--user-journey--user-flow.html">User flow</a></li>
-              <li><a href="tax-disc--user-journey--start-page-referrers.html">Start page referrers</a></li>
-              <li><a href="tax-disc--user-journey--recorded-errors.html">Recorded errors</a></li>
+              <li><a href="tax-disc--operational-effectiveness--estimated-fraud-rates.html" class="active">Estimated fraud rates</a></li>
             </ol>
           </div>
         </div>
@@ -166,8 +164,8 @@
             <ul>
               <li><a href="tax-disc--service-usage--overview.html">Service usage</a></li>
               <li><a href="tax-disc--user-experience--overview.html">User experience</a></li>
-              <!--<li><a href="tax-disc--user-journey--overview.html">User journey</a></li>-->
-              <li><a href="tax-disc--operational-effectiveness--overview.html">Operational effectiveness</a></li>
+              <li><a href="tax-disc--user-journey--overview.html">User journey</a></li>
+              <!--<li><a href="tax-disc--operational-effectiveness--overview.html">Operational effectiveness</a></li>-->
             </ul>
           </nav>
 
@@ -176,12 +174,13 @@
       </header>
       <!-- end -->
 
+
       <!-- intro header -->
       <header>
         <h1>
-          1. Overview
+          4. Estimated fraud rates
         </h1>
-        <p class="explanatory">Users completing the transaction online, including assisted digital users</p>
+        <p class="explanatory">Estimated amount of fraud received related to tax disc applications.</p>
       </header>
       <!-- end intro header -->
 
@@ -189,6 +188,7 @@
       <div class="graphing">
         <!-- prototype only. non functional. non accessible -->
         <form class="graph-controls" id="graphControls">
+<!-- 
           <div class="selections">
             <label>
               Date range:
@@ -207,31 +207,33 @@
           </div>
 
           <div class="options">
-            <label>
-              Options:
-              <select id="options">
-                <option value="optsMonth">per month</option>
-                <option value="optsCumulative">cumulative</option>
-              </select>
-            </label>
+            <span class="label">Options</span>
+            <ul class="graph-controls--options">
+              <li>
+                <a href="#" id="optsMonth">per month</a>
+              </li>
+              <li>
+                <a href="#" id="optsCumulative">cumulative</a>
+              </li>
+            </ul>
           </div>
-
+ -->
         </form>
         
         <div class="graph">
-          <img src="../assets/images/digital-take-up.svg" id="graph" />
+          <img src="../assets/images/graph-1.svg" id="graph" />
         </div>
 
         <!-- container for image swaps -->
         <script type="text/javascript">
           var graphs = {
             intial: '../assets/images/graph-1.svg',
-            months6 : '../assets/images/graph-2.svg',
-            months12 : '../assets/images/graph-3.svg',
-            weekly : '../assets/images/graph-4.svg',
-            monthly: '../assets/images/graph-5.svg',
-            optsMonth: '../assets/images/graph-6.svg',
-            optsCumulative: '../assets/images/graph-7.svg'
+            months6 : '../assets/images/graph-1.svg',
+            months12 : '../assets/images/graph-1.svg',
+            weekly : '../assets/images/graph-1.svg',
+            monthly: '../assets/images/graph-1.svg',
+            optsMonth: '../assets/images/graph-1.svg',
+            optsCumulative: '../assets/images/graph-1.svg'
           };
         </script>
 
@@ -243,9 +245,9 @@
         <!-- main area -->
         <div class="article-area">
           <div class="detail">
-            <h2>About the digital take up data</h2>
+            <h2>About the data</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent dapibus leo sem. Nullam  placerat nibh in neque vestibulum ultrices. Sed ornare nulla cursus nibh pellentesque, at convallis sapien venenatis. Phasellus at egestas massa. Proin at rhoncus libero. Proin urna dolor, ullamcorper vitae metus convallis, accumsan faucibus velit.</p>
-            <h3>Methodology</h3>
+            <h3>Notes</h3>
             <p>Pellentesque rutrum lorem nec diam facilisis elementum. Nulla at tincidunt nisl. Nulla bibendum turpis id odio lacinia dignissim. Curabitur eleifend fermentum laoreet. Vivamus vestibulum, tellus nec aliquam rhoncus, nunc metus elementum nisl, ac imperdiet leo nibh ut purus.</p>
           </div>
         </div>
