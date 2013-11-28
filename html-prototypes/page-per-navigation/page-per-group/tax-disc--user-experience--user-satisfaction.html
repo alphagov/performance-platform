@@ -143,8 +143,8 @@
 
           <div class="group-nav">
             <ol start="1">
-              <li><a href="tax-disc--user-experience--overview.html" class="active">Overview</a></li>
-              <li><a href="tax-disc--user-experience--user-satisfaction.html">User satisfaction</a></li>
+              <li><a href="tax-disc--user-experience--overview.html">Overview</a></li>
+              <li><a href="tax-disc--user-experience--user-satisfaction.html" class="active">User satisfaction</a></li>
               <li><a href="tax-disc--user-experience--trust.html">Trust</a></li>
             </ol>
             <!--<ol start="4">
@@ -177,9 +177,10 @@
       <!-- intro header -->
       <header>
         <h1>
-          1. Overview
+          
+          2. User satisfaction
         </h1>
-        <p class="explanatory">Users completing the transaction online, including assisted digital users</p>
+        <p class="explanatory">Average satisfaction score for all tax disc applications</p>
       </header>
       <!-- end intro header -->
 
@@ -187,7 +188,8 @@
       <div class="graphing">
         <!-- prototype only. non functional. non accessible -->
         <form class="graph-controls" id="graphControls">
-          <div class="selections">
+
+<!--           <div class="selections">
             <label>
               Date range:
               <select id="dateRange">
@@ -205,14 +207,16 @@
           </div>
 
           <div class="options">
-            <label>
-              Options:
-              <select id="options">
-                <option value="optsMonth">per month</option>
-                <option value="optsCumulative">cumulative</option>
-              </select>
-            </label>
-          </div>
+            <span class="label">Options</span>
+            <ul class="graph-controls--options">
+              <li>
+                <a href="#" id="optsMonth">per month</a>
+              </li>
+              <li>
+                <a href="#" id="optsCumulative">cumulative</a>
+              </li>
+            </ul>
+          </div> -->
 
         </form>
         
@@ -224,12 +228,12 @@
         <script type="text/javascript">
           var graphs = {
             intial: '../assets/images/graph-1.svg',
-            months6 : '../assets/images/graph-2.svg',
-            months12 : '../assets/images/graph-3.svg',
-            weekly : '../assets/images/graph-4.svg',
-            monthly: '../assets/images/graph-5.svg',
-            optsMonth: '../assets/images/graph-6.svg',
-            optsCumulative: '../assets/images/graph-7.svg'
+            months6 : '../assets/images/graph-1.svg',
+            months12 : '../assets/images/graph-1.svg',
+            weekly : '../assets/images/graph-1.svg',
+            monthly: '../assets/images/graph-1.svg',
+            optsMonth: '../assets/images/graph-1.svg',
+            optsCumulative: '../assets/images/graph-1.svg'
           };
         </script>
 
@@ -241,10 +245,10 @@
         <!-- main area -->
         <div class="article-area">
           <div class="detail">
-            <h2>About the digital take up data</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent dapibus leo sem. Nullam  placerat nibh in neque vestibulum ultrices. Sed ornare nulla cursus nibh pellentesque, at convallis sapien venenatis. Phasellus at egestas massa. Proin at rhoncus libero. Proin urna dolor, ullamcorper vitae metus convallis, accumsan faucibus velit.</p>
-            <h3>Methodology</h3>
-            <p>Pellentesque rutrum lorem nec diam facilisis elementum. Nulla at tincidunt nisl. Nulla bibendum turpis id odio lacinia dignissim. Curabitur eleifend fermentum laoreet. Vivamus vestibulum, tellus nec aliquam rhoncus, nunc metus elementum nisl, ac imperdiet leo nibh ut purus.</p>
+            <h2>About the data</h2>
+              <p>Data source: DVLA</p>
+              <p>User satisfaction is measured using a survey on a sample of users at the point of transaction completion. It is measured on a 5 point scale from most satisfied to least satisfied. The mean of these responses is converted to a percentage for display purposes.</p>
+              <p>Responses relate to the month the tax disc starts. In most cases the user would have completed the transaction before this date.</p>
           </div>
         </div>
 
