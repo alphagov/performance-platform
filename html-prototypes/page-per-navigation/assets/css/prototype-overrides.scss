@@ -36,7 +36,7 @@ main#content header.bordered {
   font-weight: 400;
   text-transform: none;
   width: 65.625%;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
 main#content header {
@@ -171,10 +171,19 @@ main#content header.ppg-header {
 }
 .group-nav {
   ol {
-    list-style: decimal;
+    // list-style: decimal;
+    list-style: none;
+    content: "-";
     padding-left: 1.5em;
     float: left;
     width: $one-third;
+    li:before{
+      content: "-";
+      position: relative;
+      float: left;
+      width: 15px;
+      margin-left: -15px;
+    }
   }
 }
 .service-link {
@@ -454,7 +463,8 @@ article table {
 
   a.active {
     color: $black;
-    font-weight: 700;
+    // color: $grey-1;
+    // font-weight: 700;
     text-decoration: none;
   }
 
