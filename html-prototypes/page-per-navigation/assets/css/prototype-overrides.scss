@@ -9,7 +9,7 @@ $performance: #097F96;
 /* override border colour on global breadrumb */
 #global-breadcrumb ol {
   border-top-color: $performance;
-  border-bottom: 1px solid #BFC1C3;
+  // border-bottom: 1px solid #BFC1C3;
 }
 
 /* remove breadcrumb border on page-per-group */
@@ -36,7 +36,7 @@ main#content header.bordered {
   font-weight: 400;
   text-transform: none;
   width: 65.625%;
-  margin-bottom: 15px;
+  margin-bottom: 25px;
 }
 
 main#content header {
@@ -71,6 +71,15 @@ text-decoration: none;
   font-size: 36px;
 }
 
+main#content .thumbnail {
+  width: 80%;
+  margin-bottom: 2em;
+  border: 1px solid $grey-3;
+  &:hover {
+    border: 1px solid $grey-1;
+  }
+}
+
 /* ************************************************* */
 /* 2 col layout */
 .container {
@@ -103,7 +112,7 @@ text-decoration: none;
   ol, li {
     list-style: none;
     margin: inherit 0;
-    padding: 0;
+    padding-left: 0.5em;
   }
 }
 .internal-links {
@@ -167,16 +176,30 @@ main#content header.ppg-header {
     float: left;
     width: $one-third;
   }
+}
+
+main#content .bordered {
+  @extend %contain-floats;
+  .lh {
+    float: left;
+    width: $two-thirds;
+  }
+  .rh {
+    margin-top: -1.25em;
+    float: left;
+    width: $one-third;
+  }
+
+
 
 }
-.group-nav {
+
+
+.group-nav, nav {
   ol {
     // list-style: decimal;
     list-style: none;
     content: "-";
-    padding-left: 1.5em;
-    float: left;
-    width: $one-third;
     li:before{
       content: "-";
       position: relative;
@@ -185,6 +208,12 @@ main#content header.ppg-header {
       margin-left: -15px;
     }
   }
+}
+
+.group-nav ol {
+  width: $one-third;
+  padding-left: 1.5em;
+  float: left;
 }
 .service-link {
   display: block;
