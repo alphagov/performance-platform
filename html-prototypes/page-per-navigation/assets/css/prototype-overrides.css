@@ -87,6 +87,10 @@ main#content header {
   margin-bottom: 1em;
 }
 
+.service-details-info {
+  width: 50%;
+  float: left;
+}
 .service-details-info dl {
   margin: 0 0 0 0;
   display: inline-block;

@@ -45,13 +45,20 @@ margin-bottom: 1em;
 }
 
 // service details
-.service-details-info dl {
-  margin: 0 0 0 0;
-  display: inline-block; }
+.service-details-info {
+  width:50%;
+  float:left;
+  dl {
+    margin: 0 0 0 0;
+    display: inline-block;
+  }
+}
   .service-details-info dl dt {
-    float: left; }
+    float: left; 
+  }
   .service-details-info dl dd {
-    margin-left: 120px; }
+    margin-left: 120px; 
+  }
 
 // strapline
 #content header h1 span.strapline a {
