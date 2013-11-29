@@ -36,7 +36,7 @@ main#content header.bordered {
   font-weight: 400;
   text-transform: none;
   width: 65.625%;
-  margin-bottom: 0;
+  margin-bottom: 10px;
 }
 
 main#content header {
@@ -454,6 +454,7 @@ article table {
 
   a.active {
     color: $black;
+    font-weight: 700;
     text-decoration: none;
   }
 
