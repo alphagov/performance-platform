@@ -270,7 +270,8 @@ main#content .bordered {
   }
   td {
     @include bold-24;
-    color: $performance;
+    // color: $performance;
+    color: $grey-1;
   }
   tbody td {
     padding: 14px 0; 
@@ -286,13 +287,13 @@ main#content .bordered {
     padding-left: 14px;
   }
   tbody td:nth-child(2) {
-    width: 165px;
+    width: 18%;
   }
   tbody td:nth-child(3) {
     width: 18%;
   }
   tbody td:nth-child(4) {
-    width: 18%;
+    width: 165px;
     padding-right: 45px;
     background-image: url('../images/chevron-bg.svg');
     background-repeat: no-repeat;
@@ -508,5 +509,4 @@ article table {
 .decrease:after {
   margin: 0 0.25em;
   font-size: 75%;
-  color: #BF1E2D;
 }

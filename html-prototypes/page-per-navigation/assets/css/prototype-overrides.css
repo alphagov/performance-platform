@@ -371,7 +371,7 @@ main#content .bordered .rh {
   font-weight: 400;
   text-transform: none;
   font-weight: 700;
-  color: #097f96;
+  color: #6f777b;
 }
 @media (max-width: 640px) {
   .service-items td {
@@ -392,13 +392,13 @@ main#content .bordered .rh {
   padding-left: 14px;
 }
 .service-items tbody td:nth-child(2) {
-  width: 165px;
+  width: 18%;
 }
 .service-items tbody td:nth-child(3) {
   width: 18%;
 }
 .service-items tbody td:nth-child(4) {
-  width: 18%;
+  width: 165px;
   padding-right: 45px;
   background-image: url("../images/chevron-bg.svg");
   background-repeat: no-repeat;
@@ -620,5 +620,4 @@ a.active {
 .decrease:after {
   margin: 0 0.25em;
   font-size: 75%;
-  color: #BF1E2D;
 }
