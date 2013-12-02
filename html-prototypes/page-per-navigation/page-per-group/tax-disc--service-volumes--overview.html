@@ -180,7 +180,6 @@
         <h1>
           Overview
         </h1>
-        <p class="explanatory"></p>
       </header>
       <!-- end intro header -->
 
@@ -265,7 +264,12 @@
           </tr>
         </tbody>
       </table>
-
+      <!-- handle clicks on entire <tr> elements -->
+      <script type="text/javascript">
+      $(' .service-items tbody tr').on('click', function() {
+        window.location.href = $(this).find('a').attr('href')
+      });
+      </script>
       <!-- main prototype area -->
       <div class="container">
 
