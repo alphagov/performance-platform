@@ -180,61 +180,91 @@
         <h1>
           1. Overview
         </h1>
-        <p class="explanatory">Users completing the transaction online, including assisted digital users</p>
+        <p class="explanatory"></p>
       </header>
       <!-- end intro header -->
 
-      <!-- "graphing" area -->
-      <div class="graphing">
-        <!-- prototype only. non functional. non accessible -->
-        <form class="graph-controls" id="graphControls">
-          <div class="selections">
-            <label>
-              Date range:
-              <select id="dateRange">
-                <option value="months6">Last 6 months</option>
-                <option value="months12">Last 12 months</option>
-              </select>
-            </label>
-            <label>
-              Period:
-              <select id="period">
-                <option value="weekly">Weekly</option>
-                <option value="monthly">Monthly</option>
-              </select>
-            </label>
-          </div>
-
-          <div class="options">
-            <label>
-              Options:
-              <select id="options">
-                <option value="optsMonth">per month</option>
-                <option value="optsCumulative">cumulative</option>
-              </select>
-            </label>
-          </div>
-
-        </form>
-        
-        <div class="graph">
-          <img src="../assets/images/digital-take-up.svg" id="graph" />
-        </div>
-
-        <!-- container for image swaps -->
-        <script type="text/javascript">
-          var graphs = {
-            intial: '../assets/images/graph-1.svg',
-            months6 : '../assets/images/graph-2.svg',
-            months12 : '../assets/images/graph-3.svg',
-            weekly : '../assets/images/graph-4.svg',
-            monthly: '../assets/images/graph-5.svg',
-            optsMonth: '../assets/images/graph-6.svg',
-            optsCumulative: '../assets/images/graph-7.svg'
-          };
-        </script>
-
-      </div>
+      <!-- main content area -->
+      <table class="service-items">
+        <thead>
+          <tr>
+            <td></td>
+            <th scope="col">Last week</th>
+            <th scope="col">Change</th>
+            <th scope="col">6 month trend</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <a href="tax-disc--service-volumes--digital-take-up.html" class="service-title">Digital take-up</a>
+            </td>
+            <td>
+              43.8%
+            </td>
+            <td>
+              <span class="increase improvement">1.28%</span>
+            </td>
+            <td>
+              <img src="../assets/images/sparkline-5.svg" width="142" height="30" />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="tax-disc--service-volumes--completed-applications.html" class="service-title">Completed applications</a>
+            </td>
+            <td>
+              1.8m
+            </td>
+            <td>
+              <span class="increase improvement">0.5%</span>
+            </td>
+            <td>
+              <img src="../assets/images/sparkline-3.svg" width="142" height="30" />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="tax-disc--service-volumes--applications-by-channel.html" class="service-title">Applications by channel</a>
+            </td>
+            <td>
+              1.75m
+            </td>
+            <td>
+              <span class="decrease decline">2.81%</span>
+            </td>
+            <td>
+              <img src="../assets/images/sparkline-two-lines.svg" width="142" height="30" />
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <table class="service-items">
+        <thead>
+          <tr>
+            <td></td>
+            <th scope="col">Right now</th>
+            <th scope="col">Last week</th>
+            <th scope="col">Last 7 days</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <a href="tax-disc--service-volumes--visitors-to-service.html" class="service-title">Visitors to service</a>
+            </td>
+            <td>
+              355
+            </td>
+            <td>
+              128k
+            </td>
+            <td>
+              <img src="../assets/images/sparkline-2.svg" width="142" height="30" />
+            </td>
+          </tr>
+        </tbody>
+      </table>
 
       <!-- main prototype area -->
       <div class="container">
@@ -248,23 +278,6 @@
             <p>Pellentesque rutrum lorem nec diam facilisis elementum. Nulla at tincidunt nisl. Nulla bibendum turpis id odio lacinia dignissim. Curabitur eleifend fermentum laoreet. Vivamus vestibulum, tellus nec aliquam rhoncus, nunc metus elementum nisl, ac imperdiet leo nibh ut purus.</p>
           </div>
         </div>
-
-        <!-- sub nav -->
-        <div class="contents subnav-links ppg">
-          <nav role="navigation">
-            <h3>Alternate formats</h3>
-            <p>
-              <a href="#">CSV download of this data</a>
-            </p>
-            <h4>Source datasets (json)</h4>
-            <ul>
-              <li><a href="#">Online applications .json</a></li>
-              <li><a href="#">Post office applications .json</a></li>
-              <li><a href="#">Manual applications .json</a></li>
-            </ul>
-          </nav>
-        </div>
-        <!-- end sub nav -->
 
       </div>
       <!-- end main prototype area -->

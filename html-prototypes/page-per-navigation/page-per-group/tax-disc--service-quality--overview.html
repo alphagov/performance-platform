@@ -183,57 +183,62 @@
       </header>
       <!-- end intro header -->
 
-      <!-- "graphing" area -->
-      <div class="graphing">
-        <!-- prototype only. non functional. non accessible -->
-        <form class="graph-controls" id="graphControls">
-          <div class="selections">
-            <label>
-              Date range:
-              <select id="dateRange">
-                <option value="months6">Last 6 months</option>
-                <option value="months12">Last 12 months</option>
-              </select>
-            </label>
-            <label>
-              Period:
-              <select id="period">
-                <option value="weekly">Weekly</option>
-                <option value="monthly">Monthly</option>
-              </select>
-            </label>
-          </div>
+      <table class="service-items">
+        <thead>
+          <tr>
+            <td></td>
+            <th scope="col">Last week</th>
+            <th scope="col">Change</th>
+            <th scope="col">6 month trend</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <a href="tax-disc--service-quality--user-satisfaction.html" class="service-title">User satisfaction</a>
+            </td>
+            <td>
+              82.3%
+            </td>
+            <td>
+              <span class="increase improvement">0.03%</span>
+            </td>
+            <td>
+              <img src="../assets/images/sparkline-4.svg" width="142" height="30" />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="tax-disc--service-quality--page-load-time.html" class="service-title">Page load time</a>
+            </td>
+            <td>
+              2.21s
+            </td>
+            <td>
+              <span class="increase decline">3.42%</span>
+            </td>
+            <td>
+              <img src="../assets/images/sparkline-3.svg" width="142" height="30" />
+              
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="tax-disc--service-quality--trust.html" class="service-title">Trust</a>
+            </td>
+            <td>
+              52%
+            </td>
+            <td>
+              <span class="decrease decline">7.88%</span>
+            </td>
+            <td>
+              <img src="../assets/images/sparkline-5.svg" width="142" height="30" />
+            </td>
+          </tr>
+        </tbody>
+      </table>
 
-          <div class="options">
-            <label>
-              Options:
-              <select id="options">
-                <option value="optsMonth">per month</option>
-                <option value="optsCumulative">cumulative</option>
-              </select>
-            </label>
-          </div>
-
-        </form>
-        
-        <div class="graph">
-          <img src="../assets/images/digital-take-up.svg" id="graph" />
-        </div>
-
-        <!-- container for image swaps -->
-        <script type="text/javascript">
-          var graphs = {
-            intial: '../assets/images/graph-1.svg',
-            months6 : '../assets/images/graph-2.svg',
-            months12 : '../assets/images/graph-3.svg',
-            weekly : '../assets/images/graph-4.svg',
-            monthly: '../assets/images/graph-5.svg',
-            optsMonth: '../assets/images/graph-6.svg',
-            optsCumulative: '../assets/images/graph-7.svg'
-          };
-        </script>
-
-      </div>
 
       <!-- main prototype area -->
       <div class="container">
@@ -247,24 +252,6 @@
             <p>Pellentesque rutrum lorem nec diam facilisis elementum. Nulla at tincidunt nisl. Nulla bibendum turpis id odio lacinia dignissim. Curabitur eleifend fermentum laoreet. Vivamus vestibulum, tellus nec aliquam rhoncus, nunc metus elementum nisl, ac imperdiet leo nibh ut purus.</p>
           </div>
         </div>
-
-        <!-- sub nav -->
-        <div class="contents subnav-links ppg">
-          <nav role="navigation">
-            <h3>Alternate formats</h3>
-            <p>
-              <a href="#">CSV download of this data</a>
-            </p>
-            <h4>Source datasets (json)</h4>
-            <ul>
-              <li><a href="#">Online applications .json</a></li>
-              <li><a href="#">Post office applications .json</a></li>
-              <li><a href="#">Manual applications .json</a></li>
-            </ul>
-          </nav>
-        </div>
-        <!-- end sub nav -->
-
       </div>
       <!-- end main prototype area -->
 
