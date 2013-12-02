@@ -188,24 +188,24 @@
         <!-- prototype only. non functional. non accessible -->
         <form class="graph-controls" id="graphControls">
 
-<!--           <div class="selections">
+          <div class="selections">
             <label>
-              Date range:
+              Time period:
               <select id="dateRange">
-                <option value="months6">Last 6 months</option>
-                <option value="months12">Last 12 months</option>
+                <option value="months6">Last 30 days</option>
+                <option value="months12">Last 24 hours</option>
               </select>
             </label>
-            <label>
+            <!-- <label>
               Period:
               <select id="period">
                 <option value="weekly">Weekly</option>
                 <option value="monthly">Monthly</option>
               </select>
-            </label>
+            </label> -->
           </div>
 
-          <div class="options">
+<!--           <div class="options">
             <span class="label">Options</span>
             <ul class="graph-controls--options">
               <li>
@@ -220,15 +220,15 @@
         </form>
         
         <div class="graph">
-          <img src="../assets/images/digital-take-up.svg" id="graph" />
+          <img src="../assets/images/speed-and-availability-30-days.svg" id="graph" />
         </div>
 
         <!-- container for image swaps -->
         <script type="text/javascript">
           var graphs = {
             intial: '../assets/images/graph-1.svg',
-            months6 : '../assets/images/graph-1.svg',
-            months12 : '../assets/images/graph-1.svg',
+            months6 : '../assets/images/speed-and-availability-30-days.svg',
+            months12 : '../assets/images/speed-and-availability-24-hours.svg',
             weekly : '../assets/images/graph-1.svg',
             monthly: '../assets/images/graph-1.svg',
             optsMonth: '../assets/images/graph-1.svg',
