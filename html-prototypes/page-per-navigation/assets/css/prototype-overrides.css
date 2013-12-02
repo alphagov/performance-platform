@@ -342,6 +342,7 @@ main#content .bordered .rh {
 
 .service-items {
   margin-top: 16px;
+  margin-bottom: 16px;
   width: 100%;
   border-spacing: 0;
   border-collapse: collapse;
@@ -371,13 +372,16 @@ main#content .bordered .rh {
   font-weight: 400;
   text-transform: none;
   font-weight: 700;
-  color: #6f777b;
+  color: #097f96;
 }
 @media (max-width: 640px) {
   .service-items td {
     font-size: 20px;
     line-height: 1.2;
   }
+}
+.service-items td span {
+  color: #6f777b;
 }
 .service-items tbody td {
   padding: 14px 0;

@@ -257,6 +257,7 @@ main#content .bordered {
 }
 .service-items {
   margin-top: 16px;
+  margin-bottom: 16px;
   width: $full-width;
   border-spacing: 0;
   border-collapse: collapse;
@@ -270,8 +271,11 @@ main#content .bordered {
   }
   td {
     @include bold-24;
-    // color: $performance;
-    color: $grey-1;
+    color: $performance;
+    span {
+      color: $grey-1;
+    }
+    // color: $grey-1;
   }
   tbody td {
     padding: 14px 0; 
