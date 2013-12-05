@@ -293,6 +293,9 @@ main#content .bordered .rh {
   border-top: 10px solid #097f96;
 }
 
+.metrics-links {
+  display: none;
+}
 .metrics-links h3 {
   font-family: "nta", Arial, sans-serif;
   font-size: 24px;
